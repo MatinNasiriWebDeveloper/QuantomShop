@@ -1,0 +1,3082 @@
+[
+  {
+    "timestamp": "2026-02-17T18:51:00.176Z",
+    "uptime": "560.403 seconds",
+    "cpu": {
+      "usage": 10.849673481648715,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.91 GB",
+      "free": "17.80 GB",
+      "usagePercent": "43.88%"
+    },
+    "processMemory": {
+      "rss": "90.63 MB",
+      "heapTotal": "41.69 MB",
+      "heapUsed": "28.67 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.09 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:51:10.186Z",
+    "uptime": "570.413 seconds",
+    "cpu": {
+      "usage": 10.85235824790683,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.27 GB",
+      "free": "17.45 GB",
+      "usagePercent": "44.99%"
+    },
+    "processMemory": {
+      "rss": "90.88 MB",
+      "heapTotal": "43.69 MB",
+      "heapUsed": "30.50 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.09 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:51:23.570Z",
+    "uptime": "0.002 seconds",
+    "cpu": {
+      "usage": 10.854989859654065,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.00 GB",
+      "free": "17.71 GB",
+      "usagePercent": "44.16%"
+    },
+    "processMemory": {
+      "rss": "86.95 MB",
+      "heapTotal": "59.65 MB",
+      "heapUsed": "34.91 MB",
+      "external": "3.49 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.09 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:51:33.594Z",
+    "uptime": "10.025 seconds",
+    "cpu": {
+      "usage": 10.855692769038138,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.97 GB",
+      "free": "17.74 GB",
+      "usagePercent": "44.06%"
+    },
+    "processMemory": {
+      "rss": "80.83 MB",
+      "heapTotal": "35.66 MB",
+      "heapUsed": "32.15 MB",
+      "external": "3.65 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.10 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:51:43.597Z",
+    "uptime": "20.028 seconds",
+    "cpu": {
+      "usage": 10.857588800090612,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.12 GB",
+      "free": "17.59 GB",
+      "usagePercent": "44.53%"
+    },
+    "processMemory": {
+      "rss": "84.56 MB",
+      "heapTotal": "37.41 MB",
+      "heapUsed": "34.00 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.10 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:51:53.607Z",
+    "uptime": "30.038 seconds",
+    "cpu": {
+      "usage": 10.858637304973954,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.91 GB",
+      "free": "17.80 GB",
+      "usagePercent": "43.87%"
+    },
+    "processMemory": {
+      "rss": "85.17 MB",
+      "heapTotal": "37.91 MB",
+      "heapUsed": "34.47 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.10 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:52:03.607Z",
+    "uptime": "40.038 seconds",
+    "cpu": {
+      "usage": 10.859512208273852,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.00 GB",
+      "free": "17.71 GB",
+      "usagePercent": "44.14%"
+    },
+    "processMemory": {
+      "rss": "86.68 MB",
+      "heapTotal": "39.16 MB",
+      "heapUsed": "35.77 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.10 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:52:35.800Z",
+    "uptime": "0.001 seconds",
+    "cpu": {
+      "usage": 10.865668757358035,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.09 GB",
+      "free": "17.62 GB",
+      "usagePercent": "44.42%"
+    },
+    "processMemory": {
+      "rss": "85.85 MB",
+      "heapTotal": "59.15 MB",
+      "heapUsed": "31.81 MB",
+      "external": "3.49 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.11 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:52:45.819Z",
+    "uptime": "10.02 seconds",
+    "cpu": {
+      "usage": 10.869594707273098,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.21 GB",
+      "free": "17.50 GB",
+      "usagePercent": "44.80%"
+    },
+    "processMemory": {
+      "rss": "108.07 MB",
+      "heapTotal": "67.16 MB",
+      "heapUsed": "38.95 MB",
+      "external": "3.74 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.12 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:52:55.818Z",
+    "uptime": "20.019 seconds",
+    "cpu": {
+      "usage": 10.870882404784997,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.12 GB",
+      "free": "17.59 GB",
+      "usagePercent": "44.52%"
+    },
+    "processMemory": {
+      "rss": "80.84 MB",
+      "heapTotal": "36.66 MB",
+      "heapUsed": "32.07 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.12 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:53:05.819Z",
+    "uptime": "30.02 seconds",
+    "cpu": {
+      "usage": 10.871375907010087,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.11 GB",
+      "free": "17.60 GB",
+      "usagePercent": "44.49%"
+    },
+    "processMemory": {
+      "rss": "81.60 MB",
+      "heapTotal": "34.91 MB",
+      "heapUsed": "31.30 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.12 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:53:15.821Z",
+    "uptime": "40.022 seconds",
+    "cpu": {
+      "usage": 10.872112920710476,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.10 GB",
+      "free": "17.61 GB",
+      "usagePercent": "44.46%"
+    },
+    "processMemory": {
+      "rss": "82.59 MB",
+      "heapTotal": "35.91 MB",
+      "heapUsed": "32.78 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.12 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:53:25.834Z",
+    "uptime": "50.035 seconds",
+    "cpu": {
+      "usage": 10.872598376595006,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.06 GB",
+      "free": "17.65 GB",
+      "usagePercent": "44.34%"
+    },
+    "processMemory": {
+      "rss": "82.76 MB",
+      "heapTotal": "37.41 MB",
+      "heapUsed": "33.93 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.13 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:53:35.837Z",
+    "uptime": "60.038 seconds",
+    "cpu": {
+      "usage": 10.872834604951526,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.00 GB",
+      "free": "17.71 GB",
+      "usagePercent": "44.14%"
+    },
+    "processMemory": {
+      "rss": "84.55 MB",
+      "heapTotal": "37.91 MB",
+      "heapUsed": "34.96 MB",
+      "external": "3.72 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.13 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:53:45.841Z",
+    "uptime": "70.042 seconds",
+    "cpu": {
+      "usage": 10.873087378038795,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.05 GB",
+      "free": "17.66 GB",
+      "usagePercent": "44.30%"
+    },
+    "processMemory": {
+      "rss": "85.78 MB",
+      "heapTotal": "39.41 MB",
+      "heapUsed": "35.94 MB",
+      "external": "3.73 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.13 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:53:55.858Z",
+    "uptime": "80.059 seconds",
+    "cpu": {
+      "usage": 10.874012278069468,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.13 GB",
+      "free": "17.58 GB",
+      "usagePercent": "44.55%"
+    },
+    "processMemory": {
+      "rss": "87.21 MB",
+      "heapTotal": "40.16 MB",
+      "heapUsed": "37.03 MB",
+      "external": "3.74 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.14 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:54:05.866Z",
+    "uptime": "90.067 seconds",
+    "cpu": {
+      "usage": 10.876202406132244,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.00 GB",
+      "free": "17.71 GB",
+      "usagePercent": "44.14%"
+    },
+    "processMemory": {
+      "rss": "87.21 MB",
+      "heapTotal": "40.41 MB",
+      "heapUsed": "38.21 MB",
+      "external": "3.74 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.14 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:54:15.874Z",
+    "uptime": "100.075 seconds",
+    "cpu": {
+      "usage": 10.87883010061071,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.19 GB",
+      "free": "17.52 GB",
+      "usagePercent": "44.75%"
+    },
+    "processMemory": {
+      "rss": "89.05 MB",
+      "heapTotal": "42.66 MB",
+      "heapUsed": "31.19 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.14 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:54:25.884Z",
+    "uptime": "110.085 seconds",
+    "cpu": {
+      "usage": 10.88149081692193,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.18 GB",
+      "free": "17.53 GB",
+      "usagePercent": "44.71%"
+    },
+    "processMemory": {
+      "rss": "89.04 MB",
+      "heapTotal": "40.66 MB",
+      "heapUsed": "32.02 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.14 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:54:35.891Z",
+    "uptime": "120.092 seconds",
+    "cpu": {
+      "usage": 10.883820172436565,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.14 GB",
+      "free": "17.57 GB",
+      "usagePercent": "44.59%"
+    },
+    "processMemory": {
+      "rss": "88.88 MB",
+      "heapTotal": "39.66 MB",
+      "heapUsed": "33.73 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.15 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:54:45.902Z",
+    "uptime": "130.103 seconds",
+    "cpu": {
+      "usage": 10.886946022883787,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.08 GB",
+      "free": "17.63 GB",
+      "usagePercent": "44.39%"
+    },
+    "processMemory": {
+      "rss": "88.89 MB",
+      "heapTotal": "39.66 MB",
+      "heapUsed": "34.34 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.15 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:54:55.909Z",
+    "uptime": "140.11 seconds",
+    "cpu": {
+      "usage": 10.889536487847135,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.09 GB",
+      "free": "17.62 GB",
+      "usagePercent": "44.43%"
+    },
+    "processMemory": {
+      "rss": "88.91 MB",
+      "heapTotal": "39.66 MB",
+      "heapUsed": "35.23 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.15 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:55:05.919Z",
+    "uptime": "150.12 seconds",
+    "cpu": {
+      "usage": 10.890570500089012,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.13 GB",
+      "free": "17.58 GB",
+      "usagePercent": "44.55%"
+    },
+    "processMemory": {
+      "rss": "88.85 MB",
+      "heapTotal": "42.66 MB",
+      "heapUsed": "37.01 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.15 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:55:15.929Z",
+    "uptime": "160.13 seconds",
+    "cpu": {
+      "usage": 10.895319759125725,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.33 GB",
+      "free": "17.38 GB",
+      "usagePercent": "45.18%"
+    },
+    "processMemory": {
+      "rss": "88.87 MB",
+      "heapTotal": "41.16 MB",
+      "heapUsed": "37.63 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.16 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:55:25.941Z",
+    "uptime": "170.142 seconds",
+    "cpu": {
+      "usage": 10.896673925995351,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.28 GB",
+      "free": "17.43 GB",
+      "usagePercent": "45.02%"
+    },
+    "processMemory": {
+      "rss": "89.44 MB",
+      "heapTotal": "44.16 MB",
+      "heapUsed": "39.25 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.16 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:55:35.953Z",
+    "uptime": "180.154 seconds",
+    "cpu": {
+      "usage": 10.900784096826497,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.44 GB",
+      "free": "17.27 GB",
+      "usagePercent": "45.53%"
+    },
+    "processMemory": {
+      "rss": "90.11 MB",
+      "heapTotal": "43.16 MB",
+      "heapUsed": "39.67 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.16 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:55:45.960Z",
+    "uptime": "190.161 seconds",
+    "cpu": {
+      "usage": 10.9035644774975,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.15 GB",
+      "free": "17.56 GB",
+      "usagePercent": "44.64%"
+    },
+    "processMemory": {
+      "rss": "89.84 MB",
+      "heapTotal": "40.91 MB",
+      "heapUsed": "32.05 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.17 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:55:55.964Z",
+    "uptime": "200.165 seconds",
+    "cpu": {
+      "usage": 10.908137259074904,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.43 GB",
+      "free": "17.28 GB",
+      "usagePercent": "45.50%"
+    },
+    "processMemory": {
+      "rss": "90.04 MB",
+      "heapTotal": "43.91 MB",
+      "heapUsed": "33.37 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.17 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:56:05.973Z",
+    "uptime": "210.174 seconds",
+    "cpu": {
+      "usage": 10.913674169567996,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.27 GB",
+      "free": "17.44 GB",
+      "usagePercent": "45.01%"
+    },
+    "processMemory": {
+      "rss": "90.05 MB",
+      "heapTotal": "40.91 MB",
+      "heapUsed": "34.35 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.17 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:56:15.984Z",
+    "uptime": "220.185 seconds",
+    "cpu": {
+      "usage": 10.915138162240506,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.24 GB",
+      "free": "17.47 GB",
+      "usagePercent": "44.91%"
+    },
+    "processMemory": {
+      "rss": "90.09 MB",
+      "heapTotal": "41.91 MB",
+      "heapUsed": "35.01 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.17 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:56:25.993Z",
+    "uptime": "230.194 seconds",
+    "cpu": {
+      "usage": 10.915703305186616,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.16 GB",
+      "free": "17.55 GB",
+      "usagePercent": "44.65%"
+    },
+    "processMemory": {
+      "rss": "90.05 MB",
+      "heapTotal": "41.91 MB",
+      "heapUsed": "36.29 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.18 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:56:36.003Z",
+    "uptime": "240.204 seconds",
+    "cpu": {
+      "usage": 10.918139228678992,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.41 GB",
+      "free": "17.30 GB",
+      "usagePercent": "45.45%"
+    },
+    "processMemory": {
+      "rss": "90.07 MB",
+      "heapTotal": "40.91 MB",
+      "heapUsed": "36.91 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.18 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:56:46.005Z",
+    "uptime": "250.206 seconds",
+    "cpu": {
+      "usage": 10.919075715253545,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.18 GB",
+      "free": "17.53 GB",
+      "usagePercent": "44.73%"
+    },
+    "processMemory": {
+      "rss": "90.19 MB",
+      "heapTotal": "43.91 MB",
+      "heapUsed": "29.62 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.18 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:56:56.008Z",
+    "uptime": "260.209 seconds",
+    "cpu": {
+      "usage": 10.919327203355667,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.24 GB",
+      "free": "17.47 GB",
+      "usagePercent": "44.90%"
+    },
+    "processMemory": {
+      "rss": "90.34 MB",
+      "heapTotal": "43.91 MB",
+      "heapUsed": "30.70 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.19 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:57:06.021Z",
+    "uptime": "270.222 seconds",
+    "cpu": {
+      "usage": 10.922892570709582,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.48 GB",
+      "free": "17.23 GB",
+      "usagePercent": "45.68%"
+    },
+    "processMemory": {
+      "rss": "90.34 MB",
+      "heapTotal": "40.91 MB",
+      "heapUsed": "31.31 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.19 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:57:16.024Z",
+    "uptime": "280.225 seconds",
+    "cpu": {
+      "usage": 10.924039062783814,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.41 GB",
+      "free": "17.30 GB",
+      "usagePercent": "45.43%"
+    },
+    "processMemory": {
+      "rss": "90.34 MB",
+      "heapTotal": "40.91 MB",
+      "heapUsed": "31.36 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.19 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:57:26.033Z",
+    "uptime": "290.234 seconds",
+    "cpu": {
+      "usage": 10.924811472482697,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.31 GB",
+      "free": "17.40 GB",
+      "usagePercent": "45.13%"
+    },
+    "processMemory": {
+      "rss": "90.34 MB",
+      "heapTotal": "41.91 MB",
+      "heapUsed": "33.02 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.19 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:57:36.042Z",
+    "uptime": "300.243 seconds",
+    "cpu": {
+      "usage": 10.929042836368033,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.43 GB",
+      "free": "17.28 GB",
+      "usagePercent": "45.49%"
+    },
+    "processMemory": {
+      "rss": "90.46 MB",
+      "heapTotal": "40.91 MB",
+      "heapUsed": "34.15 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.20 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:57:46.055Z",
+    "uptime": "310.256 seconds",
+    "cpu": {
+      "usage": 10.929850885666108,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.38 GB",
+      "free": "17.33 GB",
+      "usagePercent": "45.35%"
+    },
+    "processMemory": {
+      "rss": "90.16 MB",
+      "heapTotal": "41.91 MB",
+      "heapUsed": "34.90 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.20 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:57:56.066Z",
+    "uptime": "320.267 seconds",
+    "cpu": {
+      "usage": 10.93066326697709,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.31 GB",
+      "free": "17.40 GB",
+      "usagePercent": "45.14%"
+    },
+    "processMemory": {
+      "rss": "90.21 MB",
+      "heapTotal": "43.91 MB",
+      "heapUsed": "36.23 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.20 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:58:06.073Z",
+    "uptime": "330.274 seconds",
+    "cpu": {
+      "usage": 10.93179818096077,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.54 GB",
+      "free": "17.17 GB",
+      "usagePercent": "45.86%"
+    },
+    "processMemory": {
+      "rss": "90.37 MB",
+      "heapTotal": "44.16 MB",
+      "heapUsed": "28.64 MB",
+      "external": "3.66 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.20 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:58:16.079Z",
+    "uptime": "340.28 seconds",
+    "cpu": {
+      "usage": 10.933109177190744,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.32 GB",
+      "free": "17.39 GB",
+      "usagePercent": "45.15%"
+    },
+    "processMemory": {
+      "rss": "90.41 MB",
+      "heapTotal": "42.16 MB",
+      "heapUsed": "29.17 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.21 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:58:26.081Z",
+    "uptime": "350.282 seconds",
+    "cpu": {
+      "usage": 10.933453555477495,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.49 GB",
+      "free": "17.22 GB",
+      "usagePercent": "45.69%"
+    },
+    "processMemory": {
+      "rss": "90.42 MB",
+      "heapTotal": "41.16 MB",
+      "heapUsed": "30.81 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.21 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:58:36.093Z",
+    "uptime": "360.294 seconds",
+    "cpu": {
+      "usage": 10.933553386054234,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.39 GB",
+      "free": "17.33 GB",
+      "usagePercent": "45.36%"
+    },
+    "processMemory": {
+      "rss": "90.36 MB",
+      "heapTotal": "44.16 MB",
+      "heapUsed": "31.13 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.21 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:58:46.098Z",
+    "uptime": "370.299 seconds",
+    "cpu": {
+      "usage": 10.933970477156379,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.36 GB",
+      "free": "17.35 GB",
+      "usagePercent": "45.29%"
+    },
+    "processMemory": {
+      "rss": "90.20 MB",
+      "heapTotal": "44.16 MB",
+      "heapUsed": "32.60 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.22 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:58:56.101Z",
+    "uptime": "380.302 seconds",
+    "cpu": {
+      "usage": 10.936272169297228,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.30 GB",
+      "free": "17.41 GB",
+      "usagePercent": "45.11%"
+    },
+    "processMemory": {
+      "rss": "90.27 MB",
+      "heapTotal": "42.16 MB",
+      "heapUsed": "33.40 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.22 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:59:06.102Z",
+    "uptime": "390.303 seconds",
+    "cpu": {
+      "usage": 10.940104428052818,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.48 GB",
+      "free": "17.23 GB",
+      "usagePercent": "45.67%"
+    },
+    "processMemory": {
+      "rss": "90.42 MB",
+      "heapTotal": "44.41 MB",
+      "heapUsed": "34.14 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.22 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:59:16.107Z",
+    "uptime": "400.308 seconds",
+    "cpu": {
+      "usage": 10.942865060327197,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.52 GB",
+      "free": "17.19 GB",
+      "usagePercent": "45.78%"
+    },
+    "processMemory": {
+      "rss": "90.57 MB",
+      "heapTotal": "41.41 MB",
+      "heapUsed": "34.79 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.22 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:59:26.119Z",
+    "uptime": "410.321 seconds",
+    "cpu": {
+      "usage": 10.94586271944531,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.37 GB",
+      "free": "17.34 GB",
+      "usagePercent": "45.32%"
+    },
+    "processMemory": {
+      "rss": "87.86 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "27.21 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.23 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:59:36.129Z",
+    "uptime": "420.33 seconds",
+    "cpu": {
+      "usage": 10.948149737326743,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.37 GB",
+      "free": "17.34 GB",
+      "usagePercent": "45.31%"
+    },
+    "processMemory": {
+      "rss": "88.07 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "28.26 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.23 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:59:46.133Z",
+    "uptime": "430.334 seconds",
+    "cpu": {
+      "usage": 10.951232645273729,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.10 GB",
+      "free": "17.61 GB",
+      "usagePercent": "44.48%"
+    },
+    "processMemory": {
+      "rss": "88.08 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "29.73 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.23 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T18:59:56.138Z",
+    "uptime": "440.339 seconds",
+    "cpu": {
+      "usage": 10.952195990697666,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.06 GB",
+      "free": "17.65 GB",
+      "usagePercent": "44.33%"
+    },
+    "processMemory": {
+      "rss": "88.20 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "30.50 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.24 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:00:06.142Z",
+    "uptime": "450.343 seconds",
+    "cpu": {
+      "usage": 10.951709909935152,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.14 GB",
+      "free": "17.57 GB",
+      "usagePercent": "44.59%"
+    },
+    "processMemory": {
+      "rss": "88.22 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "31.50 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.24 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:00:16.151Z",
+    "uptime": "460.352 seconds",
+    "cpu": {
+      "usage": 10.951382835803845,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.11 GB",
+      "free": "17.60 GB",
+      "usagePercent": "44.51%"
+    },
+    "processMemory": {
+      "rss": "88.22 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "33.12 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.24 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:00:26.158Z",
+    "uptime": "470.359 seconds",
+    "cpu": {
+      "usage": 10.951622157889393,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.14 GB",
+      "free": "17.58 GB",
+      "usagePercent": "44.58%"
+    },
+    "processMemory": {
+      "rss": "87.70 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "32.86 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.24 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:00:36.172Z",
+    "uptime": "480.373 seconds",
+    "cpu": {
+      "usage": 10.951304159223833,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.00 GB",
+      "free": "17.71 GB",
+      "usagePercent": "44.14%"
+    },
+    "processMemory": {
+      "rss": "87.92 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "34.11 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.25 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:00:46.185Z",
+    "uptime": "490.386 seconds",
+    "cpu": {
+      "usage": 10.95107766792052,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.09 GB",
+      "free": "17.62 GB",
+      "usagePercent": "44.42%"
+    },
+    "processMemory": {
+      "rss": "87.76 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "34.27 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.25 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:00:56.199Z",
+    "uptime": "500.4 seconds",
+    "cpu": {
+      "usage": 10.951683179565592,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.14 GB",
+      "free": "17.57 GB",
+      "usagePercent": "44.61%"
+    },
+    "processMemory": {
+      "rss": "87.97 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "34.73 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.25 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:01:06.204Z",
+    "uptime": "510.405 seconds",
+    "cpu": {
+      "usage": 10.951977083816292,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.21 GB",
+      "free": "17.50 GB",
+      "usagePercent": "44.80%"
+    },
+    "processMemory": {
+      "rss": "88.19 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "28.13 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.25 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:01:16.206Z",
+    "uptime": "520.407 seconds",
+    "cpu": {
+      "usage": 10.952256835070926,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.19 GB",
+      "free": "17.52 GB",
+      "usagePercent": "44.75%"
+    },
+    "processMemory": {
+      "rss": "87.88 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "29.21 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.26 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:01:26.221Z",
+    "uptime": "530.422 seconds",
+    "cpu": {
+      "usage": 10.952553048475606,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.13 GB",
+      "free": "17.58 GB",
+      "usagePercent": "44.57%"
+    },
+    "processMemory": {
+      "rss": "88.04 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "28.97 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.26 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:01:36.234Z",
+    "uptime": "540.435 seconds",
+    "cpu": {
+      "usage": 10.952685180632615,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.00 GB",
+      "free": "17.71 GB",
+      "usagePercent": "44.15%"
+    },
+    "processMemory": {
+      "rss": "88.11 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "29.65 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.26 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:01:46.248Z",
+    "uptime": "550.449 seconds",
+    "cpu": {
+      "usage": 10.952749893268074,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.14 GB",
+      "free": "17.57 GB",
+      "usagePercent": "44.59%"
+    },
+    "processMemory": {
+      "rss": "88.14 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "30.96 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.27 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:01:56.262Z",
+    "uptime": "560.463 seconds",
+    "cpu": {
+      "usage": 10.953060704554861,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.08 GB",
+      "free": "17.63 GB",
+      "usagePercent": "44.40%"
+    },
+    "processMemory": {
+      "rss": "88.17 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "32.79 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.27 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:02:06.269Z",
+    "uptime": "570.47 seconds",
+    "cpu": {
+      "usage": 10.953518573759027,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.12 GB",
+      "free": "17.59 GB",
+      "usagePercent": "44.53%"
+    },
+    "processMemory": {
+      "rss": "88.21 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "32.22 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.27 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:02:16.283Z",
+    "uptime": "580.484 seconds",
+    "cpu": {
+      "usage": 10.953636837402424,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.13 GB",
+      "free": "17.58 GB",
+      "usagePercent": "44.55%"
+    },
+    "processMemory": {
+      "rss": "88.22 MB",
+      "heapTotal": "41.44 MB",
+      "heapUsed": "33.44 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.27 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:02:26.289Z",
+    "uptime": "590.49 seconds",
+    "cpu": {
+      "usage": 10.953742969047754,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.13 GB",
+      "free": "17.58 GB",
+      "usagePercent": "44.55%"
+    },
+    "processMemory": {
+      "rss": "88.22 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "33.65 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.28 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:02:36.305Z",
+    "uptime": "600.506 seconds",
+    "cpu": {
+      "usage": 10.953809611718533,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.98 GB",
+      "free": "17.74 GB",
+      "usagePercent": "44.07%"
+    },
+    "processMemory": {
+      "rss": "88.25 MB",
+      "heapTotal": "39.44 MB",
+      "heapUsed": "33.87 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.28 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:02:46.318Z",
+    "uptime": "610.519 seconds",
+    "cpu": {
+      "usage": 10.953787072381505,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.13 GB",
+      "free": "17.58 GB",
+      "usagePercent": "44.55%"
+    },
+    "processMemory": {
+      "rss": "88.04 MB",
+      "heapTotal": "40.94 MB",
+      "heapUsed": "27.80 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.28 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:02:56.326Z",
+    "uptime": "620.527 seconds",
+    "cpu": {
+      "usage": 10.953769239162948,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.12 GB",
+      "free": "17.59 GB",
+      "usagePercent": "44.54%"
+    },
+    "processMemory": {
+      "rss": "88.18 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "28.65 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.29 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:03:06.339Z",
+    "uptime": "630.54 seconds",
+    "cpu": {
+      "usage": 10.95372426342931,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.05 GB",
+      "free": "17.66 GB",
+      "usagePercent": "44.30%"
+    },
+    "processMemory": {
+      "rss": "88.21 MB",
+      "heapTotal": "40.94 MB",
+      "heapUsed": "28.78 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.29 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:03:16.349Z",
+    "uptime": "640.55 seconds",
+    "cpu": {
+      "usage": 10.953381369390033,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.98 GB",
+      "free": "17.73 GB",
+      "usagePercent": "44.07%"
+    },
+    "processMemory": {
+      "rss": "88.02 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "29.66 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.29 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:03:26.357Z",
+    "uptime": "650.558 seconds",
+    "cpu": {
+      "usage": 10.953333508009838,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.11 GB",
+      "free": "17.60 GB",
+      "usagePercent": "44.51%"
+    },
+    "processMemory": {
+      "rss": "88.13 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "30.63 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.29 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:03:36.361Z",
+    "uptime": "660.562 seconds",
+    "cpu": {
+      "usage": 10.953212774110945,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.05 GB",
+      "free": "17.66 GB",
+      "usagePercent": "44.30%"
+    },
+    "processMemory": {
+      "rss": "88.04 MB",
+      "heapTotal": "40.94 MB",
+      "heapUsed": "31.86 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.30 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:03:46.367Z",
+    "uptime": "670.568 seconds",
+    "cpu": {
+      "usage": 10.953345442378767,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.99 GB",
+      "free": "17.72 GB",
+      "usagePercent": "44.13%"
+    },
+    "processMemory": {
+      "rss": "88.07 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "32.12 MB",
+      "external": "3.66 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.30 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:03:56.373Z",
+    "uptime": "680.574 seconds",
+    "cpu": {
+      "usage": 10.953207774792464,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.98 GB",
+      "free": "17.73 GB",
+      "usagePercent": "44.08%"
+    },
+    "processMemory": {
+      "rss": "88.14 MB",
+      "heapTotal": "40.94 MB",
+      "heapUsed": "33.07 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.30 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:04:06.386Z",
+    "uptime": "690.587 seconds",
+    "cpu": {
+      "usage": 10.953305849942579,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.08 GB",
+      "free": "17.63 GB",
+      "usagePercent": "44.40%"
+    },
+    "processMemory": {
+      "rss": "88.19 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "34.20 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.30 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:04:16.391Z",
+    "uptime": "700.592 seconds",
+    "cpu": {
+      "usage": 10.953506065173924,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "14.42 GB",
+      "free": "17.29 GB",
+      "usagePercent": "45.49%"
+    },
+    "processMemory": {
+      "rss": "88.23 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "35.00 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.31 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:04:26.392Z",
+    "uptime": "710.593 seconds",
+    "cpu": {
+      "usage": 10.954077826329407,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.45 GB",
+      "free": "18.26 GB",
+      "usagePercent": "42.41%"
+    },
+    "processMemory": {
+      "rss": "88.07 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "28.53 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.31 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:04:36.407Z",
+    "uptime": "720.608 seconds",
+    "cpu": {
+      "usage": 10.95516987185419,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.42 GB",
+      "free": "18.29 GB",
+      "usagePercent": "42.33%"
+    },
+    "processMemory": {
+      "rss": "87.91 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "28.91 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.31 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:04:46.416Z",
+    "uptime": "730.617 seconds",
+    "cpu": {
+      "usage": 10.955679551604852,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.36 GB",
+      "free": "18.35 GB",
+      "usagePercent": "42.13%"
+    },
+    "processMemory": {
+      "rss": "88.06 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "30.30 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.32 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:04:56.427Z",
+    "uptime": "740.628 seconds",
+    "cpu": {
+      "usage": 10.955408899687535,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.22 GB",
+      "free": "18.49 GB",
+      "usagePercent": "41.69%"
+    },
+    "processMemory": {
+      "rss": "88.14 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "30.20 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.32 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:05:06.430Z",
+    "uptime": "750.631 seconds",
+    "cpu": {
+      "usage": 10.955296157078063,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.41 GB",
+      "free": "18.30 GB",
+      "usagePercent": "42.30%"
+    },
+    "processMemory": {
+      "rss": "88.14 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "31.51 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.32 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:05:16.430Z",
+    "uptime": "760.631 seconds",
+    "cpu": {
+      "usage": 10.955776463274915,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.46 GB",
+      "free": "18.25 GB",
+      "usagePercent": "42.43%"
+    },
+    "processMemory": {
+      "rss": "88.14 MB",
+      "heapTotal": "40.94 MB",
+      "heapUsed": "33.44 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.32 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:05:26.445Z",
+    "uptime": "770.646 seconds",
+    "cpu": {
+      "usage": 10.956132790435422,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.30 GB",
+      "free": "18.41 GB",
+      "usagePercent": "41.93%"
+    },
+    "processMemory": {
+      "rss": "88.14 MB",
+      "heapTotal": "40.94 MB",
+      "heapUsed": "33.14 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.33 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:05:36.449Z",
+    "uptime": "780.65 seconds",
+    "cpu": {
+      "usage": 10.955683200254763,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.25 GB",
+      "free": "18.46 GB",
+      "usagePercent": "41.79%"
+    },
+    "processMemory": {
+      "rss": "88.15 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "33.86 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.33 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:05:46.464Z",
+    "uptime": "790.665 seconds",
+    "cpu": {
+      "usage": 10.955483147582692,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.40 GB",
+      "free": "18.31 GB",
+      "usagePercent": "42.26%"
+    },
+    "processMemory": {
+      "rss": "87.95 MB",
+      "heapTotal": "40.94 MB",
+      "heapUsed": "34.17 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.33 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:05:56.474Z",
+    "uptime": "800.675 seconds",
+    "cpu": {
+      "usage": 10.955724960345618,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "12.54 GB",
+      "free": "19.17 GB",
+      "usagePercent": "39.56%"
+    },
+    "processMemory": {
+      "rss": "88.09 MB",
+      "heapTotal": "38.94 MB",
+      "heapUsed": "35.30 MB",
+      "external": "3.69 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.34 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:06:36.046Z",
+    "uptime": "0.001 seconds",
+    "cpu": {
+      "usage": 10.959230202244662,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "10.88 GB",
+      "free": "20.83 GB",
+      "usagePercent": "34.32%"
+    },
+    "processMemory": {
+      "rss": "81.00 MB",
+      "heapTotal": "59.40 MB",
+      "heapUsed": "32.33 MB",
+      "external": "3.49 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.35 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:06:46.070Z",
+    "uptime": "10.025 seconds",
+    "cpu": {
+      "usage": 10.96106121227129,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "11.11 GB",
+      "free": "20.60 GB",
+      "usagePercent": "35.03%"
+    },
+    "processMemory": {
+      "rss": "76.13 MB",
+      "heapTotal": "37.66 MB",
+      "heapUsed": "32.54 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.35 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:06:56.081Z",
+    "uptime": "20.036 seconds",
+    "cpu": {
+      "usage": 10.96494971278197,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "11.99 GB",
+      "free": "19.73 GB",
+      "usagePercent": "37.80%"
+    },
+    "processMemory": {
+      "rss": "78.06 MB",
+      "heapTotal": "34.91 MB",
+      "heapUsed": "32.62 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.35 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:07:06.096Z",
+    "uptime": "30.051 seconds",
+    "cpu": {
+      "usage": 10.971265799956178,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.08 GB",
+      "free": "18.63 GB",
+      "usagePercent": "41.25%"
+    },
+    "processMemory": {
+      "rss": "79.70 MB",
+      "heapTotal": "39.16 MB",
+      "heapUsed": "34.04 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.35 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:07:16.101Z",
+    "uptime": "40.056 seconds",
+    "cpu": {
+      "usage": 10.97429001828736,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.20 GB",
+      "free": "18.51 GB",
+      "usagePercent": "41.63%"
+    },
+    "processMemory": {
+      "rss": "79.98 MB",
+      "heapTotal": "36.41 MB",
+      "heapUsed": "34.68 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.36 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:07:26.108Z",
+    "uptime": "50.063 seconds",
+    "cpu": {
+      "usage": 10.977004236923442,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.09 GB",
+      "free": "18.62 GB",
+      "usagePercent": "41.28%"
+    },
+    "processMemory": {
+      "rss": "81.05 MB",
+      "heapTotal": "40.16 MB",
+      "heapUsed": "35.30 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.36 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:07:36.118Z",
+    "uptime": "60.073 seconds",
+    "cpu": {
+      "usage": 10.979069381175234,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "12.85 GB",
+      "free": "18.86 GB",
+      "usagePercent": "40.51%"
+    },
+    "processMemory": {
+      "rss": "81.64 MB",
+      "heapTotal": "37.66 MB",
+      "heapUsed": "35.89 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.36 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:07:46.126Z",
+    "uptime": "70.081 seconds",
+    "cpu": {
+      "usage": 10.979549613707407,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "12.84 GB",
+      "free": "18.87 GB",
+      "usagePercent": "40.49%"
+    },
+    "processMemory": {
+      "rss": "82.14 MB",
+      "heapTotal": "39.66 MB",
+      "heapUsed": "36.61 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.37 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:07:56.139Z",
+    "uptime": "80.094 seconds",
+    "cpu": {
+      "usage": 10.980031829002513,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "12.88 GB",
+      "free": "18.83 GB",
+      "usagePercent": "40.62%"
+    },
+    "processMemory": {
+      "rss": "82.18 MB",
+      "heapTotal": "40.66 MB",
+      "heapUsed": "38.29 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.37 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:08:06.143Z",
+    "uptime": "90.098 seconds",
+    "cpu": {
+      "usage": 10.983951314755219,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "12.90 GB",
+      "free": "18.81 GB",
+      "usagePercent": "40.68%"
+    },
+    "processMemory": {
+      "rss": "84.66 MB",
+      "heapTotal": "42.16 MB",
+      "heapUsed": "39.08 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.37 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:08:16.150Z",
+    "uptime": "100.105 seconds",
+    "cpu": {
+      "usage": 10.984068736714326,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "12.90 GB",
+      "free": "18.81 GB",
+      "usagePercent": "40.67%"
+    },
+    "processMemory": {
+      "rss": "84.68 MB",
+      "heapTotal": "41.16 MB",
+      "heapUsed": "31.98 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.37 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:08:26.165Z",
+    "uptime": "110.12 seconds",
+    "cpu": {
+      "usage": 10.985641288669887,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.29 GB",
+      "free": "18.42 GB",
+      "usagePercent": "41.91%"
+    },
+    "processMemory": {
+      "rss": "84.61 MB",
+      "heapTotal": "42.16 MB",
+      "heapUsed": "33.28 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.38 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:08:36.171Z",
+    "uptime": "120.126 seconds",
+    "cpu": {
+      "usage": 10.988703940087083,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.67 GB",
+      "free": "18.04 GB",
+      "usagePercent": "43.11%"
+    },
+    "processMemory": {
+      "rss": "85.15 MB",
+      "heapTotal": "42.16 MB",
+      "heapUsed": "34.14 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.38 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:08:46.183Z",
+    "uptime": "130.138 seconds",
+    "cpu": {
+      "usage": 10.990270797011696,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.61 GB",
+      "free": "18.10 GB",
+      "usagePercent": "42.91%"
+    },
+    "processMemory": {
+      "rss": "85.36 MB",
+      "heapTotal": "42.16 MB",
+      "heapUsed": "35.40 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.38 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:08:56.185Z",
+    "uptime": "140.14 seconds",
+    "cpu": {
+      "usage": 10.99078569384352,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.48 GB",
+      "free": "18.24 GB",
+      "usagePercent": "42.49%"
+    },
+    "processMemory": {
+      "rss": "85.37 MB",
+      "heapTotal": "44.16 MB",
+      "heapUsed": "36.89 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.39 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:09:06.185Z",
+    "uptime": "150.14 seconds",
+    "cpu": {
+      "usage": 10.990934678641079,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.29 GB",
+      "free": "18.42 GB",
+      "usagePercent": "41.92%"
+    },
+    "processMemory": {
+      "rss": "85.38 MB",
+      "heapTotal": "44.16 MB",
+      "heapUsed": "37.59 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.39 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:09:16.189Z",
+    "uptime": "160.144 seconds",
+    "cpu": {
+      "usage": 10.991437930274376,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.38 GB",
+      "free": "18.33 GB",
+      "usagePercent": "42.20%"
+    },
+    "processMemory": {
+      "rss": "85.23 MB",
+      "heapTotal": "41.16 MB",
+      "heapUsed": "38.76 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.39 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:09:26.204Z",
+    "uptime": "170.16 seconds",
+    "cpu": {
+      "usage": 10.991819249913394,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.34 GB",
+      "free": "18.37 GB",
+      "usagePercent": "42.06%"
+    },
+    "processMemory": {
+      "rss": "85.47 MB",
+      "heapTotal": "40.41 MB",
+      "heapUsed": "31.63 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.39 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:09:36.216Z",
+    "uptime": "180.171 seconds",
+    "cpu": {
+      "usage": 10.992347822367005,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.34 GB",
+      "free": "18.37 GB",
+      "usagePercent": "42.06%"
+    },
+    "processMemory": {
+      "rss": "85.38 MB",
+      "heapTotal": "43.41 MB",
+      "heapUsed": "33.36 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.40 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:09:46.219Z",
+    "uptime": "190.175 seconds",
+    "cpu": {
+      "usage": 10.99429918761961,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.22 GB",
+      "free": "18.49 GB",
+      "usagePercent": "41.68%"
+    },
+    "processMemory": {
+      "rss": "85.40 MB",
+      "heapTotal": "41.41 MB",
+      "heapUsed": "33.69 MB",
+      "external": "3.70 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.40 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:09:56.227Z",
+    "uptime": "200.182 seconds",
+    "cpu": {
+      "usage": 10.997856888330944,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "13.17 GB",
+      "free": "18.54 GB",
+      "usagePercent": "41.54%"
+    },
+    "processMemory": {
+      "rss": "85.28 MB",
+      "heapTotal": "44.16 MB",
+      "heapUsed": "34.80 MB",
+      "external": "3.71 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.40 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  },
+  {
+    "timestamp": "2026-02-17T19:10:04.462Z",
+    "uptime": "0.002 seconds",
+    "cpu": {
+      "usage": 11.001175846327772,
+      "cores": 20
+    },
+    "systemMemory": {
+      "total": "31.71 GB",
+      "used": "8.64 GB",
+      "free": "23.07 GB",
+      "usagePercent": "27.24%"
+    },
+    "processMemory": {
+      "rss": "86.58 MB",
+      "heapTotal": "60.15 MB",
+      "heapUsed": "34.66 MB",
+      "external": "3.49 MB"
+    },
+    "system": {
+      "hostname": "PH-LT-SW-01-39",
+      "platform": "win32",
+      "arch": "x64",
+      "release": "10.0.26100",
+      "uptime": "23.40 hours",
+      "loadAverage": "0.00, 0.00, 0.00"
+    }
+  }
+]
