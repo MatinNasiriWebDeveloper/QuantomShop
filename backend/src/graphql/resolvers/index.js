@@ -2,6 +2,8 @@ const Product = require('../../models/Product');
 const User = require('../../models/User');
 const Order = require('../../models/Order');
 const Otp = require('../../models/Otp');
+const Stone = require('../../models/Stone');
+const Category = require('../../models/Category');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { Op } = require('sequelize');
@@ -9,7 +11,6 @@ const { GraphQLUpload } = require('graphql-upload');
 const { createWriteStream } = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const axios = require('axios');
 
 const getUser = (token) => {
   try {
@@ -22,10 +23,8 @@ const getUser = (token) => {
   }
 };
 
-// تابع ارسال پیامک
 const sendSms = async (phone, code) => {
   try {
-    // اینجا سامانه پیامکی خودت رو اضافه کن
     console.log(`📱 SMS sent to ${phone}: Your code is ${code}`);
     return true;
   } catch (error) {
@@ -34,7 +33,6 @@ const sendSms = async (phone, code) => {
   }
 };
 
-// تولید کد تصادفی ۶ رقمی
 const generateOtpCode = () => {
   return Math.floor(100000 + Math.random() * 900000).toString();
 };
@@ -203,6 +201,137 @@ const resolvers = {
         return await Setting.findAll();
       } catch (error) {
         throw new Error('Error fetching settings: ' + error.message);
+      }
+    },
+
+    // ========== STONE QUERIES ==========
+    stones: async () => {
+      try {
+        return await Stone.findAll({
+          order: [['createdAt', 'DESC']]
+        });
+      } catch (error) {
+        throw new Error('Error fetching stones: ' + error.message);
+      }
+    },
+
+    stone: async (_, { id }) => {
+      try {
+        const stone = await Stone.findByPk(id);
+        if (!stone) {
+          throw new Error('Stone not found');
+        }
+        return stone;
+      } catch (error) {
+        throw new Error('Error fetching stone: ' + error.message);
+      }
+    },
+
+    stonesByCategory: async (_, { category }) => {
+      try {
+        return await Stone.findAll({
+          where: { category }
+        });
+      } catch (error) {
+        throw new Error('Error fetching stones by category: ' + error.message);
+      }
+    },
+
+    // ========== CATEGORY QUERIES ==========
+    categories: async () => {
+      try {
+        const categories = await Category.findAll();
+        
+        const categoriesWithCount = await Promise.all(
+          categories.map(async (cat) => {
+            const productCount = await Product.count({
+              where: { category: cat.name }
+            });
+            return {
+              ...cat.toJSON(),
+              productCount
+            };
+          })
+        );
+        
+        return categoriesWithCount;
+      } catch (error) {
+        throw new Error('Error fetching categories: ' + error.message);
+      }
+    },
+
+    // ========== DISCOUNT QUERIES ==========
+    bestDiscounts: async (_, { limit = 5 }) => {
+      try {
+        const products = await Product.findAll({
+          where: {
+            discount: {
+              [Op.gt]: 0
+            }
+          },
+          order: [['discount', 'DESC']],
+          limit
+        });
+
+        const discounts = products.reduce((acc, product) => {
+          const percent = product.discount;
+          if (!acc[percent]) {
+            acc[percent] = {
+              title: `${percent}% تخفیف ویژه`,
+              description: `محصولات با ${percent} درصد تخفیف`,
+              discountPercent: percent,
+              validUntil: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
+              products: []
+            };
+          }
+          acc[percent].products.push(product);
+          return acc;
+        }, {});
+
+        return Object.values(discounts).slice(0, limit);
+      } catch (error) {
+        throw new Error('Error fetching best discounts: ' + error.message);
+      }
+    },
+
+    // ========== NEWEST PRODUCTS QUERIES ==========
+    newestProducts: async (_, { limit = 8 }) => {
+      try {
+        return await Product.findAll({
+          order: [['createdAt', 'DESC']],
+          limit
+        });
+      } catch (error) {
+        throw new Error('Error fetching newest products: ' + error.message);
+      }
+    },
+
+    // ========== STORE INFO QUERIES ==========
+    storeInfo: async () => {
+      try {
+        const Setting = require('../../models/Setting');
+        
+        const address = await Setting.findOne({ where: { key: 'store_address' } });
+        const phone = await Setting.findOne({ where: { key: 'store_phone' } });
+        const email = await Setting.findOne({ where: { key: 'store_email' } });
+        const instagram = await Setting.findOne({ where: { key: 'social_instagram' } });
+        const telegram = await Setting.findOne({ where: { key: 'social_telegram' } });
+        const twitter = await Setting.findOne({ where: { key: 'social_twitter' } });
+        const linkedin = await Setting.findOne({ where: { key: 'social_linkedin' } });
+
+        return {
+          address: address?.value || 'تهران، خیابان ولیعصر، پلاک ۱۲۳',
+          phone: phone?.value || '۰۲۱-۱۲۳۴۵۶۷۸',
+          email: email?.value || 'info@quantomshop.com',
+          socialLinks: {
+            instagram: instagram?.value || '#',
+            telegram: telegram?.value || '#',
+            twitter: twitter?.value || '#',
+            linkedin: linkedin?.value || '#'
+          }
+        };
+      } catch (error) {
+        throw new Error('Error fetching store info: ' + error.message);
       }
     }
   },
@@ -508,7 +637,7 @@ const resolvers = {
       }
     },
 
-    // ========== OTP MUTATIONS (Forgot Password) ==========
+    // ========== OTP MUTATIONS ==========
     forgotPassword: async (_, { phone }) => {
       try {
         const user = await User.findOne({ where: { phone } });
@@ -630,6 +759,68 @@ const resolvers = {
           throw new Error('زمان توکن منقضی شده است. دوباره تلاش کنید');
         }
         throw new Error(error.message);
+      }
+    },
+
+    // ========== STONE MUTATIONS ==========
+    createStone: async (_, { input }) => {
+      try {
+        return await Stone.create(input);
+      } catch (error) {
+        throw new Error('Error creating stone: ' + error.message);
+      }
+    },
+
+    updateStone: async (_, { id, input }) => {
+      try {
+        const stone = await Stone.findByPk(id);
+        if (!stone) {
+          throw new Error('Stone not found');
+        }
+        await stone.update(input);
+        return stone;
+      } catch (error) {
+        throw new Error('Error updating stone: ' + error.message);
+      }
+    },
+
+    deleteStone: async (_, { id }) => {
+      try {
+        const deleted = await Stone.destroy({ where: { id } });
+        return deleted > 0;
+      } catch (error) {
+        throw new Error('Error deleting stone: ' + error.message);
+      }
+    },
+
+    // ========== CATEGORY MUTATIONS ==========
+    createCategory: async (_, { input }) => {
+      try {
+        return await Category.create(input);
+      } catch (error) {
+        throw new Error('Error creating category: ' + error.message);
+      }
+    },
+
+    updateCategory: async (_, { id, input }) => {
+      try {
+        const category = await Category.findByPk(id);
+        if (!category) {
+          throw new Error('Category not found');
+        }
+        await category.update(input);
+        return category;
+      } catch (error) {
+        throw new Error('Error updating category: ' + error.message);
+      }
+    },
+
+    deleteCategory: async (_, { id }) => {
+      try {
+        const deleted = await Category.destroy({ where: { id } });
+        return deleted > 0;
+      } catch (error) {
+        throw new Error('Error deleting category: ' + error.message);
       }
     }
   }

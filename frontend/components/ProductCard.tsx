@@ -43,10 +43,10 @@ export default function ProductCard({
 
   return (
     <Link href={`/product/${product.id}`} className="text-decoration-none">
-      <Card className="h-100 border-0">
+      <Card className="h-100 border-0" style={{ cursor: 'pointer' }}>
         <div className="position-relative" style={{ height: '200px' }}>
           <Image
-            src={product.imageUrl || '/images/products/placeholder.jpg'}
+            src={product.imageUrl || '/images/placeholder.jpg'}
             alt={product.name}
             fill
             style={{ objectFit: 'cover' }}

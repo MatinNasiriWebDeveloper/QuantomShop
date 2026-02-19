@@ -21,6 +21,7 @@ const typeDefs = gql`
     discount: Int
     originalPrice: Float
     stock: Int!
+    createdAt: String!
   }
 
   type User {
@@ -84,6 +85,48 @@ const typeDefs = gql`
     token: String
   }
 
+  type Category {
+    id: ID!
+    name: String!
+    slug: String!
+    productCount: Int
+  }
+
+  type Discount {
+    id: ID!
+    title: String!
+    description: String
+    discountPercent: Int!
+    validUntil: String
+    products: [Product!]!
+  }
+
+  type StoreInfo {
+    address: String!
+    phone: String!
+    email: String!
+    socialLinks: SocialLinks!
+  }
+
+  type SocialLinks {
+    instagram: String
+    telegram: String
+    twitter: String
+    linkedin: String
+  }
+
+  type Stone {
+    id: ID!
+    name: String!
+    price: Float!
+    imageUrl: String
+    category: String!
+    origin: String!
+    description: String
+    stock: Int!
+    createdAt: String!
+  }
+
   input OrderItemInput {
     productId: ID!
     quantity: Int!
@@ -123,6 +166,21 @@ const typeDefs = gql`
     avatar: String
   }
 
+  input StoneInput {
+    name: String!
+    price: Float!
+    imageUrl: String
+    category: String!
+    origin: String!
+    description: String
+    stock: Int!
+  }
+
+  input CategoryInput {
+    name: String!
+    slug: String!
+  }
+
   type Query {
     # Product queries
     products: [Product!]!
@@ -144,6 +202,23 @@ const typeDefs = gql`
     # Setting queries
     getSetting(key: String!): Setting
     getAllSettings: [Setting!]!
+    
+    # Stone queries
+    stones: [Stone!]!
+    stone(id: ID!): Stone
+    stonesByCategory(category: String!): [Stone!]!
+    
+    # Category queries
+    categories: [Category!]!
+    
+    # Discount queries
+    bestDiscounts(limit: Int): [Discount!]!
+    
+    # Newest products
+    newestProducts(limit: Int): [Product!]!
+    
+    # Store info
+    storeInfo: StoreInfo!
   }
 
   type Mutation {
@@ -171,10 +246,20 @@ const typeDefs = gql`
     # Upload mutation
     uploadAvatar(file: Upload!): File!
     
-    # OTP mutations for password recovery
+    # OTP mutations
     forgotPassword(phone: String!): OtpResponse!
     verifyOtp(phone: String!, code: String!): VerifyOtpResponse!
     resetPassword(phone: String!, token: String!, newPassword: String!): AuthPayload!
+    
+    # Stone mutations
+    createStone(input: StoneInput!): Stone!
+    updateStone(id: ID!, input: StoneInput!): Stone!
+    deleteStone(id: ID!): Boolean!
+    
+    # Category mutations
+    createCategory(input: CategoryInput!): Category!
+    updateCategory(id: ID!, input: CategoryInput!): Category!
+    deleteCategory(id: ID!): Boolean!
   }
 `;
 

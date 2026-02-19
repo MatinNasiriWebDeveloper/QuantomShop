@@ -1,9 +1,7 @@
 'use client';
 
 import { Toaster, toast } from 'react-hot-toast';
-import { useEffect } from 'react';
 
-// تابع‌های کمکی برای نمایش نوتیفیکیشن
 export const showToast = {
   success: (message: string) => toast.success(message, {
     duration: 3000,
@@ -11,12 +9,19 @@ export const showToast = {
     style: {
       background: '#10b981',
       color: 'white',
-      padding: '16px',
-      borderRadius: '10px',
+      padding: '16px 20px',
+      borderRadius: '12px',
       fontSize: '14px',
+      fontWeight: '500',
       direction: 'rtl',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+      border: '1px solid rgba(255,255,255,0.2)',
     },
     icon: '✅',
+    iconTheme: {
+      primary: 'white',
+      secondary: '#10b981',
+    },
   }),
   
   error: (message: string) => toast.error(message, {
@@ -25,12 +30,19 @@ export const showToast = {
     style: {
       background: '#ef4444',
       color: 'white',
-      padding: '16px',
-      borderRadius: '10px',
+      padding: '16px 20px',
+      borderRadius: '12px',
       fontSize: '14px',
+      fontWeight: '500',
       direction: 'rtl',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+      border: '1px solid rgba(255,255,255,0.2)',
     },
     icon: '❌',
+    iconTheme: {
+      primary: 'white',
+      secondary: '#ef4444',
+    },
   }),
   
   info: (message: string) => toast(message, {
@@ -39,10 +51,13 @@ export const showToast = {
     style: {
       background: '#3b82f6',
       color: 'white',
-      padding: '16px',
-      borderRadius: '10px',
+      padding: '16px 20px',
+      borderRadius: '12px',
       fontSize: '14px',
+      fontWeight: '500',
       direction: 'rtl',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+      border: '1px solid rgba(255,255,255,0.2)',
     },
     icon: 'ℹ️',
   }),
@@ -53,10 +68,13 @@ export const showToast = {
     style: {
       background: '#f59e0b',
       color: 'white',
-      padding: '16px',
-      borderRadius: '10px',
+      padding: '16px 20px',
+      borderRadius: '12px',
       fontSize: '14px',
+      fontWeight: '500',
       direction: 'rtl',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+      border: '1px solid rgba(255,255,255,0.2)',
     },
     icon: '⚠️',
   }),
@@ -66,10 +84,13 @@ export const showToast = {
     style: {
       background: '#6b7280',
       color: 'white',
-      padding: '16px',
-      borderRadius: '10px',
+      padding: '16px 20px',
+      borderRadius: '12px',
       fontSize: '14px',
+      fontWeight: '500',
       direction: 'rtl',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+      border: '1px solid rgba(255,255,255,0.2)',
     },
   }),
   
@@ -79,10 +100,13 @@ export const showToast = {
     style: {
       background: backgroundColor,
       color: 'white',
-      padding: '16px',
-      borderRadius: '10px',
+      padding: '16px 20px',
+      borderRadius: '12px',
       fontSize: '14px',
+      fontWeight: '500',
       direction: 'rtl',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+      border: '1px solid rgba(255,255,255,0.2)',
     },
     icon: icon,
   }),
@@ -94,32 +118,23 @@ export default function ToastProvider() {
       position="top-center"
       reverseOrder={false}
       gutter={8}
-      containerClassName=""
       containerStyle={{
         top: 80,
         zIndex: 99999,
       }}
       toastOptions={{
-        className: '',
         duration: 3000,
         style: {
-          background: '#363636',
-          color: '#fff',
           direction: 'rtl',
+          fontFamily: 'IRANSans, Vazir, sans-serif',
         },
         success: {
           duration: 3000,
           icon: '✅',
-          style: {
-            background: '#10b981',
-          },
         },
         error: {
           duration: 4000,
           icon: '❌',
-          style: {
-            background: '#ef4444',
-          },
         },
       }}
     />

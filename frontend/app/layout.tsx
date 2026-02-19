@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ToastProvider from '@/components/ToastProvider';
 import ApolloProviderWrapper from '../components/ApolloProviderWrapper';
-import WebVitals from '@/components/WebVitals';
+import { CartProvider } from './context/CartContext';
+import './globals.css';
 
 export const metadata = {
   title: 'کوانتوم شاپ',
@@ -17,9 +18,10 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body>
         <ApolloProviderWrapper>
-          <ToastProvider />
-          <WebVitals />
-          {children}
+          <CartProvider>
+            <ToastProvider />
+            {children}
+          </CartProvider>
         </ApolloProviderWrapper>
       </body>
     </html>

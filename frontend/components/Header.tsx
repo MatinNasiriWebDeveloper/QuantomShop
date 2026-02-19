@@ -4,9 +4,22 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Container, Navbar, Nav, Form, Button } from 'react-bootstrap';
-import { Search, Person, BoxArrowRight, Bag, Heart, PersonCircle } from 'react-bootstrap-icons';
+import { Container, Navbar, Nav, Form, Button, Badge } from 'react-bootstrap';
+import { 
+  Search, 
+  Person, 
+  BoxArrowRight, 
+  Bag, 
+  Heart, 
+  PersonCircle, 
+  Cart,
+  XLg, 
+  Dash, 
+  Plus 
+} from 'react-bootstrap-icons';
+import { useCart } from '../app/context/CartContext';
 import { showToast } from './ToastProvider';
+import toast from 'react-hot-toast';
 
 export default function Header() {
   const router = useRouter();
@@ -14,8 +27,12 @@ export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<any>(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showCartPopup, setShowCartPopup] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const cartPopupRef = useRef<HTMLDivElement>(null);
+  
+  const { items, removeFromCart, updateQuantity, getTotalItems, getTotalPrice } = useCart();
 
   useEffect(() => {
     const checkLoginStatus = () => {
@@ -56,6 +73,13 @@ export default function Header() {
       ) {
         setShowDropdown(false);
       }
+      
+      if (
+        cartPopupRef.current && 
+        !cartPopupRef.current.contains(event.target as Node)
+      ) {
+        setShowCartPopup(false);
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -75,28 +99,33 @@ export default function Header() {
   };
 
   const handleLogout = () => {
-    // اول منو رو می‌بندیم
     setShowDropdown(false);
-    
-    // بعد عملیات خروج رو انجام می‌دیم
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setIsLoggedIn(false);
     setUser(null);
-    
-    // پیام خروج رو نشون می‌دیم
     showToast.info('با موفقیت از حساب خود خارج شدید');
-    
-    // ریدایرکت به صفحه اصلی
     router.push('/');
   };
 
-  const handleDropdownToggle = () => {
-    setShowDropdown(!showDropdown);
+  const handleCartClick = () => {
+    router.push('/cart');
   };
 
-  const handleLinkClick = () => {
-    setShowDropdown(false);
+  const handleCheckout = () => {
+    setShowCartPopup(false);
+    if (!isLoggedIn) {
+      localStorage.setItem('redirectAfterLogin', '/cart');
+      showToast.warning('برای ثبت سفارش باید وارد حساب کاربری خود شوید');
+      setTimeout(() => router.push('/login'), 2000);
+      return;
+    }
+    router.push('/checkout');
+  };
+
+  const handleContinueShopping = () => {
+    setShowCartPopup(false);
+    router.push('/products');
   };
 
   const getInitials = () => {
@@ -108,6 +137,10 @@ export default function Header() {
       return nameParts[0][0].toUpperCase();
     }
     return '';
+  };
+
+  const formatPrice = (price: number) => {
+    return price.toLocaleString('fa-IR') + ' تومان';
   };
 
   return (
@@ -132,16 +165,17 @@ export default function Header() {
         .cart-badge {
           position: absolute;
           top: -5px;
-          right: -8px;
+          right: -5px;
           background-color: #dc3545;
           color: white;
           border-radius: 50%;
-          width: 18px;
-          height: 18px;
-          font-size: 11px;
+          width: 20px;
+          height: 20px;
+          font-size: 12px;
           display: flex;
           align-items: center;
           justify-content: center;
+          border: 2px solid white;
         }
         
         .search-input-container {
@@ -299,6 +333,114 @@ export default function Header() {
           margin: 8px 0;
         }
         
+        .cart-popup {
+          position: absolute;
+          top: 60px;
+          left: 0;
+          background: white;
+          border-radius: 16px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+          min-width: 380px;
+          max-width: 400px;
+          z-index: 10000;
+          padding: 20px;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .cart-popup.show {
+          display: block;
+        }
+        
+        .cart-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 0;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .cart-item-image {
+          width: 60px;
+          height: 60px;
+          border-radius: 8px;
+          overflow: hidden;
+          flex-shrink: 0;
+        }
+        
+        .cart-item-details {
+          flex: 1;
+        }
+        
+        .cart-item-name {
+          font-weight: 600;
+          margin-bottom: 4px;
+          font-size: 14px;
+          color: #333;
+        }
+        
+        .cart-item-price {
+          color: #6a1b9a;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        
+        .cart-item-actions {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        
+        .quantity-btn {
+          width: 28px;
+          height: 28px;
+          border-radius: 8px;
+          border: 1px solid #e0e0e0;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          color: #333;
+        }
+        
+        .quantity-btn:hover {
+          background-color: #f5f5f5;
+          border-color: #6a1b9a;
+          color: #6a1b9a;
+        }
+        
+        .quantity-btn:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        
+        .remove-btn {
+          width: 28px;
+          height: 28px;
+          border-radius: 8px;
+          border: 1px solid #e0e0e0;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          color: #dc3545;
+        }
+        
+        .remove-btn:hover {
+          background-color: #dc3545;
+          border-color: #dc3545;
+          color: white;
+        }
+        
+        .cart-summary {
+          padding-top: 16px;
+          margin-top: 8px;
+          border-top: 2px solid #f0f0f0;
+        }
+        
         @media (max-width: 992px) {
           .user-name {
             display: none;
@@ -306,6 +448,14 @@ export default function Header() {
           .dropdown-menu-custom {
             left: auto;
             right: 0;
+          }
+          .cart-popup {
+            position: fixed;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 350px;
           }
         }
       `}</style>
@@ -364,27 +514,139 @@ export default function Header() {
 
                   <div className="vr text-white opacity-50 d-none d-lg-block" style={{ height: '30px', width: '1px' }}></div>
 
-                  <Link href="/cart" className="position-relative">
-                    <div className="d-flex align-items-center justify-content-center p-1 rounded-circle" style={{ backgroundColor: 'rgba(255,255,255,0.1)', width: '40px', height: '40px' }}>
-                      <Image
-                        src="/images/logos/shopping-cart-line-icon-fast-buy-vector-logo-162749127.webp"
-                        alt="سبد خرید"
-                        width={32}
-                        height={32}
-                        className="rounded-circle"
-                        style={{ objectFit: 'cover' }}
-                      />
+                  {/* سبد خرید با پاپ‌آپ */}
+                  <div className="position-relative" ref={cartPopupRef}>
+                    <div 
+                      className="position-relative"
+                      onMouseEnter={() => setShowCartPopup(true)}
+                    >
+                      <button
+                        onClick={handleCartClick}
+                        className="bg-transparent border-0 p-0"
+                      >
+                        <div className="d-flex align-items-center justify-content-center p-1 rounded-circle" style={{ backgroundColor: 'rgba(255,255,255,0.1)', width: '40px', height: '40px' }}>
+                          <Cart size={20} color="white" />
+                        </div>
+                        {getTotalItems() > 0 && (
+                          <span className="cart-badge">{getTotalItems()}</span>
+                        )}
+                      </button>
                     </div>
-                    <span className="cart-badge">3</span>
-                  </Link>
 
+                    {/* پاپ‌آپ سبد خرید */}
+                    {showCartPopup && (
+                      <div className="cart-popup">
+                        <div className="d-flex justify-content-between align-items-center mb-3">
+                          <h6 className="fw-bold mb-0">سبد خرید شما</h6>
+                          <Badge bg="primary" style={{ backgroundColor: '#6a1b9a' }}>
+                            {getTotalItems()} کالا
+                          </Badge>
+                        </div>
+
+                        {items.length === 0 ? (
+                          <div className="text-center py-4">
+                            <Cart size={48} className="text-muted mb-3" />
+                            <p className="text-muted mb-2">
+                              {isLoggedIn && user?.name 
+                                ? `${user.name} عزیز، شما هیچ کالایی به سبد خرید اضافه نکرده‌اید`
+                                : 'شما هیچ کالایی به سبد خرید اضافه نکرده‌اید'
+                              }
+                            </p>
+                            <Button 
+                              variant="outline-primary" 
+                              size="sm"
+                              onClick={handleContinueShopping}
+                              style={{ color: '#6a1b9a', borderColor: '#6a1b9a' }}
+                            >
+                              مشاهده محصولات
+                            </Button>
+                          </div>
+                        ) : (
+                          <>
+                            <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
+                              {items.map((item) => (
+                                <div key={item.id} className="cart-item">
+                                  <div className="cart-item-image">
+                                    <Image
+                                      src={item.imageUrl}
+                                      alt={item.name}
+                                      width={60}
+                                      height={60}
+                                      style={{ objectFit: 'cover' }}
+                                    />
+                                  </div>
+                                  <div className="cart-item-details">
+                                    <div className="cart-item-name">{item.name}</div>
+                                    <div className="cart-item-price">
+                                      {formatPrice(item.finalPrice * item.quantity)}
+                                    </div>
+                                  </div>
+                                  <div className="cart-item-actions">
+                                    <button
+                                      className="quantity-btn"
+                                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                                      disabled={item.quantity <= 1}
+                                    >
+                                      <Dash size={14} />
+                                    </button>
+                                    <span className="fw-bold">{item.quantity}</span>
+                                    <button
+                                      className="quantity-btn"
+                                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                                      disabled={item.quantity >= item.stock}
+                                    >
+                                      <Plus size={14} />
+                                    </button>
+                                    <button
+                                      className="remove-btn"
+                                      onClick={() => removeFromCart(item.id)}
+                                    >
+                                      <XLg size={12} />
+                                    </button>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+
+                            <div className="cart-summary">
+                              <div className="d-flex justify-content-between mb-2">
+                                <span>جمع کل:</span>
+                                <span className="fw-bold text-primary">
+                                  {formatPrice(getTotalPrice())}
+                                </span>
+                              </div>
+                              <div className="d-flex gap-2">
+                                <Button 
+                                  variant="primary" 
+                                  className="flex-grow-1"
+                                  style={{ backgroundColor: '#6a1b9a', borderColor: '#6a1b9a' }}
+                                  onClick={handleCheckout}
+                                >
+                                  ثبت سفارش
+                                </Button>
+                                <Button 
+                                  variant="outline-primary" 
+                                  onClick={handleContinueShopping}
+                                  style={{ color: '#6a1b9a', borderColor: '#6a1b9a' }}
+                                >
+                                  ادامه خرید
+                                </Button>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* منوی کاربر */}
                   <div className="user-menu" ref={dropdownRef}>
                     {isLoggedIn && user ? (
                       <>
                         <button 
                           ref={buttonRef}
                           className="user-menu-button"
-                          onClick={handleDropdownToggle}
+                          onClick={() => setShowDropdown(!showDropdown)}
                         >
                           <div className="user-avatar">
                             {user.avatar ? (
@@ -417,39 +679,24 @@ export default function Header() {
                             </small>
                           </div>
 
-                          <Link 
-                            href="/profile" 
-                            className="dropdown-item-custom" 
-                            onClick={handleLinkClick}
-                          >
+                          <Link href="/profile" className="dropdown-item-custom" onClick={() => setShowDropdown(false)}>
                             <PersonCircle size={18} color="#6a1b9a" />
                             <span>پروفایل من</span>
                           </Link>
 
-                          <Link 
-                            href="/orders" 
-                            className="dropdown-item-custom" 
-                            onClick={handleLinkClick}
-                          >
+                          <Link href="/orders" className="dropdown-item-custom" onClick={() => setShowDropdown(false)}>
                             <Bag size={18} color="#6a1b9a" />
                             <span>سفارش‌های من</span>
                           </Link>
 
-                          <Link 
-                            href="/wishlist" 
-                            className="dropdown-item-custom" 
-                            onClick={handleLinkClick}
-                          >
+                          <Link href="/wishlist" className="dropdown-item-custom" onClick={() => setShowDropdown(false)}>
                             <Heart size={18} color="#6a1b9a" />
                             <span>علاقه‌مندی‌ها</span>
                           </Link>
 
                           <div className="dropdown-divider"></div>
 
-                          <button 
-                            onClick={handleLogout} 
-                            className="dropdown-item-custom logout"
-                          >
+                          <button onClick={handleLogout} className="dropdown-item-custom logout">
                             <BoxArrowRight size={18} />
                             <span>خروج از حساب</span>
                           </button>

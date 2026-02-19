@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { Container, Row, Col, Card, Form, Button, Tab, Nav, InputGroup } from 'react-bootstrap';
+import { useState, useRef, useEffect } from 'react';
+import { Container, Row, Col, Card, Form, Button, Tab, Nav, InputGroup, Spinner, Badge } from 'react-bootstrap';
 import { Eye, EyeSlash, PersonCircle, CloudUpload } from 'react-bootstrap-icons';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -16,7 +16,16 @@ import toast from 'react-hot-toast';
 export default function LoginPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('login');
+  const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
   
+  // بررسی وجود آدرس بازگشت در localStorage
+  useEffect(() => {
+    const savedRedirect = localStorage.getItem('redirectAfterLogin');
+    if (savedRedirect) {
+      setRedirectUrl(savedRedirect);
+    }
+  }, []);
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -62,6 +71,12 @@ export default function LoginPage() {
         return;
       }
       
+      const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+      if (!allowedTypes.includes(file.type)) {
+        showToast.error('فرمت عکس باید jpeg، jpg، png یا webp باشد');
+        return;
+      }
+      
       setRegisterData({
         ...registerData,
         avatar: file
@@ -73,6 +88,16 @@ export default function LoginPage() {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^09[0-9]{9}$/;
+    return phoneRegex.test(phone);
   };
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
@@ -102,20 +127,33 @@ export default function LoginPage() {
         toast.dismiss(loadingToast);
         showToast.success('با موفقیت وارد شدید');
         
-        setTimeout(() => {
-          router.push('/');
-        }, 1500);
+        const redirectUrl = localStorage.getItem('redirectAfterLogin');
+        if (redirectUrl) {
+          localStorage.removeItem('redirectAfterLogin');
+          setTimeout(() => {
+            router.push(redirectUrl);
+          }, 1500);
+        } else {
+          setTimeout(() => {
+            router.push('/');
+          }, 1500);
+        }
       }
     } catch (error: any) {
       toast.dismiss(loadingToast);
-      showToast.error(error.message || 'ایمیل یا رمز عبور اشتباه است');
+      
+      if (error.message.includes('credentials')) {
+        showToast.error('ایمیل یا رمز عبور اشتباه است');
+      } else {
+        showToast.error(error.message || 'خطا در ورود به سیستم');
+      }
     }
   };
 
   const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!registerData.name) {
+    if (!registerData.name.trim()) {
       showToast.error('لطفاً نام و نام خانوادگی را وارد کنید');
       return;
     }
@@ -125,8 +163,18 @@ export default function LoginPage() {
       return;
     }
     
+    if (!validateEmail(registerData.email)) {
+      showToast.error('ایمیل معتبر نیست');
+      return;
+    }
+    
     if (!registerData.phone) {
       showToast.error('لطفاً شماره موبایل را وارد کنید');
+      return;
+    }
+    
+    if (!validatePhone(registerData.phone)) {
+      showToast.error('شماره موبایل معتبر نیست (مثال: 09123456789)');
       return;
     }
     
@@ -142,18 +190,6 @@ export default function LoginPage() {
 
     if (registerData.password !== registerData.confirmPassword) {
       showToast.error('رمز عبور و تکرار آن مطابقت ندارند');
-      return;
-    }
-
-    const phoneRegex = /^09[0-9]{9}$/;
-    if (!phoneRegex.test(registerData.phone)) {
-      showToast.error('شماره موبایل معتبر نیست (مثال: 09123456789)');
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(registerData.email)) {
-      showToast.error('ایمیل معتبر نیست');
       return;
     }
 
@@ -203,7 +239,18 @@ export default function LoginPage() {
       }
     } catch (error: any) {
       toast.dismiss(loadingToast);
-      showToast.error(error.message || 'خطا در ثبت‌نام');
+      
+      if (error.message.includes('already exists')) {
+        if (error.message.includes('email')) {
+          showToast.error('این ایمیل قبلاً ثبت شده است');
+        } else if (error.message.includes('phone')) {
+          showToast.error('این شماره موبایل قبلاً ثبت شده است');
+        } else {
+          showToast.error('کاربری با این اطلاعات قبلاً ثبت شده است');
+        }
+      } else {
+        showToast.error(error.message || 'خطا در ثبت‌نام');
+      }
     }
   };
 
@@ -224,6 +271,11 @@ export default function LoginPage() {
               >
                 <h2 className="fw-bold mb-1">به کوانتوم شاپ خوش آمدید</h2>
                 <p className="mb-0 opacity-75">برای ادامه وارد شوید یا ثبت‌نام کنید</p>
+                {redirectUrl && (
+                  <Badge bg="light" text="dark" className="mt-2 px-3 py-2">
+                    پس از ورود به صفحه قبلی باز می‌گردید
+                  </Badge>
+                )}
               </div>
               
               <Card.Body className="p-4">
@@ -262,7 +314,7 @@ export default function LoginPage() {
                   </Nav>
 
                   <Tab.Content>
-                    {/* ========== فرم ورود ========== */}
+                    {/* فرم ورود */}
                     <Tab.Pane eventKey="login">
                       <Form onSubmit={handleLoginSubmit}>
                         <Form.Group className="mb-3" controlId="loginEmail">
@@ -312,7 +364,19 @@ export default function LoginPage() {
                           }}
                           disabled={loginLoading}
                         >
-                          {loginLoading ? 'در حال ورود...' : 'ورود به حساب کاربری'}
+                          {loginLoading ? (
+                            <>
+                              <Spinner
+                                as="span"
+                                animation="border"
+                                size="sm"
+                                role="status"
+                                aria-hidden="true"
+                                className="me-2"
+                              />
+                              در حال ورود...
+                            </>
+                          ) : 'ورود به حساب کاربری'}
                         </Button>
 
                         <div className="text-center mt-3">
@@ -323,9 +387,10 @@ export default function LoginPage() {
                       </Form>
                     </Tab.Pane>
 
-                    {/* ========== فرم ثبت‌نام ========== */}
+                    {/* فرم ثبت‌نام */}
                     <Tab.Pane eventKey="register">
                       <Form onSubmit={handleRegisterSubmit}>
+                        {/* بخش آپلود عکس */}
                         <div className="text-center mb-4">
                           <div 
                             className="position-relative d-inline-block"
@@ -417,6 +482,9 @@ export default function LoginPage() {
                             className="py-2 border-2 rounded-3"
                             style={{ borderColor: '#e0e0e0' }}
                           />
+                          <Form.Text className="text-muted">
+                            شماره موبایل باید با 09 شروع شود
+                          </Form.Text>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="registerPassword">
@@ -478,7 +546,19 @@ export default function LoginPage() {
                           }}
                           disabled={registerLoading}
                         >
-                          {registerLoading ? 'در حال ثبت‌نام...' : 'ثبت‌نام در کوانتوم شاپ'}
+                          {registerLoading ? (
+                            <>
+                              <Spinner
+                                as="span"
+                                animation="border"
+                                size="sm"
+                                role="status"
+                                aria-hidden="true"
+                                className="me-2"
+                              />
+                              در حال ثبت‌نام...
+                            </>
+                          ) : 'ثبت‌نام در کوانتوم شاپ'}
                         </Button>
                       </Form>
                     </Tab.Pane>

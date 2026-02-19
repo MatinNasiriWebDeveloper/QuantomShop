@@ -799,5 +799,2345 @@
     "id": "v4-1771355395517-7883291730147",
     "navigationType": "navigate",
     "timestamp": "2026-02-17T19:09:55.521Z"
+  },
+  {
+    "name": "FCP",
+    "value": 4047.9000000059605,
+    "rating": "poor",
+    "delta": 4047.9000000059605,
+    "id": "v4-1771358187066-7010240553379",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-17T19:56:27.082Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 3571.1000000089407,
+    "rating": "poor",
+    "delta": 3571.1000000089407,
+    "id": "v4-1771358187066-7666056245707",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-17T19:56:27.083Z"
+  },
+  {
+    "name": "LCP",
+    "value": 4047.9000000059605,
+    "rating": "poor",
+    "delta": 4047.9000000059605,
+    "id": "v4-1771358187066-8131350722358",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-17T19:56:30.131Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771358187081-1374297942998",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-17T19:56:30.134Z"
+  },
+  {
+    "name": "FCP",
+    "value": 488,
+    "rating": "good",
+    "delta": 488,
+    "id": "v4-1771358252129-1508946165351",
+    "navigationType": "reload",
+    "timestamp": "2026-02-17T19:57:32.135Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 297.19999998807907,
+    "rating": "good",
+    "delta": 297.19999998807907,
+    "id": "v4-1771358252129-6353641158463",
+    "navigationType": "reload",
+    "timestamp": "2026-02-17T19:57:32.136Z"
+  },
+  {
+    "name": "FID",
+    "value": 8.700000002980232,
+    "rating": "good",
+    "delta": 8.700000002980232,
+    "id": "v4-1771358252129-7161915139443",
+    "navigationType": "reload",
+    "timestamp": "2026-02-17T19:57:35.404Z"
+  },
+  {
+    "name": "LCP",
+    "value": 1440,
+    "rating": "good",
+    "delta": 1440,
+    "id": "v4-1771358252129-3869763526412",
+    "navigationType": "reload",
+    "timestamp": "2026-02-17T19:57:38.270Z"
+  },
+  {
+    "name": "FCP",
+    "value": 440,
+    "rating": "good",
+    "delta": 440,
+    "id": "v4-1771358284575-4775800874546",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-17T19:58:04.577Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 201.09999999403954,
+    "rating": "good",
+    "delta": 201.09999999403954,
+    "id": "v4-1771358284575-4687038217961",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-17T19:58:04.578Z"
+  },
+  {
+    "name": "FCP",
+    "value": 440,
+    "rating": "good",
+    "delta": 440,
+    "id": "v4-1771358286868-7845294411993",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-17T19:58:06.875Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 265.90000000596046,
+    "rating": "good",
+    "delta": 265.90000000596046,
+    "id": "v4-1771358286868-1342242189025",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-17T19:58:06.876Z"
+  },
+  {
+    "name": "LCP",
+    "value": 940,
+    "rating": "good",
+    "delta": 940,
+    "id": "v4-1771358286868-6308870435386",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-17T19:58:08.889Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.009994739610731194,
+    "rating": "good",
+    "delta": 0.009994739610731194,
+    "id": "v4-1771358286874-3449873917562",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-17T19:58:08.903Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 5804,
+    "rating": "poor",
+    "delta": 5804,
+    "id": "v4-1771434453499-6061253052106",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T17:07:33.641Z"
+  },
+  {
+    "name": "INP",
+    "value": 32,
+    "rating": "good",
+    "delta": 32,
+    "id": "v4-1771434453499-8082655891374",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T17:07:44.755Z"
+  },
+  {
+    "name": "INP",
+    "value": 48,
+    "rating": "good",
+    "delta": 16,
+    "id": "v4-1771434453499-8082655891374",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T17:10:49.885Z"
+  },
+  {
+    "name": "FID",
+    "value": 4.0999999940395355,
+    "rating": "good",
+    "delta": 4.0999999940395355,
+    "id": "v4-1771438077583-3962233193479",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:07:57.614Z"
+  },
+  {
+    "name": "FCP",
+    "value": 15588,
+    "rating": "poor",
+    "delta": 15588,
+    "id": "v4-1771438077585-2453924142741",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:07:57.622Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 5804,
+    "rating": "poor",
+    "delta": 5804,
+    "id": "v4-1771438077585-6187702735028",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:07:57.634Z"
+  },
+  {
+    "name": "LCP",
+    "value": 15688,
+    "rating": "poor",
+    "delta": 15688,
+    "id": "v4-1771438077584-2652547945303",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:08:13.857Z"
+  },
+  {
+    "name": "INP",
+    "value": 48,
+    "rating": "good",
+    "delta": 48,
+    "id": "v4-1771438077584-8806609020623",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:08:14.512Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.013712305769962836,
+    "rating": "good",
+    "delta": 0.013712305769962836,
+    "id": "v4-1771438077613-1617578189299",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:08:14.516Z"
+  },
+  {
+    "name": "FID",
+    "value": 4.0999999940395355,
+    "rating": "good",
+    "delta": 4.0999999940395355,
+    "id": "v4-1771438213029-8023357506340",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:10:13.064Z"
+  },
+  {
+    "name": "FCP",
+    "value": 15588,
+    "rating": "poor",
+    "delta": 15588,
+    "id": "v4-1771438213031-8065248632501",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:10:13.069Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 5804,
+    "rating": "poor",
+    "delta": 5804,
+    "id": "v4-1771438213031-6710839709097",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-18T18:10:13.073Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 734.7000000178814,
+    "rating": "good",
+    "delta": 734.7000000178814,
+    "id": "v4-1771438229891-8701482282159",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:10:29.936Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 863.5999999940395,
+    "rating": "needs-improvement",
+    "delta": 863.5999999940395,
+    "id": "v4-1771438239944-1509288618790",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:10:39.989Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 863.5999999940395,
+    "rating": "needs-improvement",
+    "delta": 863.5999999940395,
+    "id": "v4-1771438287382-3709023714221",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:11:27.421Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 863.5999999940395,
+    "rating": "needs-improvement",
+    "delta": 863.5999999940395,
+    "id": "v4-1771438294932-4564629080623",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:11:35.034Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 592.3000000119209,
+    "rating": "good",
+    "delta": 592.3000000119209,
+    "id": "v4-1771438296292-5778353094761",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:11:36.324Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 136.7999999821186,
+    "rating": "good",
+    "delta": 136.7999999821186,
+    "id": "v4-1771438395574-9703783631865",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:13:15.595Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 136.7999999821186,
+    "rating": "good",
+    "delta": 136.7999999821186,
+    "id": "v4-1771438408283-3228246623444",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:13:28.319Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 685.7999999821186,
+    "rating": "good",
+    "delta": 685.7999999821186,
+    "id": "v4-1771438423481-8198373849946",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:13:43.498Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 729.2000000178814,
+    "rating": "good",
+    "delta": 729.2000000178814,
+    "id": "v4-1771438470141-5676175791191",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:14:30.170Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 839.6999999880791,
+    "rating": "needs-improvement",
+    "delta": 839.6999999880791,
+    "id": "v4-1771438477067-3121947753964",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:14:37.091Z"
+  },
+  {
+    "name": "INP",
+    "value": 24,
+    "rating": "good",
+    "delta": 24,
+    "id": "v4-1771438477067-5211326740420",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:14:43.620Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 910.5,
+    "rating": "needs-improvement",
+    "delta": 910.5,
+    "id": "v4-1771438531888-9094750360626",
+    "navigationType": "reload",
+    "timestamp": "2026-02-18T18:15:31.913Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 1034.9000000059605,
+    "rating": "needs-improvement",
+    "delta": 1034.9000000059605,
+    "id": "v4-1771483261531-9092807307384",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:01.550Z"
+  },
+  {
+    "name": "FCP",
+    "value": 2832,
+    "rating": "needs-improvement",
+    "delta": 2832,
+    "id": "v4-1771483261531-4225593723398",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:01.649Z"
+  },
+  {
+    "name": "LCP",
+    "value": 2832,
+    "rating": "needs-improvement",
+    "delta": 2832,
+    "id": "v4-1771483261531-9847777257430",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:06.576Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771483261648-4125857053890",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:06.578Z"
+  },
+  {
+    "name": "FCP",
+    "value": 228,
+    "rating": "good",
+    "delta": 228,
+    "id": "v4-1771483271158-1806803410235",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:11.164Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 103.90000000596046,
+    "rating": "good",
+    "delta": 103.90000000596046,
+    "id": "v4-1771483271158-5335344727059",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:11.165Z"
+  },
+  {
+    "name": "LCP",
+    "value": 228,
+    "rating": "good",
+    "delta": 228,
+    "id": "v4-1771483271158-2861995401395",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:15.732Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771483271164-3270988674159",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:41:15.736Z"
+  },
+  {
+    "name": "FCP",
+    "value": 236,
+    "rating": "good",
+    "delta": 236,
+    "id": "v4-1771483322330-5615682070821",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:42:02.339Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 122.19999998807907,
+    "rating": "good",
+    "delta": 122.19999998807907,
+    "id": "v4-1771483322330-7454049103698",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:42:02.340Z"
+  },
+  {
+    "name": "FID",
+    "value": 1.5999999940395355,
+    "rating": "good",
+    "delta": 1.5999999940395355,
+    "id": "v4-1771483322329-3034632810750",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:42:06.675Z"
+  },
+  {
+    "name": "LCP",
+    "value": 236,
+    "rating": "good",
+    "delta": 236,
+    "id": "v4-1771483322329-9827343307001",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:42:06.676Z"
+  },
+  {
+    "name": "INP",
+    "value": 8,
+    "rating": "good",
+    "delta": 8,
+    "id": "v4-1771483322330-9900401851646",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:42:06.961Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771483322338-6608135760604",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:42:06.963Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 1403.800000011921,
+    "rating": "needs-improvement",
+    "delta": 1403.800000011921,
+    "id": "v4-1771483344294-1172242556617",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:42:24.321Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 1832.2999999821186,
+    "rating": "poor",
+    "delta": 1832.2999999821186,
+    "id": "v4-1771483381963-6475554720917",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:01.987Z"
+  },
+  {
+    "name": "FCP",
+    "value": 536,
+    "rating": "good",
+    "delta": 536,
+    "id": "v4-1771483391969-4161210515571",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:11.996Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 311.69999998807907,
+    "rating": "good",
+    "delta": 311.69999998807907,
+    "id": "v4-1771483391969-6398431407562",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:11.998Z"
+  },
+  {
+    "name": "FID",
+    "value": 2.5,
+    "rating": "good",
+    "delta": 2.5,
+    "id": "v4-1771483391968-5663118441389",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:20.373Z"
+  },
+  {
+    "name": "LCP",
+    "value": 536,
+    "rating": "good",
+    "delta": 536,
+    "id": "v4-1771483391968-4664850541763",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:20.377Z"
+  },
+  {
+    "name": "INP",
+    "value": 8,
+    "rating": "good",
+    "delta": 8,
+    "id": "v4-1771483391969-5646630597723",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:20.645Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.026124020408796984,
+    "rating": "good",
+    "delta": 0.026124020408796984,
+    "id": "v4-1771483391994-2023612878106",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:20.649Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 1788.300000011921,
+    "rating": "needs-improvement",
+    "delta": 1788.300000011921,
+    "id": "v4-1771483425752-8043036419289",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:43:45.819Z"
+  },
+  {
+    "name": "FCP",
+    "value": 336,
+    "rating": "good",
+    "delta": 336,
+    "id": "v4-1771483440010-4983253376751",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:00.039Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 157.30000001192093,
+    "rating": "good",
+    "delta": 157.30000001192093,
+    "id": "v4-1771483440010-1994603453194",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:00.041Z"
+  },
+  {
+    "name": "FID",
+    "value": 14,
+    "rating": "good",
+    "delta": 14,
+    "id": "v4-1771483440010-3417847401354",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:02.457Z"
+  },
+  {
+    "name": "LCP",
+    "value": 336,
+    "rating": "good",
+    "delta": 336,
+    "id": "v4-1771483440010-5386636920279",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:02.459Z"
+  },
+  {
+    "name": "FCP",
+    "value": 236,
+    "rating": "good",
+    "delta": 236,
+    "id": "v4-1771483457987-3927855934070",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:17.998Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 148.5,
+    "rating": "good",
+    "delta": 148.5,
+    "id": "v4-1771483457987-2605008079464",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:17.999Z"
+  },
+  {
+    "name": "LCP",
+    "value": 236,
+    "rating": "good",
+    "delta": 236,
+    "id": "v4-1771483457986-3720743903606",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:18.266Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771483457997-7951107805766",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:44:18.268Z"
+  },
+  {
+    "name": "FCP",
+    "value": 816,
+    "rating": "good",
+    "delta": 816,
+    "id": "v4-1771483469855-5700574596188",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:29.867Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 562.5,
+    "rating": "good",
+    "delta": 562.5,
+    "id": "v4-1771483469855-3303540293865",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:29.869Z"
+  },
+  {
+    "name": "LCP",
+    "value": 816,
+    "rating": "good",
+    "delta": 816,
+    "id": "v4-1771483469855-6292580810332",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:30.770Z"
+  },
+  {
+    "name": "FCP",
+    "value": 1580,
+    "rating": "good",
+    "delta": 1580,
+    "id": "v4-1771483474435-7920499984688",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:34.446Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 1189,
+    "rating": "needs-improvement",
+    "delta": 1189,
+    "id": "v4-1771483474435-2097698699620",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:34.449Z"
+  },
+  {
+    "name": "LCP",
+    "value": 1580,
+    "rating": "good",
+    "delta": 1580,
+    "id": "v4-1771483474435-1344706496633",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:35.032Z"
+  },
+  {
+    "name": "FCP",
+    "value": 944,
+    "rating": "good",
+    "delta": 944,
+    "id": "v4-1771483480593-1403384487584",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:40.659Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 706.0999999940395,
+    "rating": "good",
+    "delta": 706.0999999940395,
+    "id": "v4-1771483480593-6546947605938",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:40.660Z"
+  },
+  {
+    "name": "LCP",
+    "value": 2060,
+    "rating": "good",
+    "delta": 2060,
+    "id": "v4-1771483480593-3678753698287",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:42.406Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771483480657-8575455446040",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:42.407Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 3258.800000011921,
+    "rating": "poor",
+    "delta": 3258.800000011921,
+    "id": "v4-1771483490540-5507302171107",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T06:44:50.621Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771483457997-7951107805766",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:45:58.390Z"
+  },
+  {
+    "name": "INP",
+    "value": 8,
+    "rating": "good",
+    "delta": 8,
+    "id": "v4-1771483457987-1938323870634",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:46:01.039Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 1173.2999999821186,
+    "rating": "needs-improvement",
+    "delta": 1173.2999999821186,
+    "id": "v4-1771483638805-1320539754769",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:47:18.850Z"
+  },
+  {
+    "name": "FCP",
+    "value": 288,
+    "rating": "good",
+    "delta": 288,
+    "id": "v4-1771483659834-3196953618646",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:47:39.839Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 169.90000000596046,
+    "rating": "good",
+    "delta": 169.90000000596046,
+    "id": "v4-1771483659834-1302730728584",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:47:39.840Z"
+  },
+  {
+    "name": "LCP",
+    "value": 288,
+    "rating": "good",
+    "delta": 288,
+    "id": "v4-1771483659834-9112594294194",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:47:40.023Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771483659839-3024522184438",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:47:40.023Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771483659839-3024522184438",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:47:43.410Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 191.7999999821186,
+    "rating": "good",
+    "delta": 191.7999999821186,
+    "id": "v4-1771483739606-7007531672900",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:48:59.635Z"
+  },
+  {
+    "name": "FCP",
+    "value": 240,
+    "rating": "good",
+    "delta": 240,
+    "id": "v4-1771484015500-2909313560671",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:53:35.513Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 135.5,
+    "rating": "good",
+    "delta": 135.5,
+    "id": "v4-1771484015500-9833756127484",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:53:35.515Z"
+  },
+  {
+    "name": "FID",
+    "value": 6.5,
+    "rating": "good",
+    "delta": 6.5,
+    "id": "v4-1771484015499-9915010514963",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:53:35.807Z"
+  },
+  {
+    "name": "LCP",
+    "value": 240,
+    "rating": "good",
+    "delta": 240,
+    "id": "v4-1771484015499-7908905393047",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:53:35.809Z"
+  },
+  {
+    "name": "INP",
+    "value": 16,
+    "rating": "good",
+    "delta": 16,
+    "id": "v4-1771484015499-7328013004923",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:53:36.544Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771484015512-5289383648101",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:53:36.545Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771484015512-5289383648101",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:54:07.852Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 276.90000000596046,
+    "rating": "good",
+    "delta": 276.90000000596046,
+    "id": "v4-1771484071182-6797687693932",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:54:31.222Z"
+  },
+  {
+    "name": "INP",
+    "value": 8,
+    "rating": "good",
+    "delta": 8,
+    "id": "v4-1771484071182-7115563374267",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:54:41.759Z"
+  },
+  {
+    "name": "FCP",
+    "value": 240,
+    "rating": "good",
+    "delta": 240,
+    "id": "v4-1771484267057-6673320316629",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:57:47.070Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 83.90000000596046,
+    "rating": "good",
+    "delta": 83.90000000596046,
+    "id": "v4-1771484267057-3723219576595",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:57:47.071Z"
+  },
+  {
+    "name": "LCP",
+    "value": 240,
+    "rating": "good",
+    "delta": 240,
+    "id": "v4-1771484267057-8804365760534",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:57:48.664Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771484267068-7304106475284",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:57:48.665Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.049570160790060415,
+    "rating": "good",
+    "delta": 0.049570160790060415,
+    "id": "v4-1771484267068-7304106475284",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T06:57:54.153Z"
+  },
+  {
+    "name": "FCP",
+    "value": 344,
+    "rating": "good",
+    "delta": 344,
+    "id": "v4-1771484953702-4336344590320",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:09:13.724Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 100.59999999403954,
+    "rating": "good",
+    "delta": 100.59999999403954,
+    "id": "v4-1771484953702-8155948578897",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:09:13.727Z"
+  },
+  {
+    "name": "FCP",
+    "value": 292,
+    "rating": "good",
+    "delta": 292,
+    "id": "v4-1771484958369-1435045964026",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:09:18.378Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 81.69999998807907,
+    "rating": "good",
+    "delta": 81.69999998807907,
+    "id": "v4-1771484958369-4202416518983",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:09:18.379Z"
+  },
+  {
+    "name": "FID",
+    "value": 2.9000000059604645,
+    "rating": "good",
+    "delta": 2.9000000059604645,
+    "id": "v4-1771484958369-6382250559016",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:09:21.259Z"
+  },
+  {
+    "name": "LCP",
+    "value": 660,
+    "rating": "good",
+    "delta": 660,
+    "id": "v4-1771484958369-7558957410542",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:09:21.262Z"
+  },
+  {
+    "name": "FCP",
+    "value": 152.40000000596046,
+    "rating": "good",
+    "delta": 152.40000000596046,
+    "id": "v4-1771484977445-3418436738362",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T07:09:37.461Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771484977445-8022456353602",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T07:09:37.462Z"
+  },
+  {
+    "name": "FID",
+    "value": 0.8999999761581421,
+    "rating": "good",
+    "delta": 0.8999999761581421,
+    "id": "v4-1771484977445-7115515750035",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T07:09:40.428Z"
+  },
+  {
+    "name": "LCP",
+    "value": 584.4000000059605,
+    "rating": "good",
+    "delta": 584.4000000059605,
+    "id": "v4-1771484977445-5808968256062",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T07:09:40.433Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771484977459-7091361727680",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T07:09:41.561Z"
+  },
+  {
+    "name": "INP",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771484977445-7779581588863",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T07:09:41.559Z"
+  },
+  {
+    "name": "FCP",
+    "value": 564,
+    "rating": "good",
+    "delta": 564,
+    "id": "v4-1771484990433-2877335530095",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:09:50.461Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 338.09999999403954,
+    "rating": "good",
+    "delta": 338.09999999403954,
+    "id": "v4-1771484990433-7413294615110",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:09:50.464Z"
+  },
+  {
+    "name": "LCP",
+    "value": 1164,
+    "rating": "good",
+    "delta": 1164,
+    "id": "v4-1771484990433-3880244156624",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:09:54.127Z"
+  },
+  {
+    "name": "FCP",
+    "value": 224,
+    "rating": "good",
+    "delta": 224,
+    "id": "v4-1771485005807-5757475179496",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:10:05.827Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 81.90000000596046,
+    "rating": "good",
+    "delta": 81.90000000596046,
+    "id": "v4-1771485005808-3505913812726",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:10:05.829Z"
+  },
+  {
+    "name": "LCP",
+    "value": 1056,
+    "rating": "good",
+    "delta": 1056,
+    "id": "v4-1771485005807-5582404160922",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:10:08.399Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771485005825-4246635803230",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:10:08.401Z"
+  },
+  {
+    "name": "INP",
+    "value": 16,
+    "rating": "good",
+    "delta": 16,
+    "id": "v4-1771485005807-3628886800878",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:10:16.721Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 579.2000000178814,
+    "rating": "good",
+    "delta": 579.2000000178814,
+    "id": "v4-1771485064885-6035227841757",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:11:04.926Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 517.9000000059605,
+    "rating": "good",
+    "delta": 517.9000000059605,
+    "id": "v4-1771485066659-6278208636935",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:11:06.689Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 483.40000000596046,
+    "rating": "good",
+    "delta": 483.40000000596046,
+    "id": "v4-1771485075983-1577548252744",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:11:15.989Z"
+  },
+  {
+    "name": "FCP",
+    "value": 1084,
+    "rating": "good",
+    "delta": 1084,
+    "id": "v4-1771485238108-7988952529061",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:13:58.133Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 785.6999999880791,
+    "rating": "good",
+    "delta": 785.6999999880791,
+    "id": "v4-1771485238108-8202134261822",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:13:58.135Z"
+  },
+  {
+    "name": "LCP",
+    "value": 2620,
+    "rating": "needs-improvement",
+    "delta": 2620,
+    "id": "v4-1771485238108-9369418572030",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:14:08.497Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771485238131-9145535805522",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:14:08.500Z"
+  },
+  {
+    "name": "INP",
+    "value": 24,
+    "rating": "good",
+    "delta": 24,
+    "id": "v4-1771485238108-8841509691260",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:16:22.791Z"
+  },
+  {
+    "name": "FCP",
+    "value": 1084,
+    "rating": "good",
+    "delta": 1084,
+    "id": "v4-1771485665398-2482235235378",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:21:05.438Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 785.6999999880791,
+    "rating": "good",
+    "delta": 785.6999999880791,
+    "id": "v4-1771485665399-4813786573564",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:21:05.442Z"
+  },
+  {
+    "name": "INP",
+    "value": 24,
+    "rating": "good",
+    "delta": 24,
+    "id": "v4-1771485665397-1100599090418",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:21:12.028Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771485665437-2729134220962",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:21:12.033Z"
+  },
+  {
+    "name": "LCP",
+    "value": 2620,
+    "rating": "needs-improvement",
+    "delta": 2620,
+    "id": "v4-1771485665395-5226664551651",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:21:12.025Z"
+  },
+  {
+    "name": "FCP",
+    "value": 560,
+    "rating": "good",
+    "delta": 560,
+    "id": "v4-1771486168325-8336947221934",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:29:28.342Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 446.5,
+    "rating": "good",
+    "delta": 446.5,
+    "id": "v4-1771486168325-4762226918412",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:29:28.344Z"
+  },
+  {
+    "name": "LCP",
+    "value": 1124,
+    "rating": "good",
+    "delta": 1124,
+    "id": "v4-1771486168325-7925299666544",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:29:30.037Z"
+  },
+  {
+    "name": "FID",
+    "value": 8.300000011920929,
+    "rating": "good",
+    "delta": 8.300000011920929,
+    "id": "v4-1771486168324-9259102632086",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:29:30.105Z"
+  },
+  {
+    "name": "FCP",
+    "value": 220,
+    "rating": "good",
+    "delta": 220,
+    "id": "v4-1771486170392-8644853107256",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:29:30.395Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 104.09999999403954,
+    "rating": "good",
+    "delta": 104.09999999403954,
+    "id": "v4-1771486170392-8211543874383",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:29:30.396Z"
+  },
+  {
+    "name": "FCP",
+    "value": 160,
+    "rating": "good",
+    "delta": 160,
+    "id": "v4-1771486176450-9203980105500",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:36.467Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 63,
+    "rating": "good",
+    "delta": 63,
+    "id": "v4-1771486176450-3743176578899",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:36.468Z"
+  },
+  {
+    "name": "LCP",
+    "value": 160,
+    "rating": "good",
+    "delta": 160,
+    "id": "v4-1771486176450-1427188754107",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:38.265Z"
+  },
+  {
+    "name": "FID",
+    "value": 4.9000000059604645,
+    "rating": "good",
+    "delta": 4.9000000059604645,
+    "id": "v4-1771486176450-1565444683914",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:38.317Z"
+  },
+  {
+    "name": "FCP",
+    "value": 204,
+    "rating": "good",
+    "delta": 204,
+    "id": "v4-1771486178596-7704134088476",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:29:38.599Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 109.90000000596046,
+    "rating": "good",
+    "delta": 109.90000000596046,
+    "id": "v4-1771486178596-7168538045757",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:29:38.599Z"
+  },
+  {
+    "name": "FCP",
+    "value": 156,
+    "rating": "good",
+    "delta": 156,
+    "id": "v4-1771486179997-6477941433078",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:40.006Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 60,
+    "rating": "good",
+    "delta": 60,
+    "id": "v4-1771486179997-2186641639945",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:40.007Z"
+  },
+  {
+    "name": "LCP",
+    "value": 624,
+    "rating": "good",
+    "delta": 624,
+    "id": "v4-1771486179997-7303985081710",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:42.608Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.009994739610731194,
+    "rating": "good",
+    "delta": 0.009994739610731194,
+    "id": "v4-1771486180005-4428968071328",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:29:42.610Z"
+  },
+  {
+    "name": "FCP",
+    "value": 168,
+    "rating": "good",
+    "delta": 168,
+    "id": "v4-1771486195416-7006125229163",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:29:55.418Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 76,
+    "rating": "good",
+    "delta": 76,
+    "id": "v4-1771486195416-8269687677691",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:29:55.419Z"
+  },
+  {
+    "name": "FCP",
+    "value": 172,
+    "rating": "good",
+    "delta": 172,
+    "id": "v4-1771486215485-2513657211533",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:30:15.497Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 76,
+    "rating": "good",
+    "delta": 76,
+    "id": "v4-1771486215485-7509605681209",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:30:15.499Z"
+  },
+  {
+    "name": "LCP",
+    "value": 672,
+    "rating": "good",
+    "delta": 672,
+    "id": "v4-1771486215485-3764286534936",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:30:27.726Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.009994739610731194,
+    "rating": "good",
+    "delta": 0.009994739610731194,
+    "id": "v4-1771486215496-4655383805193",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:30:27.727Z"
+  },
+  {
+    "name": "FCP",
+    "value": 524,
+    "rating": "good",
+    "delta": 524,
+    "id": "v4-1771486665069-7014955283899",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:37:45.122Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 245.2999999821186,
+    "rating": "good",
+    "delta": 245.2999999821186,
+    "id": "v4-1771486665069-8421139414681",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:37:45.125Z"
+  },
+  {
+    "name": "FID",
+    "value": 11,
+    "rating": "good",
+    "delta": 11,
+    "id": "v4-1771486665067-9565814936423",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:37:46.990Z"
+  },
+  {
+    "name": "LCP",
+    "value": 2292,
+    "rating": "good",
+    "delta": 2292,
+    "id": "v4-1771486665068-6907239811787",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:37:46.993Z"
+  },
+  {
+    "name": "FCP",
+    "value": 472,
+    "rating": "good",
+    "delta": 472,
+    "id": "v4-1771486667921-1288597149629",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:37:47.925Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 250.40000000596046,
+    "rating": "good",
+    "delta": 250.40000000596046,
+    "id": "v4-1771486667921-1325030571667",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:37:47.927Z"
+  },
+  {
+    "name": "FCP",
+    "value": 512,
+    "rating": "good",
+    "delta": 512,
+    "id": "v4-1771486670177-6204816221954",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:37:50.195Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 300,
+    "rating": "good",
+    "delta": 300,
+    "id": "v4-1771486670177-8961668621011",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:37:50.197Z"
+  },
+  {
+    "name": "LCP",
+    "value": 512,
+    "rating": "good",
+    "delta": 512,
+    "id": "v4-1771486670176-4642672544000",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:37:53.653Z"
+  },
+  {
+    "name": "FID",
+    "value": 5.700000017881393,
+    "rating": "good",
+    "delta": 5.700000017881393,
+    "id": "v4-1771486670176-4889911138507",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:37:53.693Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 245.59999999403954,
+    "rating": "good",
+    "delta": 245.59999999403954,
+    "id": "v4-1771486680915-3562404772986",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:38:00.920Z"
+  },
+  {
+    "name": "FCP",
+    "value": 400,
+    "rating": "good",
+    "delta": 400,
+    "id": "v4-1771486680915-1947308731601",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:38:00.918Z"
+  },
+  {
+    "name": "FCP",
+    "value": 240,
+    "rating": "good",
+    "delta": 240,
+    "id": "v4-1771486682440-2003717310000",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:38:02.452Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 99.90000000596046,
+    "rating": "good",
+    "delta": 99.90000000596046,
+    "id": "v4-1771486682440-2273489922237",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:38:02.453Z"
+  },
+  {
+    "name": "LCP",
+    "value": 240,
+    "rating": "good",
+    "delta": 240,
+    "id": "v4-1771486682440-4098192464982",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:38:11.281Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.009994739610731194,
+    "rating": "good",
+    "delta": 0.009994739610731194,
+    "id": "v4-1771486682451-3490399689703",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:38:11.324Z"
+  },
+  {
+    "name": "FCP",
+    "value": 664,
+    "rating": "good",
+    "delta": 664,
+    "id": "v4-1771486766068-2397813026770",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:39:26.092Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 280.5,
+    "rating": "good",
+    "delta": 280.5,
+    "id": "v4-1771486766068-9143147375596",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:39:26.093Z"
+  },
+  {
+    "name": "LCP",
+    "value": 1412,
+    "rating": "good",
+    "delta": 1412,
+    "id": "v4-1771486766067-8474473868593",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:39:27.613Z"
+  },
+  {
+    "name": "FID",
+    "value": 3.0999999940395355,
+    "rating": "good",
+    "delta": 3.0999999940395355,
+    "id": "v4-1771486766067-6292634131525",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:39:27.643Z"
+  },
+  {
+    "name": "FCP",
+    "value": 680,
+    "rating": "good",
+    "delta": 680,
+    "id": "v4-1771486768670-7387105059744",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:39:28.675Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 434.90000000596046,
+    "rating": "good",
+    "delta": 434.90000000596046,
+    "id": "v4-1771486768670-7487238968125",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:39:28.677Z"
+  },
+  {
+    "name": "FCP",
+    "value": 420,
+    "rating": "good",
+    "delta": 420,
+    "id": "v4-1771486773118-5903233641052",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:39:33.131Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 228,
+    "rating": "good",
+    "delta": 228,
+    "id": "v4-1771486773118-8152555380214",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:39:33.132Z"
+  },
+  {
+    "name": "LCP",
+    "value": 420,
+    "rating": "good",
+    "delta": 420,
+    "id": "v4-1771486773118-5744475449690",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:39:33.432Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.009994739610731194,
+    "rating": "good",
+    "delta": 0.009994739610731194,
+    "id": "v4-1771486773131-4002282555681",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:39:33.435Z"
+  },
+  {
+    "name": "FCP",
+    "value": 336,
+    "rating": "good",
+    "delta": 336,
+    "id": "v4-1771486984641-4569839724014",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:04.649Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 279.90000000596046,
+    "rating": "good",
+    "delta": 279.90000000596046,
+    "id": "v4-1771486984641-8858072306805",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:04.649Z"
+  },
+  {
+    "name": "FID",
+    "value": 5.200000017881393,
+    "rating": "good",
+    "delta": 5.200000017881393,
+    "id": "v4-1771486984641-4227585925653",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:06.388Z"
+  },
+  {
+    "name": "LCP",
+    "value": 620,
+    "rating": "good",
+    "delta": 620,
+    "id": "v4-1771486984641-6004012308364",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:06.389Z"
+  },
+  {
+    "name": "FCP",
+    "value": 120,
+    "rating": "good",
+    "delta": 120,
+    "id": "v4-1771486986582-5166856324076",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:43:06.583Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 70.2999999821186,
+    "rating": "good",
+    "delta": 70.2999999821186,
+    "id": "v4-1771486986582-9521448957294",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:43:06.584Z"
+  },
+  {
+    "name": "FCP",
+    "value": 120,
+    "rating": "good",
+    "delta": 120,
+    "id": "v4-1771486988170-5128729079028",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:43:08.175Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 69.89999997615814,
+    "rating": "good",
+    "delta": 69.89999997615814,
+    "id": "v4-1771486988170-2896692393482",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:43:08.175Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 655.2000000178814,
+    "rating": "good",
+    "delta": 655.2000000178814,
+    "id": "v4-1771487008862-2223202919552",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:28.873Z"
+  },
+  {
+    "name": "FCP",
+    "value": 728,
+    "rating": "good",
+    "delta": 728,
+    "id": "v4-1771487008862-9372051066223",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:28.872Z"
+  },
+  {
+    "name": "FCP",
+    "value": 108,
+    "rating": "good",
+    "delta": 108,
+    "id": "v4-1771487018162-7110916957245",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:38.168Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 61.39999997615814,
+    "rating": "good",
+    "delta": 61.39999997615814,
+    "id": "v4-1771487018162-1578293429048",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:38.168Z"
+  },
+  {
+    "name": "LCP",
+    "value": 476,
+    "rating": "good",
+    "delta": 476,
+    "id": "v4-1771487018162-7633317814255",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:40.105Z"
+  },
+  {
+    "name": "FID",
+    "value": 2.300000011920929,
+    "rating": "good",
+    "delta": 2.300000011920929,
+    "id": "v4-1771487018162-8200261849257",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T07:43:40.153Z"
+  },
+  {
+    "name": "FCP",
+    "value": 156,
+    "rating": "good",
+    "delta": 156,
+    "id": "v4-1771487020346-2170141678535",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:43:40.347Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 86.09999999403954,
+    "rating": "good",
+    "delta": 86.09999999403954,
+    "id": "v4-1771487020346-2341761770275",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T07:43:40.348Z"
+  },
+  {
+    "name": "FCP",
+    "value": 96,
+    "rating": "good",
+    "delta": 96,
+    "id": "v4-1771487022760-6507117491665",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:43:42.766Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 54.099999994039536,
+    "rating": "good",
+    "delta": 54.099999994039536,
+    "id": "v4-1771487022760-3577283970902",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:43:42.767Z"
+  },
+  {
+    "name": "LCP",
+    "value": 328,
+    "rating": "good",
+    "delta": 328,
+    "id": "v4-1771487022760-3839315311592",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:44:01.596Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.009994739610731194,
+    "rating": "good",
+    "delta": 0.009994739610731194,
+    "id": "v4-1771487022766-5198707212841",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T07:44:01.597Z"
+  },
+  {
+    "name": "FCP",
+    "value": 1931.199999988079,
+    "rating": "needs-improvement",
+    "delta": 1931.199999988079,
+    "id": "v4-1771490260900-4722039079505",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T08:37:40.909Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 1767.4000000059605,
+    "rating": "needs-improvement",
+    "delta": 1767.4000000059605,
+    "id": "v4-1771490260900-2657503443786",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T08:37:40.910Z"
+  },
+  {
+    "name": "LCP",
+    "value": 2479.199999988079,
+    "rating": "good",
+    "delta": 2479.199999988079,
+    "id": "v4-1771490260900-8733292959543",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T08:41:24.949Z"
+  },
+  {
+    "name": "FID",
+    "value": 6.800000011920929,
+    "rating": "good",
+    "delta": 6.800000011920929,
+    "id": "v4-1771490260900-5868269678445",
+    "navigationType": "prerender",
+    "timestamp": "2026-02-19T08:41:24.980Z"
+  },
+  {
+    "name": "FCP",
+    "value": 192,
+    "rating": "good",
+    "delta": 192,
+    "id": "v4-1771490510737-7195638055307",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:41:50.739Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 92.69999998807907,
+    "rating": "good",
+    "delta": 92.69999998807907,
+    "id": "v4-1771490510737-6725428703649",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:41:50.739Z"
+  },
+  {
+    "name": "LCP",
+    "value": 192,
+    "rating": "good",
+    "delta": 192,
+    "id": "v4-1771490510737-7232987688098",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:41:52.500Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771490510738-7718201785454",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:41:52.501Z"
+  },
+  {
+    "name": "FCP",
+    "value": 272,
+    "rating": "good",
+    "delta": 272,
+    "id": "v4-1771490542858-9697064709134",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:42:22.864Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 176.2999999821186,
+    "rating": "good",
+    "delta": 176.2999999821186,
+    "id": "v4-1771490542858-4027189410163",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:42:22.865Z"
+  },
+  {
+    "name": "LCP",
+    "value": 624,
+    "rating": "good",
+    "delta": 624,
+    "id": "v4-1771490542858-2466414219697",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:42:25.981Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.009994739610731194,
+    "rating": "good",
+    "delta": 0.009994739610731194,
+    "id": "v4-1771490542864-1652730030547",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:42:25.983Z"
+  },
+  {
+    "name": "FCP",
+    "value": 96,
+    "rating": "good",
+    "delta": 96,
+    "id": "v4-1771490698843-2979614165963",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:44:58.846Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 44.400000005960464,
+    "rating": "good",
+    "delta": 44.400000005960464,
+    "id": "v4-1771490698843-5246558192515",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:44:58.847Z"
+  },
+  {
+    "name": "LCP",
+    "value": 96,
+    "rating": "good",
+    "delta": 96,
+    "id": "v4-1771490698843-5346070038122",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:45:07.902Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771490698846-3559299373891",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:45:07.903Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 971.5,
+    "rating": "needs-improvement",
+    "delta": 971.5,
+    "id": "v4-1771490916707-5661499695849",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T08:48:36.730Z"
+  },
+  {
+    "name": "FCP",
+    "value": 188,
+    "rating": "good",
+    "delta": 188,
+    "id": "v4-1771490925427-8178939450708",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:48:45.432Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 123,
+    "rating": "good",
+    "delta": 123,
+    "id": "v4-1771490925427-4443201046880",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:48:45.433Z"
+  },
+  {
+    "name": "FID",
+    "value": 1.5999999940395355,
+    "rating": "good",
+    "delta": 1.5999999940395355,
+    "id": "v4-1771490925427-9712389918217",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:48:46.962Z"
+  },
+  {
+    "name": "LCP",
+    "value": 488,
+    "rating": "good",
+    "delta": 488,
+    "id": "v4-1771490925427-3465679680332",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:48:46.962Z"
+  },
+  {
+    "name": "FCP",
+    "value": 128,
+    "rating": "good",
+    "delta": 128,
+    "id": "v4-1771490939975-8623356266333",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T08:48:59.980Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 66.80000001192093,
+    "rating": "good",
+    "delta": 66.80000001192093,
+    "id": "v4-1771490939975-1527786416355",
+    "navigationType": "reload",
+    "timestamp": "2026-02-19T08:48:59.981Z"
+  },
+  {
+    "name": "FCP",
+    "value": 104,
+    "rating": "good",
+    "delta": 104,
+    "id": "v4-1771490945449-3264220505177",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:05.451Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 51,
+    "rating": "good",
+    "delta": 51,
+    "id": "v4-1771490945450-4832285653000",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:05.451Z"
+  },
+  {
+    "name": "FCP",
+    "value": 108,
+    "rating": "good",
+    "delta": 108,
+    "id": "v4-1771490947091-5812941646242",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:49:07.097Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 62.5,
+    "rating": "good",
+    "delta": 62.5,
+    "id": "v4-1771490947091-1432151061880",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:49:07.097Z"
+  },
+  {
+    "name": "FID",
+    "value": 1.7999999821186066,
+    "rating": "good",
+    "delta": 1.7999999821186066,
+    "id": "v4-1771490949048-3286256496774",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:09.054Z"
+  },
+  {
+    "name": "FCP",
+    "value": 92,
+    "rating": "good",
+    "delta": 92,
+    "id": "v4-1771490949049-4249217938067",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:09.054Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 39.900000005960464,
+    "rating": "good",
+    "delta": 39.900000005960464,
+    "id": "v4-1771490949049-2735853367960",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:09.055Z"
+  },
+  {
+    "name": "LCP",
+    "value": 92,
+    "rating": "good",
+    "delta": 92,
+    "id": "v4-1771490949048-8197895063044",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:11.688Z"
+  },
+  {
+    "name": "INP",
+    "value": 72,
+    "rating": "good",
+    "delta": 72,
+    "id": "v4-1771490949049-8032837114769",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:20.060Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0,
+    "rating": "good",
+    "delta": 0,
+    "id": "v4-1771490949054-7791227917433",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:49:20.062Z"
+  },
+  {
+    "name": "FID",
+    "value": 1.7999999821186066,
+    "rating": "good",
+    "delta": 1.7999999821186066,
+    "id": "v4-1771491091477-8440178645783",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:51:31.487Z"
+  },
+  {
+    "name": "FCP",
+    "value": 92,
+    "rating": "good",
+    "delta": 92,
+    "id": "v4-1771491091478-8772571997302",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:51:31.488Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 39.900000005960464,
+    "rating": "good",
+    "delta": 39.900000005960464,
+    "id": "v4-1771491091478-3616757237726",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:51:31.490Z"
+  },
+  {
+    "name": "LCP",
+    "value": 92,
+    "rating": "good",
+    "delta": 92,
+    "id": "v4-1771491091478-2657547029751",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:51:45.763Z"
+  },
+  {
+    "name": "FCP",
+    "value": 268,
+    "rating": "good",
+    "delta": 268,
+    "id": "v4-1771491122691-1922475243596",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:52:02.703Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 191.80000001192093,
+    "rating": "good",
+    "delta": 191.80000001192093,
+    "id": "v4-1771491122691-8707021767612",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:52:02.704Z"
+  },
+  {
+    "name": "LCP",
+    "value": 484,
+    "rating": "good",
+    "delta": 484,
+    "id": "v4-1771491122691-2937054978799",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:52:04.347Z"
+  },
+  {
+    "name": "FID",
+    "value": 0.5,
+    "rating": "good",
+    "delta": 0.5,
+    "id": "v4-1771491122691-1389942152334",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:52:04.406Z"
+  },
+  {
+    "name": "FCP",
+    "value": 96,
+    "rating": "good",
+    "delta": 96,
+    "id": "v4-1771491128950-9488271042838",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:52:08.951Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 54.80000001192093,
+    "rating": "good",
+    "delta": 54.80000001192093,
+    "id": "v4-1771491128950-9620875421464",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:52:08.952Z"
+  },
+  {
+    "name": "FCP",
+    "value": 216,
+    "rating": "good",
+    "delta": 216,
+    "id": "v4-1771491130410-8067333130690",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:52:10.416Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 161.10000002384186,
+    "rating": "good",
+    "delta": 161.10000002384186,
+    "id": "v4-1771491130410-4348528567336",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:52:10.417Z"
+  },
+  {
+    "name": "LCP",
+    "value": 432,
+    "rating": "good",
+    "delta": 432,
+    "id": "v4-1771491130410-3713746007607",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:52:18.001Z"
+  },
+  {
+    "name": "FID",
+    "value": 0.5,
+    "rating": "good",
+    "delta": 0.5,
+    "id": "v4-1771491130410-8870172987554",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:52:18.030Z"
+  },
+  {
+    "name": "INP",
+    "value": 40,
+    "rating": "good",
+    "delta": 40,
+    "id": "v4-1771491130410-1125622138257",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:52:28.200Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.26264843308513575,
+    "rating": "poor",
+    "delta": 0.26264843308513575,
+    "id": "v4-1771491130416-9478033429725",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:52:28.201Z"
+  },
+  {
+    "name": "FCP",
+    "value": 88,
+    "rating": "good",
+    "delta": 88,
+    "id": "v4-1771491185313-1276970774698",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:53:05.315Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 42.099999994039536,
+    "rating": "good",
+    "delta": 42.099999994039536,
+    "id": "v4-1771491185313-6908122323592",
+    "navigationType": "navigate",
+    "timestamp": "2026-02-19T08:53:05.316Z"
+  },
+  {
+    "name": "FCP",
+    "value": 108,
+    "rating": "good",
+    "delta": 108,
+    "id": "v4-1771491186526-3951252693224",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:53:06.542Z"
+  },
+  {
+    "name": "TTFB",
+    "value": 58.70000001788139,
+    "rating": "good",
+    "delta": 58.70000001788139,
+    "id": "v4-1771491186526-8294056647822",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:53:06.542Z"
+  },
+  {
+    "name": "LCP",
+    "value": 388,
+    "rating": "good",
+    "delta": 388,
+    "id": "v4-1771491186526-2743190576264",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:53:08.333Z"
+  },
+  {
+    "name": "CLS",
+    "value": 0.010905929139843833,
+    "rating": "good",
+    "delta": 0.010905929139843833,
+    "id": "v4-1771491186542-5782298796111",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:53:08.334Z"
+  },
+  {
+    "name": "INP",
+    "value": 40,
+    "rating": "good",
+    "delta": 40,
+    "id": "v4-1771491186526-6333279707031",
+    "navigationType": "back-forward",
+    "timestamp": "2026-02-19T08:56:28.679Z"
   }
 ]
