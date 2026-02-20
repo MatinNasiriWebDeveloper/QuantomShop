@@ -24,3 +24,187 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ========== استایل‌های پایه ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  direction: rtl;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* تنظیم فونت برای همه عناصر */
+body, button, input, select, textarea, .btn, .navbar, .card, .dropdown, .modal {
+  font-family: inherit !important;
+}
+
+/* ========== تنظیمات اعداد انگلیسی ========== */
+.price, .amount, .count, .number, .product-price, .total-price,
+[class*="price"], [class*="Price"], [class*="count"], [class*="Count"],
+.badge, .badge *, .btn .price, .card-text .price,
+.en-number, .english-number {
+  font-family: var(--font-vazirmatn), 'Tahoma', 'Arial', sans-serif !important;
+  direction: ltr !important;
+  display: inline-block;
+  font-weight: 700 !important;
+}
+
+/* ========== وزن‌های مختلف ========== */
+.fw-light { font-weight: 300 !important; }
+.fw-regular { font-weight: 400 !important; }
+.fw-medium { font-weight: 500 !important; }
+.fw-bold { font-weight: 700 !important; }
+.fw-extra-bold { font-weight: 800 !important; }
+.fw-black { font-weight: 900 !important; }
+
+/* ========== قیمت‌ها ========== */
+.price, .product-price {
+  font-weight: 700 !important;
+  color: #6a1b9a;
+}
+
+/* ========== دکمه‌ها ========== */
+.btn {
+  font-weight: 700 !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #6a1b9a !important;
+  border-color: #6a1b9a !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #5a1482 !important;
+  border-color: #5a1482 !important;
+}
+
+/* ========== کارت محصولات ========== */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-weight: 700 !important;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ========== هدر و ناوبری ========== */
+.navbar-brand {
+  font-weight: 700 !important;
+}
+
+.nav-link {
+  font-weight: 500 !important;
+  font-size: 0.95rem;
+}
+
+/* ========== فوتر ========== */
+footer {
+  background-color: #6a1b9a !important;
+  color: white;
+}
+
+/* ========== نشانگرها و برچسب‌ها ========== */
+.badge {
+  font-weight: 700 !important;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* ========== فرم‌ها ========== */
+.form-control, .form-select {
+  font-weight: 500 !important;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 10px 15px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #6a1b9a;
+  box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.1);
+}
+
+/* ========== جداول ========== */
+.table th {
+  font-weight: 700 !important;
+  background-color: #f8f9fa;
+}
+
+/* ========== اسکرول‌بار ========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6a1b9a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a1482;
+}
+
+/* ========== ریسپانسیو ========== */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 13px;
+  }
+  
+  h1, .h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3, .h3 {
+    font-size: 1.2rem;
+  }
+
+  .best-sellers-swiper .swiper-slide {
+    height: auto;
+    width: 340px !important;  /* ← اینجا: عرض هر اسلاید را تنظیم کن */
+  }
+
+  @media (min-width: 768px) {
+    .best-sellers-swiper .swiper-slide {
+      width: 360px !important;  /* ← عرض در تبلت */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .best-sellers-swiper .swiper-slide {
+      width: 380px !important;  /* ← عرض در دسکتاپ */
+    }
+  }
+   
+}

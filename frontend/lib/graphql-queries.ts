@@ -74,6 +74,24 @@ export const GET_DISCOUNTED_PRODUCTS = gql`
   }
 `;
 
+// ========== PRODUCT DETAILS QUERY ==========
+export const GET_PRODUCT_DETAILS = gql`
+  query GetProductDetails($id: ID!) {
+    product(id: $id) {
+      id
+      name
+      price
+      finalPrice
+      description
+      imageUrl
+      category
+      brand
+      discount
+      stock
+    }
+  }
+`;
+
 // ========== STONE QUERIES ==========
 export const GET_STONES = gql`
   query GetStones {
@@ -127,6 +145,32 @@ export const GET_CATEGORIES = gql`
       name
       slug
       productCount
+    }
+  }
+`;
+
+// ========== CATEGORY IMAGE QUERIES (اضافه شده) ==========
+export const GET_CATEGORY_IMAGES = gql`
+  query GetCategoryImages {
+    categoryImages {
+      id
+      name
+      imageUrl
+      link
+      order
+      active
+    }
+  }
+`;
+
+export const GET_ACTIVE_CATEGORY_IMAGES = gql`
+  query GetActiveCategoryImages {
+    activeCategoryImages {
+      id
+      name
+      imageUrl
+      link
+      order
     }
   }
 `;
@@ -295,20 +339,17 @@ export const GET_ALL_SETTINGS = gql`
   }
 `;
 
-// ========== PRODUCT QUERIES ==========
-export const GET_PRODUCT_DETAILS = gql`
-  query GetProductDetails($id: ID!) {
-    product(id: $id) {
+// ========== BEST SELLERS QUERY ==========
+export const GET_BEST_SELLERS = gql`
+  query GetBestSellers($limit: Int) {
+    bestSellers(limit: $limit) {
       id
       name
       price
       finalPrice
-      description
       imageUrl
-      category
-      brand
       discount
-      stock
+      brand
     }
   }
 `;

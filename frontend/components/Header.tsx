@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Container, Navbar, Nav, Form, Button, Badge } from 'react-bootstrap';
+import { Container, Navbar, Nav, Form, Button, Badge, Modal } from 'react-bootstrap';
 import { 
   Search, 
   Person, 
@@ -15,11 +15,186 @@ import {
   Cart,
   XLg, 
   Dash, 
-  Plus 
+  Plus,
+  QuestionCircle,
+  Gift,
+  DiamondFill,
+  CreditCard,
+  Wallet2,
+  Grid,
+  ChevronLeft,
+  ChevronRight,
+  Laptop,
+  Phone,
+  Tablet,
+  Headphones,
+  Watch,
+  Speaker,
+  Tv,
+  HouseDoor,
+  ShieldCheck,
+  Camera,
+  Printer,
+  Wifi,
+  CupHot,
+  CarFront,
+  Book,
+  Controller
 } from 'react-bootstrap-icons';
-import { useCart } from '../app/context/CartContext';
+import { useCart } from '@/app/context/CartContext';
 import { showToast } from './ToastProvider';
 import toast from 'react-hot-toast';
+
+// ساختار دسته‌بندی‌ها مانند دیجی‌کالا
+const categories = [
+  {
+    id: 1,
+    name: 'موبایل',
+    icon: <Phone size={22} />,
+    color: '#2196f3',
+    subcategories: [
+      { name: 'گوشی موبایل', link: '/products?category=mobile', icon: '📱' },
+      { name: 'هدفون و هدست', link: '/products?category=headphone', icon: '🎧' },
+      { name: 'پاوربانک', link: '/products?category=powerbank', icon: '🔋' },
+      { name: 'گوشی ساده', link: '/products?category=simple-phone', icon: '📞' }
+    ]
+  },
+  {
+    id: 2,
+    name: 'لپ تاپ',
+    icon: <Laptop size={22} />,
+    color: '#4caf50',
+    subcategories: [
+      { name: 'لپ تاپ ایسوس', link: '/products?brand=asus', icon: '💻' },
+      { name: 'لپ تاپ ایسر', link: '/products?brand=acer', icon: '💻' },
+      { name: 'لپ تاپ لنوو', link: '/products?brand=lenovo', icon: '💻' },
+      { name: 'لپ تاپ اچ‌پی', link: '/products?brand=hp', icon: '💻' },
+      { name: 'لپ تاپ دل', link: '/products?brand=dell', icon: '💻' },
+      { name: 'مک‌بوک', link: '/products?brand=apple&category=laptop', icon: '🍎' }
+    ]
+  },
+  {
+    id: 3,
+    name: 'تبلت',
+    icon: <Tablet size={22} />,
+    color: '#ff9800',
+    subcategories: [
+      { name: 'تبلت اپل', link: '/products?brand=apple&category=tablet', icon: '📱' },
+      { name: 'تبلت سامسونگ', link: '/products?brand=samsung&category=tablet', icon: '📱' },
+      { name: 'تبلت شیائومی', link: '/products?brand=xiaomi&category=tablet', icon: '📱' },
+      { name: 'تبلت لنوو', link: '/products?brand=lenovo&category=tablet', icon: '📱' }
+    ]
+  },
+  {
+    id: 4,
+    name: 'صوتی و تصویری',
+    icon: <Speaker size={22} />,
+    color: '#e91e63',
+    subcategories: [
+      { name: 'هدفون و هندزفری', link: '/products?category=headphone', icon: '🎧' },
+      { name: 'اسپیکر بلوتوثی', link: '/products?category=speaker', icon: '🔊' },
+      { name: 'میکروفون', link: '/products?category=microphone', icon: '🎤' },
+      { name: 'پخش‌کننده صوتی', link: '/products?category=audio-player', icon: '📻' }
+    ]
+  },
+  {
+    id: 5,
+    name: 'ساعت هوشمند',
+    icon: <Watch size={22} />,
+    color: '#9c27b0',
+    subcategories: [
+      { name: 'اپل واچ', link: '/products?brand=apple&category=watch', icon: '⌚' },
+      { name: 'ساعت سامسونگ', link: '/products?brand=samsung&category=watch', icon: '⌚' },
+      { name: 'ساعت شیائومی', link: '/products?brand=xiaomi&category=watch', icon: '⌚' },
+      { name: 'ساعت امیازفیت', link: '/products?brand=amazfit&category=watch', icon: '⌚' }
+    ]
+  },
+  {
+    id: 6,
+    name: 'تلویزیون',
+    icon: <Tv size={22} />,
+    color: '#f44336',
+    subcategories: [
+      { name: 'تلویزیون سامسونگ', link: '/products?brand=samsung&category=tv', icon: '📺' },
+      { name: 'تلویزیون الجی', link: '/products?brand=lg&category=tv', icon: '📺' },
+      { name: 'تلویزیون سونی', link: '/products?brand=sony&category=tv', icon: '📺' },
+      { name: 'تلویزیون شیائومی', link: '/products?brand=xiaomi&category=tv', icon: '📺' }
+    ]
+  },
+  {
+    id: 7,
+    name: 'لوازم خانگی',
+    icon: <HouseDoor size={22} />,
+    color: '#795548',
+    subcategories: [
+      { name: 'یخچال', link: '/products?category=refrigerator', icon: '❄️' },
+      { name: 'لباسشویی', link: '/products?category=washer', icon: '🧺' },
+      { name: 'جاروبرقی', link: '/products?category=vacuum', icon: '🌀' },
+      { name: 'چای‌ساز و کتری', link: '/products?category=kettle', icon: '☕' },
+      { name: 'اتو', link: '/products?category=iron', icon: '👕' }
+    ]
+  },
+  {
+    id: 8,
+    name: 'لوازم جانبی',
+    icon: <ShieldCheck size={22} />,
+    color: '#607d8b',
+    subcategories: [
+      { name: 'کیف و کاور گوشی', link: '/products?category=case', icon: '📱' },
+      { name: 'محافظ صفحه', link: '/products?category=screen-protector', icon: '🛡️' },
+      { name: 'کابل و شارژر', link: '/products?category=charger', icon: '🔌' },
+      { name: 'هولدر و پایه', link: '/products?category=holder', icon: '📎' }
+    ]
+  },
+  {
+    id: 9,
+    name: 'دوربین',
+    icon: <Camera size={22} />,
+    color: '#673ab7',
+    subcategories: [
+      { name: 'دوربین عکاسی', link: '/products?category=camera', icon: '📷' },
+      { name: 'دوربین فیلمبرداری', link: '/products?category=camcorder', icon: '🎥' },
+      { name: 'لنز دوربین', link: '/products?category=lens', icon: '🔭' },
+      { name: 'سه‌پایه', link: '/products?category=tripod', icon: '📐' }
+    ]
+  },
+  {
+    id: 10,
+    name: 'شبکه',
+    icon: <Wifi size={22} />,
+    color: '#009688',
+    subcategories: [
+      { name: 'روتر', link: '/products?category=router', icon: '📡' },
+      { name: 'کابل شبکه', link: '/products?category=network-cable', icon: '🔌' },
+      { name: 'اکسس پوینت', link: '/products?category=access-point', icon: '📶' },
+      { name: 'مودم', link: '/products?category=modem', icon: '📠' }
+    ]
+  },
+  {
+    id: 11,
+    name: 'پرینتر',
+    icon: <Printer size={22} />,
+    color: '#ff5722',
+    subcategories: [
+      { name: 'پرینتر لیزری', link: '/products?category=laser-printer', icon: '🖨️' },
+      { name: 'پرینتر جوهرافشان', link: '/products?category=inkjet-printer', icon: '🖨️' },
+      { name: 'کارتریج', link: '/products?category=cartridge', icon: '💾' },
+      { name: 'کاغذ و ملزومات', link: '/products?category=paper', icon: '📄' }
+    ]
+  },
+  {
+    id: 12,
+    name: 'گیمینگ',
+    icon: <Controller size={22} />,
+    color: '#8bc34a',
+    subcategories: [
+      { name: 'کنسول بازی', link: '/products?category=console', icon: '🎮' },
+      { name: 'بازی کامپیوتر', link: '/products?category=pc-game', icon: '💿' },
+      { name: 'هدفون گیمینگ', link: '/products?category=gaming-headphone', icon: '🎧' },
+      { name: 'صندلی گیمینگ', link: '/products?category=gaming-chair', icon: '🪑' }
+    ]
+  }
+];
 
 export default function Header() {
   const router = useRouter();
@@ -28,12 +203,43 @@ export default function Header() {
   const [user, setUser] = useState<any>(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showCartPopup, setShowCartPopup] = useState(false);
+  const [showCategoryModal, setShowCategoryModal] = useState(false);
+  const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
+  const [selectedMainCategory, setSelectedMainCategory] = useState<number | null>(null);
+  
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const cartPopupRef = useRef<HTMLDivElement>(null);
-  
+
   const { items, removeFromCart, updateQuantity, getTotalItems, getTotalPrice } = useCart();
 
+  // بستن منوها با کلیک بیرون
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current && 
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current && 
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setShowDropdown(false);
+      }
+      
+      if (
+        cartPopupRef.current && 
+        !cartPopupRef.current.contains(event.target as Node)
+      ) {
+        setShowCartPopup(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // بررسی وضعیت لاگین
   useEffect(() => {
     const checkLoginStatus = () => {
       const token = localStorage.getItem('token');
@@ -60,31 +266,6 @@ export default function Header() {
     
     return () => {
       window.removeEventListener('storage', checkLoginStatus);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current && 
-        !dropdownRef.current.contains(event.target as Node) &&
-        buttonRef.current && 
-        !buttonRef.current.contains(event.target as Node)
-      ) {
-        setShowDropdown(false);
-      }
-      
-      if (
-        cartPopupRef.current && 
-        !cartPopupRef.current.contains(event.target as Node)
-      ) {
-        setShowCartPopup(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
@@ -140,7 +321,20 @@ export default function Header() {
   };
 
   const formatPrice = (price: number) => {
-    return price.toLocaleString('fa-IR') + ' تومان';
+    return price.toLocaleString('en-US') + ' تومان';
+  };
+
+  const handleCategoryClick = (link: string) => {
+    setShowCategoryModal(false);
+    router.push(link);
+  };
+
+  const handleMainCategoryClick = (categoryId: number) => {
+    if (selectedMainCategory === categoryId) {
+      setSelectedMainCategory(null);
+    } else {
+      setSelectedMainCategory(categoryId);
+    }
   };
 
   return (
@@ -441,6 +635,256 @@ export default function Header() {
           border-top: 2px solid #f0f0f0;
         }
         
+        /* استایل نوار ابزار پایین */
+        .toolbar-container {
+          border-top: 2px solid #333;
+          background-color: #f8f9fa;
+          padding: 8px 0;
+        }
+        
+        .toolbar-items {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+        
+        .toolbar-link {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          color: #333;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          padding: 5px 10px;
+          border-radius: 20px;
+        }
+        
+        .toolbar-link:hover {
+          background-color: rgba(106, 27, 154, 0.1);
+          color: #6a1b9a;
+        }
+        
+        .toolbar-divider {
+          width: 1px;
+          height: 25px;
+          background-color: #ccc;
+          margin: 0 5px;
+        }
+        
+        .category-btn {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background-color: #6a1b9a;
+          color: white;
+          border: none;
+          border-radius: 30px;
+          padding: 8px 20px;
+          font-size: 14px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover {
+          background-color: #5a1482;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(106, 27, 154, 0.3);
+        }
+        
+        /* استایل مودال دسته‌بندی */
+        .category-modal {
+          max-width: 1000px !important;
+        }
+        
+        .category-modal .modal-content {
+          border-radius: 20px;
+          overflow: hidden;
+          border: none;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .category-modal-header {
+          background: linear-gradient(135deg, #6a1b9a, #9c27b0);
+          color: white;
+          padding: 20px 30px;
+          border-bottom: none;
+          display: flex;
+          align-items: center;
+          flex-direction: row-reverse;  /* این خط مهم است - محتوا را برعکس می‌کند */
+        }
+        
+        .category-modal-header .btn-close {
+          filter: invert(1) grayscale(100%) brightness(200%);
+          opacity: 0.8;
+          transition: all 0.3s ease;
+          margin-left: 0;
+          margin-right: 0;
+        }
+        
+        .category-modal-header .btn-close:hover {
+          opacity: 1;
+          transform: rotate(90deg);
+        }
+        
+        .category-modal-header .modal-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin: 0;
+          text-align: right;
+          flex: 1;
+        }
+        
+        .category-modal-body {
+          padding: 0;
+          display: flex;
+          min-height: 500px;
+        }
+        
+        .main-categories {
+          width: 280px;
+          background-color: #f8f9fa;
+          border-left: 1px solid #e0e0e0;
+          overflow-y: auto;
+          max-height: 500px;
+        }
+        
+        .main-category-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 15px 20px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .main-category-item:hover {
+          background-color: rgba(106, 27, 154, 0.1);
+        }
+        
+        .main-category-item.selected {
+          background-color: rgba(106, 27, 154, 0.15);
+          border-right: 4px solid #6a1b9a;
+        }
+        
+        .main-category-icon {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #6a1b9a;
+        }
+        
+        .main-category-name {
+          flex: 1;
+          font-weight: 600;
+          color: #333;
+        }
+        
+        .main-category-arrow {
+          color: #999;
+          font-size: 12px;
+        }
+        
+        .subcategories {
+          flex: 1;
+          padding: 25px;
+          overflow-y: auto;
+          max-height: 500px;
+          background: white;
+        }
+        
+        .subcategory-section {
+          margin-bottom: 25px;
+        }
+        
+        .subcategory-title {
+          font-weight: 700;
+          color: #6a1b9a;
+          margin-bottom: 15px;
+          font-size: 1.1rem;
+          border-bottom: 2px solid #f0f0f0;
+          padding-bottom: 8px;
+        }
+        
+        .subcategory-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+        }
+        
+        .subcategory-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 12px;
+          background-color: #f8f9fa;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border: 1px solid #e0e0e0;
+        }
+        
+        .subcategory-item:hover {
+          background-color: rgba(106, 27, 154, 0.1);
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          border-color: #6a1b9a;
+        }
+        
+        .subcategory-icon {
+          font-size: 20px;
+        }
+        
+        .subcategory-name {
+          flex: 1;
+          font-size: 13px;
+          font-weight: 500;
+          color: #333;
+        }
+        
+        .subcategory-arrow {
+          color: #999;
+          font-size: 12px;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+        
+        .subcategory-item:hover .subcategory-arrow {
+          opacity: 1;
+          transform: translateX(-3px);
+          color: #6a1b9a;
+        }
+        
+        .category-modal-footer {
+          background-color: #f8f9fa;
+          padding: 15px 30px;
+          border-top: 1px solid #e0e0e0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .view-all-link {
+          color: #6a1b9a;
+          font-weight: 700;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          transition: all 0.3s ease;
+        }
+        
+        .view-all-link:hover {
+          color: #5a1482;
+          gap: 8px;
+        }
+        
         @media (max-width: 992px) {
           .user-name {
             display: none;
@@ -456,6 +900,27 @@ export default function Header() {
             transform: translateX(-50%);
             width: 90%;
             max-width: 350px;
+          }
+          .toolbar-items {
+            gap: 10px;
+          }
+          .toolbar-link span {
+            display: none;
+          }
+          .toolbar-link {
+            padding: 5px;
+          }
+          .category-modal-body {
+            flex-direction: column;
+          }
+          .main-categories {
+            width: 100%;
+            border-left: none;
+            border-bottom: 1px solid #e0e0e0;
+            max-height: 200px;
+          }
+          .subcategory-grid {
+            grid-template-columns: 1fr;
           }
         }
       `}</style>
@@ -716,6 +1181,140 @@ export default function Header() {
           </div>
         </Container>
       </Navbar>
+
+      {/* نوار ابزار پایین - با خط مشکی */}
+      <div className="toolbar-container">
+        <Container>
+          <div className="toolbar-items">
+            {/* دکمه دسته‌بندی */}
+            <button 
+              className="category-btn"
+              onClick={() => setShowCategoryModal(true)}
+            >
+              <Grid size={18} />
+              <span>دسته‌بندی کالاها</span>
+            </button>
+
+            <div className="toolbar-divider"></div>
+
+            <Link href="/products?filter=discount" className="toolbar-link">
+              <Gift size={18} color="#6a1b9a" />
+              <span>برترین تخفیف‌ها</span>
+            </Link>
+            
+            <Link href="/gold" className="toolbar-link">
+              <DiamondFill size={18} color="#6a1b9a" />
+              <span>Quantom Gold</span>
+            </Link>
+            
+            <Link href="/installment" className="toolbar-link">
+              <CreditCard size={18} color="#6a1b9a" />
+              <span>خرید اقساطی</span>
+            </Link>
+            
+            <Link href="/credit" className="toolbar-link">
+              <Wallet2 size={18} color="#6a1b9a" />
+              <span>خرید اعتباری</span>
+            </Link>
+
+            <div className="toolbar-divider"></div>
+
+            <Link href="/support" className="toolbar-link">
+              <QuestionCircle size={18} color="#6a1b9a" />
+              <span>سوالی دارید؟</span>
+            </Link>
+          </div>
+        </Container>
+      </div>
+
+      {/* مودال دسته‌بندی */}
+      <Modal 
+        show={showCategoryModal} 
+        onHide={() => setShowCategoryModal(false)}
+        dialogClassName="category-modal"
+        centered
+        backdrop="static"
+      >
+        <Modal.Header className="category-modal-header">
+          <button 
+            type="button" 
+            className="btn-close" 
+            onClick={() => setShowCategoryModal(false)}
+            aria-label="Close"
+          ></button>
+          <h3 className="modal-title">دسته‌بندی کالاها</h3>
+        </Modal.Header>
+        
+        <Modal.Body className="category-modal-body">
+          {/* دسته‌بندی‌های اصلی */}
+          <div className="main-categories">
+            {categories.map((category) => (
+              <div
+                key={category.id}
+                className={`main-category-item ${selectedMainCategory === category.id ? 'selected' : ''}`}
+                onClick={() => handleMainCategoryClick(category.id)}
+                onMouseEnter={() => setHoveredCategory(category.id)}
+                onMouseLeave={() => setHoveredCategory(null)}
+              >
+                <div className="main-category-icon" style={{ color: category.color }}>
+                  {category.icon}
+                </div>
+                <span className="main-category-name">{category.name}</span>
+                <ChevronLeft className="main-category-arrow" size={14} />
+              </div>
+            ))}
+          </div>
+
+          {/* زیرشاخه‌ها */}
+          <div className="subcategories">
+            {selectedMainCategory ? (
+              <>
+                {categories
+                  .filter(c => c.id === selectedMainCategory)
+                  .map(category => (
+                    <div key={category.id} className="subcategory-section">
+                      <h4 className="subcategory-title">{category.name}</h4>
+                      <div className="subcategory-grid">
+                        {category.subcategories.map((sub, index) => (
+                          <div
+                            key={index}
+                            className="subcategory-item"
+                            onClick={() => handleCategoryClick(sub.link)}
+                          >
+                            <span className="subcategory-icon">{sub.icon}</span>
+                            <span className="subcategory-name">{sub.name}</span>
+                            <ChevronLeft className="subcategory-arrow" size={12} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+              </>
+            ) : (
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                height: '100%',
+                color: '#999',
+                fontSize: '14px'
+              }}>
+                برای مشاهده زیرشاخه‌ها، یک دسته انتخاب کنید
+              </div>
+            )}
+          </div>
+        </Modal.Body>
+
+        <Modal.Footer className="category-modal-footer">
+          <Link href="/products" className="view-all-link" onClick={() => setShowCategoryModal(false)}>
+            <span>مشاهده همه محصولات</span>
+            <ChevronRight size={16} />
+          </Link>
+          <Badge bg="light" text="dark">
+            {categories.length} دسته اصلی
+          </Badge>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

@@ -7,6 +7,7 @@ import { useQuery } from '@apollo/client';
 import { GET_PRODUCTS } from '@/lib/graphql-queries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 

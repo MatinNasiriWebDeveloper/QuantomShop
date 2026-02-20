@@ -14,7 +14,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'example.com',
+        hostname: 'a.nooncdn.com',
         pathname: '/**',
       },
     ],

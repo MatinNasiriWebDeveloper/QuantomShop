@@ -10,9 +10,11 @@ import { ArrowLeft, ChevronRight, ChevronLeft } from 'react-bootstrap-icons';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useQuery } from '@apollo/client';
-import { GET_PRODUCTS } from '@/lib/graphql-queries';
+import { GET_PRODUCTS, GET_ACTIVE_CATEGORY_IMAGES } from '@/lib/graphql-queries';
+import CategorySections from '@/components/CategorySections';
+import BestSellers from '@/components/BestSellers';
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
-import stoneImage from "../public/images/banners/stone.png"
+import stoneImage from "../public/images/banners/123.png"
 
 loadDevMessages();
 loadErrorMessages();
@@ -22,13 +24,14 @@ export default function Home() {
   const [hoveredBrand, setHoveredBrand] = useState<number | null>(null);
   const [hoveredFeatured, setHoveredFeatured] = useState<string | null>(null);
   const [hoveredSale, setHoveredSale] = useState<string | null>(null);
+  const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
   const [featuredPage, setFeaturedPage] = useState(0);
   const [salePage, setSalePage] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const router = useRouter();
 
-  // دریافت محصولات از GraphQL
-  const { loading, error, data } = useQuery(GET_PRODUCTS);
+  const { loading: productsLoading, error: productsError, data: productsData } = useQuery(GET_PRODUCTS);
+  const { loading: categoriesLoading, error: categoriesError, data: categoriesData } = useQuery(GET_ACTIVE_CATEGORY_IMAGES);
 
   const itemsPerPage = 4;
 
@@ -83,92 +86,19 @@ export default function Home() {
     }
   ];
 
-  // لیست برندهای معتبر با نام فارسی و انگلیسی
   const brands = [
-    { 
-      id: 1, 
-      image: '/images/products/app.webp', 
-      name: 'اپل', 
-      nameEn: 'apple',
-      productCount: 0 
-    },
-    { 
-      id: 2, 
-      image: '/images/products/sam.webp', 
-      name: 'سامسونگ', 
-      nameEn: 'samsung',
-      productCount: 0 
-    },
-    { 
-      id: 3, 
-      image: '/images/products/so.webp', 
-      name: 'سونی', 
-      nameEn: 'sony',
-      productCount: 0 
-    },
-    { 
-      id: 4, 
-      image: '/images/products/lg.webp', 
-      name: 'الجی', 
-      nameEn: 'lg',
-      productCount: 0 
-    },
-    { 
-      id: 5, 
-      image: '/images/products/haylou.webp', 
-      name: 'هایلو', 
-      nameEn: 'haylou',
-      productCount: 0 
-    },
-    { 
-      id: 6, 
-      image: '/images/products/jbl.webp', 
-      name: 'جی‌بی‌ال', 
-      nameEn: 'jbl',
-      productCount: 0 
-    },
-    { 
-      id: 7, 
-      image: '/images/products/noki.webp', 
-      name: 'نوکیا', 
-      nameEn: 'nokia',
-      productCount: 0 
-    },
-    { 
-      id: 8, 
-      image: '/images/products/tp.webp', 
-      name: 'تی‌پی‌لینک', 
-      nameEn: 'tp-link',
-      productCount: 0 
-    },
-    { 
-      id: 9, 
-      image: '/images/products/tsco.webp', 
-      name: 'تسکو', 
-      nameEn: 'tesco',
-      productCount: 0 
-    },
-    { 
-      id: 10, 
-      image: '/images/products/anker.webp', 
-      name: 'انکر', 
-      nameEn: 'anker',
-      productCount: 0 
-    },
-    { 
-      id: 11, 
-      image: '/images/products/as.webp', 
-      name: 'ایسر', 
-      nameEn: 'acer',
-      productCount: 0 
-    },
-    { 
-      id: 12, 
-      image: '/images/products/as.webp', 
-      name: 'ایسوس', 
-      nameEn: 'asus',
-      productCount: 0 
-    }
+    { id: 1, image: '/images/products/app.webp', name: 'اپل', nameEn: 'apple', productCount: 0 },
+    { id: 2, image: '/images/products/sam.webp', name: 'سامسونگ', nameEn: 'samsung', productCount: 0 },
+    { id: 3, image: '/images/products/so.webp', name: 'سونی', nameEn: 'sony', productCount: 0 },
+    { id: 4, image: '/images/products/lg.webp', name: 'الجی', nameEn: 'lg', productCount: 0 },
+    { id: 5, image: '/images/products/haylou.webp', name: 'هایلو', nameEn: 'haylou', productCount: 0 },
+    { id: 6, image: '/images/products/jbl.webp', name: 'جی‌بی‌ال', nameEn: 'jbl', productCount: 0 },
+    { id: 7, image: '/images/products/noki.webp', name: 'نوکیا', nameEn: 'nokia', productCount: 0 },
+    { id: 8, image: '/images/products/tp.webp', name: 'تی‌پی‌لینک', nameEn: 'tp-link', productCount: 0 },
+    { id: 9, image: '/images/products/tsco.webp', name: 'تسکو', nameEn: 'tesco', productCount: 0 },
+    { id: 10, image: '/images/products/anker.webp', name: 'انکر', nameEn: 'anker', productCount: 0 },
+    { id: 11, image: '/images/products/as.webp', name: 'ایسر', nameEn: 'acer', productCount: 0 },
+    { id: 12, image: '/images/products/as.webp', name: 'ایسوس', nameEn: 'asus', productCount: 0 }
   ];
 
   useEffect(() => {
@@ -180,10 +110,9 @@ export default function Home() {
     }
   }, [isHovering]);
 
-  // به‌روزرسانی تعداد محصولات هر برند
   useEffect(() => {
-    if (data?.products) {
-      const products = data.products;
+    if (productsData?.products) {
+      const products = productsData.products;
       brands.forEach(brand => {
         const count = products.filter((p: any) => 
           p.brand?.toLowerCase() === brand.nameEn.toLowerCase()
@@ -191,9 +120,9 @@ export default function Home() {
         brand.productCount = count;
       });
     }
-  }, [data]);
+  }, [productsData]);
 
-  if (loading) return (
+  if (productsLoading || categoriesLoading) return (
     <div>
       <Header />
       <Container className="mt-5 text-center">
@@ -206,19 +135,21 @@ export default function Home() {
     </div>
   );
 
-  if (error) return (
+  if (productsError || categoriesError) return (
     <div>
       <Header />
       <Container className="mt-5 text-center">
         <div className="alert alert-danger" role="alert">
-          خطا در بارگذاری محصولات: {error.message}
+          خطا در بارگذاری: {productsError?.message || categoriesError?.message}
         </div>
       </Container>
       <Footer />
     </div>
   );
 
-  const products = data?.products || [];
+  const products = productsData?.products || [];
+  const categoryImages = categoriesData?.activeCategoryImages || [];
+  
   const featuredProducts = products.slice(0, 8);
   const onSaleProducts = products.filter((p: any) => p.discount > 0).slice(0, 8);
   
@@ -265,6 +196,10 @@ export default function Home() {
 
   const handleBrandClick = (brand: any) => {
     router.push(`/products?brand=${brand.nameEn}`);
+  };
+
+  const handleCategoryClick = (link: string) => {
+    router.push(link);
   };
 
   return (
@@ -351,7 +286,7 @@ export default function Home() {
         </Container>
       </section>
       
-      {/* ========== بخش قهرمانی (Hero Section) ========== */}      
+      {/* ========== بخش قهرمانی ========== */}      
       <section className="bg-primary text-white py-5">
         <Container>
           <Row className="align-items-center">
@@ -538,51 +473,57 @@ export default function Home() {
               </Button>
             </Col>
           </Row>
-        </section>
+          </section>
+          
+          {/* ========== بنر سنگ‌ها - با عنوان جداگانه ========== */}
+          <Container className="my-5" fluid>
+            {/* عنوان و دکمه در بالای عکس */}
+            <Row className="mb-5">
+              <Col className="text-center">
+                <h1 className="display-3 fw-bold mb-3" style={{ color: '#6a1b9a' }}>
+                  سنگ‌های تزئینی
+                </h1>
+                <p className="lead fs-3 text-muted mb-4">
+                  کیفیت عالی، قیمت مناسب، تنوع بی‌نظیر
+                </p>
+                <Link href="/stones">
+                  <Button 
+                    variant="primary" 
+                    size="lg"
+                    className="px-5 py-3 fw-bold"
+                    style={{ 
+                      backgroundColor: '#6a1b9a', 
+                      borderColor: '#6a1b9a',
+                      borderRadius: '50px',
+                      fontSize: '1.2rem'
+                    }}
+                  >
+                    مشاهده محصولات
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
 
-        {/* ========== بنر سنگ‌ها (بعد از محصولات ویژه) ========== */}
-        <Container className="my-5">
-          <Link href="/stones" className="text-decoration-none">
-            <div className="position-relative" style={{ height: '280px', width: '100%' }}>
-              <Image
-                src={stoneImage}
-                alt="سنگ‌های ساختمانی و تزئینی"
-                fill
-                sizes="(max-width: 768px) 100vw, 1200px"
-                style={{ 
-                  objectFit: 'cover', 
-                  borderRadius: '25px',
-                }}
-                className="shadow-lg"
-                priority={false}
-              />
-              {/* متن روی بنر */}
-              <div className="position-absolute top-50 start-50 translate-middle text-white text-center" 
-                   style={{ 
-                     backgroundColor: 'rgba(106, 27, 154, 0.7)', 
-                     padding: '25px 50px', 
-                     borderRadius: '60px',
-                     backdropFilter: 'blur(8px)',
-                     border: '2px solid rgba(255,255,255,0.3)',
-                     boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
-                   }}>
-                <h2 className="display-5 fw-bold mb-3">سنگ‌های ساختمانی و تزئینی</h2>
-                <p className="lead mb-4">کیفیت عالی، قیمت مناسب، تنوع بی‌نظیر</p>
-                <Button 
-                  variant="light" 
-                  size="lg" 
-                  className="px-5 py-3 fw-bold"
-                  style={{ 
-                    borderRadius: '50px',
-                    fontSize: '1.2rem'
-                  }}
-                >
-                  مشاهده محصولات
-                </Button>
-              </div>
-            </div>
-          </Link>
-        </Container>
+            {/* عکس با نمایش کامل و بدون حاشیه */}
+            <Row className="g-0">
+              <Col>
+                <div className="position-relative w-100" style={{ height: '600px', backgroundColor: '#f5f5f5', overflow: 'hidden' }}>
+                  <Image
+                    src={stoneImage}
+                    alt="سنگ‌های تزئینی"
+                    fill
+                    sizes="100vw"
+                    className="rounded-4 shadow-lg"
+                    style={{ 
+                      objectFit: 'cover',
+                      objectPosition: 'center'
+                    }}
+                    priority
+                  />
+                </div>
+              </Col>
+            </Row>
+          </Container>
 
         {/* ========== تخفیف‌های ویژه ========== */}
         <section className="mb-5">
@@ -610,7 +551,6 @@ export default function Home() {
               <Row>
                 {saleToShow.map((product: any) => {
                   const discountPercentage = product.discount || 0;
-                  
                   return (
                     <Col 
                       key={product.id} 
@@ -672,8 +612,38 @@ export default function Home() {
           </Row>
         </section>
 
-        {/* ========== برندهای معتبر (ثابت) ========== */}
-        <section className="mb-5 brand-section">
+        {/* ========== گالری ۴ عکس دسته‌بندی ========== */}
+        {categoryImages.length > 0 && (
+          <section className="mb-5">
+            <h2 className="h3 fw-bold mb-4">خرید بر اساس دسته‌بندی</h2>
+            <Row>
+              {categoryImages.map((category: any) => (
+                <Col key={category.id} xs={6} md={3} className="mb-4">
+                  <div 
+                    className="category-image-container"
+                    onClick={() => handleCategoryClick(category.link)}
+                    onMouseEnter={() => setHoveredCategory(parseInt(category.id))}
+                    onMouseLeave={() => setHoveredCategory(null)}
+                  >
+                    <div className="category-image-wrapper">
+                      <Image
+                        src={category.imageUrl}
+                        alt={category.name}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                        className="category-image"
+                      />
+                      <div className="category-image-overlay" />
+                    </div>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </section>
+        )}
+
+        {/* ========== برندهای معتبر ========== */}
+        <section className="mb-5">
           <div className="d-flex justify-content-between align-items-center mb-4">
             <h2 className="h3 fw-bold">برندهای معتبر</h2>
             <Link href="/brands" className="text-decoration-none d-flex align-items-center">
@@ -681,61 +651,62 @@ export default function Home() {
               <ArrowLeft className="me-2" />
             </Link>
           </div>
-          
-          <div className="brand-container">
-            <Row className="text-center brand-row">
-              {brands.map((brand) => (
-                <Col key={brand.id} xs={6} sm={4} md={3} lg={2} className="mb-4">
-                  <div 
-                    className="p-3 bg-white rounded shadow-sm d-flex align-items-center justify-content-center position-relative cursor-pointer brand-item"
-                    style={{ 
-                      height: '120px',
-                      transition: 'all 0.3s ease',
-                      cursor: 'pointer',
-                      border: hoveredBrand === brand.id ? '3px solid #dc3545' : '1px solid #dee2e6',
-                      transform: hoveredBrand === brand.id ? 'scale(1.05)' : 'scale(1)'
-                    }}
-                    onClick={() => handleBrandClick(brand)}
-                    onMouseEnter={() => setHoveredBrand(brand.id)}
-                    onMouseLeave={() => setHoveredBrand(null)}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    {/* افکت قرمز رنگ در hover */}
-                    <div 
-                      className="position-absolute top-0 start-0 w-100 h-100 rounded"
-                      style={{
-                        opacity: hoveredBrand === brand.id ? 0.1 : 0,
-                        backgroundColor: '#dc3545',
-                        transition: 'opacity 0.3s ease'
-                      }}
-                    />
-                    
-                    {/* لوگو برند */}
-                    <div style={{ width: '100px', height: '70px', position: 'relative', zIndex: 1 }}>
-                      <Image
-                        src={brand.image}
-                        alt={brand.name}
-                        fill
-                        style={{ objectFit: 'contain' }}
-                      />
-                    </div>
 
-                    {/* نشانگر تعداد محصولات */}
-                    {brand.productCount > 0 && (
-                      <div className="position-absolute top-0 end-0 m-2">
-                        <span className="badge bg-primary rounded-pill" style={{ backgroundColor: '#6a1b9a' }}>
-                          {brand.productCount}
-                        </span>
-                      </div>
-                    )}
+          <Row className="text-center">
+            {brands.map((brand) => (
+              <Col key={brand.id} xs={6} sm={4} md={3} lg={2} className="mb-4">
+                <div 
+                  className="p-3 bg-white rounded shadow-sm d-flex align-items-center justify-content-center position-relative cursor-pointer"
+                  style={{ 
+                    height: '120px',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer',
+                    border: hoveredBrand === brand.id ? '3px solid #dc3545' : '1px solid #dee2e6',
+                    transform: hoveredBrand === brand.id ? 'scale(1.05)' : 'scale(1)'
+                  }}
+                  onClick={() => handleBrandClick(brand)}
+                  onMouseEnter={() => setHoveredBrand(brand.id)}
+                  onMouseLeave={() => setHoveredBrand(null)}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div 
+                    className="position-absolute top-0 start-0 w-100 h-100 rounded"
+                    style={{
+                      opacity: hoveredBrand === brand.id ? 0.1 : 0,
+                      backgroundColor: '#dc3545',
+                      transition: 'opacity 0.3s ease'
+                    }}
+                  />
+                  
+                  <div style={{ width: '100px', height: '70px', position: 'relative', zIndex: 1 }}>
+                    <Image
+                      src={brand.image}
+                      alt={brand.name}
+                      fill
+                      style={{ objectFit: 'contain' }}
+                    />
                   </div>
-                  <p className="mt-2 fw-bold small">{brand.name}</p>
-                </Col>
-              ))}
-            </Row>
-          </div>
+
+                  {brand.productCount > 0 && (
+                    <div className="position-absolute top-0 end-0 m-2">
+                      <span className="badge bg-primary rounded-pill" style={{ backgroundColor: '#6a1b9a' }}>
+                        {brand.productCount}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <p className="mt-2 fw-bold small">{brand.name}</p>
+              </Col>
+            ))}
+          </Row>
         </section>
+
+        {/* ========== پرفروش‌ترین کالاها ========== */}
+        <BestSellers />
+
+        {/* ========== دسته‌بندی‌های ویژه ========== */}
+        <CategorySections />
 
         {/* ========== ویژگی‌های فروشگاه ========== */}
         <section className="py-5 border-top">
@@ -783,7 +754,6 @@ export default function Home() {
         </section>
       </Container>
       
-      {/* ========== فوتر ========== */}
       <Footer />
       
       <style jsx global>{`
@@ -797,10 +767,29 @@ export default function Home() {
         
         .product-card-wrapper {
           transition: all 0.3s ease;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
         }
         
         .product-card-wrapper:hover {
           z-index: 10;
+        }
+        
+        .product-card-wrapper :global(.card) {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .product-card-wrapper :global(.card-body) {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .product-card-wrapper :global(.card-body > div:last-child) {
+          margin-top: auto;
         }
         
         .d-flex.gap-3 {
@@ -826,62 +815,56 @@ export default function Home() {
           background-color: #6a1b9a !important;
         }
 
-        /* ========== استایل‌های بخش برندهای ثابت ========== */
-        .brand-section {
+        /* ========== استایل گالری دسته‌بندی‌ها ========== */
+        .category-image-container {
           position: relative;
-          background: white;
-          z-index: 5;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          border-radius: 10px;
-        }
-
-        .brand-container {
           width: 100%;
+          height: 200px;
+          border-radius: 12px;
+          overflow: hidden;
+          cursor: pointer;
           transition: all 0.3s ease;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .brand-row {
-          display: flex;
-          flex-wrap: wrap;
-          margin-right: -15px;
-          margin-left: -15px;
+        .category-image-container:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 25px rgba(106, 27, 154, 0.3);
+          z-index: 10;
         }
 
-        .brand-item {
+        .category-image-wrapper {
+          position: relative;
           width: 100%;
-          transition: all 0.3s ease;
-          background: white;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          height: 100%;
         }
 
-        .brand-item:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 25px rgba(106, 27, 154, 0.2) !important;
+        .category-image {
+          object-fit: cover !important;
+          transition: transform 0.5s ease !important;
         }
 
-        /* برای اطمینان از ثابت ماندن در اسکرول */
-        .container {
-          position: relative;
+        .category-image-container:hover .category-image {
+          transform: scale(1.1);
         }
 
-        /* اطمینان از اینکه بخش برندها در جای خود باقی می‌ماند */
-        section.mb-5.brand-section {
-          position: relative;
-          overflow: visible;
-        }
-
-        /* افکت hover برای برندها */
-        .brand-item .position-absolute {
+        .category-image-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to bottom, rgba(106, 27, 154, 0), rgba(106, 27, 154, 0.3));
+          opacity: 0;
+          transition: opacity 0.3s ease;
           pointer-events: none;
         }
 
-        /* استایل ریسپانسیو برای موبایل */
+        .category-image-container:hover .category-image-overlay {
+          opacity: 1;
+        }
+
         @media (max-width: 768px) {
-          .brand-section {
-            padding: 15px 0;
-          }
-          
           .brand-item {
             height: 100px !important;
           }
@@ -889,6 +872,27 @@ export default function Home() {
           .brand-item div[style*="width: 100px"] {
             width: 70px !important;
             height: 50px !important;
+          }
+
+          .category-image-container {
+            height: 150px;
+          }
+          
+          .display-3 {
+            font-size: 2.5rem !important;
+          }
+          
+          .lead.fs-3 {
+            font-size: 1.2rem !important;
+          }
+          
+          .position-relative[style*="height: 700px"] {
+            height: 400px !important;
+          }
+          
+          .btn-lg {
+            padding: 0.5rem 1rem !important;
+            font-size: 1rem !important;
           }
         }
       `}</style>
