@@ -16,7 +16,7 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata = {
-  title: 'کوانتوم شاپ',
+  title: 'Quantom Shop',
   description: 'فروشگاه اینترنتی کوانتوم شاپ',
 };
 

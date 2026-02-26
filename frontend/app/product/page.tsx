@@ -102,7 +102,7 @@ export default function ProductsPage() {
 
   const getBrandName = (brandKey: string): string => {
     const brandNames: { [key: string]: string } = {
-      'apple': 'اپل',
+      'apple': 'اظل',
       'samsung': 'سامسونگ',
       'sony': 'سونی',
       'lg': 'الجی',

@@ -64,7 +64,7 @@ router.post('/avatar', upload.single('avatar'), (req, res) => {
   }
 });
 
-// Route آپلود چندین فایل (اختیاری)
+// Route آپلود چندین فایل
 router.post('/multiple', upload.array('files', 5), (req, res) => {
   try {
     if (!req.files || req.files.length === 0) {

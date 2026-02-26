@@ -87,18 +87,18 @@ export default function Home() {
   ];
 
   const brands = [
-    { id: 1, image: '/images/products/app.webp', name: 'اپل', nameEn: 'apple', productCount: 0 },
-    { id: 2, image: '/images/products/sam.webp', name: 'سامسونگ', nameEn: 'samsung', productCount: 0 },
-    { id: 3, image: '/images/products/so.webp', name: 'سونی', nameEn: 'sony', productCount: 0 },
-    { id: 4, image: '/images/products/lg.webp', name: 'الجی', nameEn: 'lg', productCount: 0 },
-    { id: 5, image: '/images/products/haylou.webp', name: 'هایلو', nameEn: 'haylou', productCount: 0 },
-    { id: 6, image: '/images/products/jbl.webp', name: 'جی‌بی‌ال', nameEn: 'jbl', productCount: 0 },
-    { id: 7, image: '/images/products/noki.webp', name: 'نوکیا', nameEn: 'nokia', productCount: 0 },
-    { id: 8, image: '/images/products/tp.webp', name: 'تی‌پی‌لینک', nameEn: 'tp-link', productCount: 0 },
-    { id: 9, image: '/images/products/tsco.webp', name: 'تسکو', nameEn: 'tesco', productCount: 0 },
-    { id: 10, image: '/images/products/anker.webp', name: 'انکر', nameEn: 'anker', productCount: 0 },
-    { id: 11, image: '/images/products/as.webp', name: 'ایسر', nameEn: 'acer', productCount: 0 },
-    { id: 12, image: '/images/products/as.webp', name: 'ایسوس', nameEn: 'asus', productCount: 0 }
+    { id: 1, image: '/images/products/app.webp', nameEn: 'apple', productCount: 0 },
+    { id: 2, image: '/images/products/sam.webp', nameEn: 'samsung', productCount: 0 },
+    { id: 3, image: '/images/products/so.webp', nameEn: 'sony', productCount: 0 },
+    { id: 4, image: '/images/products/lg.webp', nameEn: 'lg', productCount: 0 },
+    { id: 5, image: '/images/products/haylou.webp', nameEn: 'haylou', productCount: 0 },
+    { id: 6, image: '/images/products/jbl.webp',  nameEn: 'jbl', productCount: 0 },
+    { id: 7, image: '/images/products/noki.webp', nameEn: 'nokia', productCount: 0 },
+    { id: 8, image: '/images/products/tp.webp', nameEn: 'tp-link', productCount: 0 },
+    { id: 9, image: '/images/products/tsco.webp',  nameEn: 'tesco', productCount: 0 },
+    { id: 10, image: '/images/products/anker.webp', nameEn: 'anker', productCount: 0 },
+    { id: 11, image: '/images/products/as.webp',  nameEn: 'acer', productCount: 0 },
+    { id: 12, image: '/images/products/as.webp',  nameEn: 'asus', productCount: 0 }
   ];
 
   useEffect(() => {
