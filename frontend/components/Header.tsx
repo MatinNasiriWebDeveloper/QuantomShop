@@ -206,7 +206,7 @@ export default function Header() {
   const [showCategoryModal, setShowCategoryModal] = useState(false);
   const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
   const [selectedMainCategory, setSelectedMainCategory] = useState<number | null>(null);
-  
+ 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const cartPopupRef = useRef<HTMLDivElement>(null);
@@ -972,7 +972,7 @@ export default function Header() {
                 <div className="d-flex align-items-center gap-3 justify-content-center justify-content-lg-end">
                   
                   <Nav className="d-flex flex-row gap-2">
-                    <Nav.Link href="/" className="text-white px-2">خانه</Nav.Link>
+                    <Nav.Link href="/" className="text-white px-2"></Nav.Link>
                     <Nav.Link href="/products" className="text-white px-2">محصولات</Nav.Link>
                     <Nav.Link href="/about" className="text-white px-2">درباره ما</Nav.Link>
                   </Nav>
@@ -1217,12 +1217,25 @@ export default function Header() {
               <span>خرید اعتباری</span>
             </Link>
 
+            <Link href="/Chance_Product" className='toolbar-link'>
+                <Cart size={18} color="#6a1b9a" />
+                <span>گردونه شانس</span>
+            </Link>
+
             <div className="toolbar-divider"></div>
 
             <Link href="/support" className="toolbar-link">
               <QuestionCircle size={18} color="#6a1b9a" />
               <span>سوالی دارید؟</span>
             </Link>
+
+            <div className="toolbar-divider"></div>
+                    
+            <Link href="/wallet" className="toolbar-link">
+                  <Wallet2 size={18} color='#6a1b9a'/>
+                  <span>کیف پول</span>
+            </Link>
+
           </div>
         </Container>
       </div>

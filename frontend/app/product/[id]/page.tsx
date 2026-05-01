@@ -191,12 +191,12 @@ export default function ProductPage() {
           {/* تصویر محصول */}
           <Col lg={6} className="mb-4">
             <Card className="border-0 shadow-sm">
-              <div className="position-relative" style={{ height: '400px', backgroundColor: '#f8f9fa' }}>
+              <div className="position-relative" style={{ height: '200px' ,  backgroundColor: '#f8f9fa' }}>
                 <Image
                   src={images[0]}
                   alt={product.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 150vw"
                   style={{ objectFit: 'contain' }}
                   className="p-3"
                   priority
@@ -260,6 +260,19 @@ export default function ProductPage() {
               <div className="mb-4">
                 <label className="fw-bold mb-2">تعداد:</label>
                 <div className="d-flex align-items-center gap-3">
+                <Button 
+                    variant="outline-secondary" 
+                    size="sm"
+                    onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
+                    disabled={quantity >= product.stock}
+                    style={{ width: '32px', height: '32px', padding: 0 }}
+                  >
+
+                    +
+                  </Button>
+                  <span className="fs-5 fw-bold">{quantity}</span>
+
+
                   <Button 
                     variant="outline-secondary" 
                     size="sm"
@@ -267,17 +280,8 @@ export default function ProductPage() {
                     disabled={quantity <= 1}
                     style={{ width: '32px', height: '32px', padding: 0 }}
                   >
+
                     -
-                  </Button>
-                  <span className="fs-5 fw-bold">{quantity}</span>
-                  <Button 
-                    variant="outline-secondary" 
-                    size="sm"
-                    onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
-                    disabled={quantity >= product.stock}
-                    style={{ width: '32px', height: '32px', padding: 0 }}
-                  >
-                    +
                   </Button>
                   <span className="text-muted me-3">از {product.stock} عدد</span>
                 </div>

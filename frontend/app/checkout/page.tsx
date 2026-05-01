@@ -45,9 +45,9 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
 
   // نقاط پیشنهادی (شبیه‌سازی جستجو)
   const suggestions = [
-    { id: 1, name: 'تهران، خیابان ولیعصر، پلاک ۱۲۳', lat: 35.7219, lng: 51.3347 },
-    { id: 2, name: 'تهران، خیابان انقلاب، خیابان دانشگاه، پلاک ۴۵', lat: 35.7020, lng: 51.3950 },
-    { id: 3, name: 'تهران، خیابان شریعتی، خیابان ظفر، پلاک ۸۹', lat: 35.7640, lng: 51.4430 },
+    { id: 1, name: 'تهران، خیابان ولیعصر، پلاک 123', lat: 35.7219, lng: 51.3347 },
+    { id: 2, name: 'تهران، خیابان انقلاب، خیابان دانشگاه، پلاک 45', lat: 35.7020, lng: 51.3950 },
+    { id: 3, name: 'تهران، خیابان شریعتی، خیابان ظفر، پلاک 89', lat: 35.7640, lng: 51.4430 },
   ];
 
   const filteredSuggestions = suggestions.filter(s => 
@@ -144,7 +144,7 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
                 className="py-3 ps-5 rounded-3 border-2"
                 style={{ borderColor: '#e0e0e0' }}
               />
-              <Search className="position-absolute top-50 start-0 translate-middle-y ms-3" size={20} color="#6a1b9a" />
+              <Search className="position-absolute top-50 start-0 translate-middle-y ms-3" size={40} color="#6a1b9a" />
             </div>
 
             {/* نقشه (شبیه‌سازی شده) */}
@@ -161,7 +161,6 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
               <div className="text-center">
                 <GeoAlt size={48} className="text-primary mb-2" />
                 <p className="text-muted mb-0">برای انتخاب آدرس روی نقشه کلیک کنید</p>
-                <p className="text-muted small">(در پروژه واقعی از Google Maps استفاده می‌شود)</p>
               </div>
               
               {/* نشانگر موقعیت */}
@@ -218,7 +217,7 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
                     name="plaque"
                     value={addressDetails.plaque}
                     onChange={handleInputChange}
-                    placeholder="۱۲۳" 
+                    placeholder="123" 
                     className="py-2" 
                   />
                 </Col>
@@ -229,7 +228,7 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
                     name="unit"
                     value={addressDetails.unit}
                     onChange={handleInputChange}
-                    placeholder="۵" 
+                    placeholder="5" 
                     className="py-2" 
                   />
                 </Col>
@@ -243,7 +242,7 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
                     name="floor"
                     value={addressDetails.floor}
                     onChange={handleInputChange}
-                    placeholder="۳" 
+                    placeholder="3" 
                     className="py-2" 
                   />
                 </Col>
@@ -254,7 +253,7 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
                     name="postalCode"
                     value={addressDetails.postalCode}
                     onChange={handleInputChange}
-                    placeholder="۱۲۳۴۵۶۷۸۹۰" 
+                    placeholder="1234567890" 
                     className="py-2" 
                   />
                 </Col>
@@ -279,7 +278,7 @@ const MapModal = ({ show, onHide, onSelectAddress }: {
                   name="recipientPhone"
                   value={addressDetails.recipientPhone}
                   onChange={handleInputChange}
-                  placeholder="۰۹۱۲۳۴۵۶۷۸۹" 
+                  placeholder="09123456789" 
                   className="py-2" 
                 />
               </Form.Group>
@@ -375,9 +374,9 @@ export default function CheckoutPage() {
 
   // ساعت‌های ارسال (3 بازه زمانی)
   const deliveryTimes = [
-    { id: 1, time: '۹ صبح تا ۱۲ ظهر', start: '09:00', end: '12:00' },
-    { id: 2, time: '۱۲ ظهر تا ۱۸ عصر', start: '12:00', end: '18:00' },
-    { id: 3, time: '۱۸ عصر تا ۲۲ شب', start: '18:00', end: '22:00' },
+    { id: 1, time: '9 صبح تا 12 ظهر', start: '09:00', end: '12:00' },
+    { id: 2, time: '12 ظهر تا 18 عصر', start: '12:00', end: '18:00' },
+    { id: 3, time: '18 عصر تا 22 شب', start: '18:00', end: '22:00' },
   ];
 
   useEffect(() => {
@@ -474,7 +473,7 @@ export default function CheckoutPage() {
                   </Col>
                   <Col md={6} className="mb-3">
                     <Form.Label className="text-muted small">شماره موبایل</Form.Label>
-                    <p className="fw-bold">{user?.phone || '۰۹۱۲۳۴۵۶۷۸۹'}</p>
+                    <p className="fw-bold">{user?.phone || '09123456789'}</p>
                   </Col>
                 </Row>
               </Card.Body>
@@ -593,7 +592,7 @@ export default function CheckoutPage() {
                 <div className="mb-4" style={{ maxHeight: '300px', overflowY: 'auto' }}>
                   {items.map((item) => (
                     <div key={item.id} className="d-flex gap-3 mb-3 pb-3 border-bottom">
-                      <div style={{ width: '70px', height: '70px', position: 'relative' }}>
+                      <div style={{ width: '130px', height: '80px', position: 'relative' }}>
                         <Image
                           src={item.imageUrl}
                           alt={item.name}

@@ -12,7 +12,7 @@ const appleProducts = [
     brand: 'apple',
     discount: 5,
     stock: 10,
-    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/iphone14promax.jpg'
+    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/f4c0e5f4199abda603494b54e0655cbd0447405f_1765624240.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90'
   },
   {
     name: 'گوشی موبایل اپل آیفون ۱۴ پرو ۵۱۲ گیگابایت',
@@ -22,7 +22,7 @@ const appleProducts = [
     brand: 'apple',
     discount: 7,
     stock: 12,
-    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/iphone14pro.jpg'
+    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/f4c0e5f4199abda603494b54e0655cbd0447405f_1765624240.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90'
   },
   {
     name: 'گوشی موبایل اپل آیفون ۱۴ پلاس ۲۵۶ گیگابایت',
@@ -32,7 +32,7 @@ const appleProducts = [
     brand: 'apple',
     discount: 8,
     stock: 15,
-    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/iphone14plus.jpg'
+    imageUrl: 'https://dkstatics-public.digikala.com/digikala-products/f4c0e5f4199abda603494b54e0655cbd0447405f_1765624240.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/format,webp/quality,q_90'
   },
   {
     name: 'گوشی موبایل اپل آیفون ۱۴ ۱۲۸ گیگابایت',

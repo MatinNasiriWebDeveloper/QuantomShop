@@ -41,7 +41,7 @@ async function createProductsForBrand(brand, count = 20) {
       price: price,
       description: `${brand.name} ${category} با کیفیت عالی و طراحی منحصر به فرد. مناسب برای کاربری روزمره و حرفه‌ای.`,
       category: category,
-      brand: brand.nameEn,
+      brand: brand.nameEn,z
       discount: discount,
       stock: stock,
       imageUrl: `https://via.placeholder.com/300x300?text=${brand.name}+${i}`,

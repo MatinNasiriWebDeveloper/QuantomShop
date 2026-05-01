@@ -450,7 +450,7 @@ export default function ProductsPage() {
             className="p-0 me-2 text-decoration-none"
             style={{ color: '#6a1b9a' }}
           >
-            <ArrowLeft size={20} />
+          <ArrowLeft size={20}/>
           </Button>
           <Link href="/" className="text-decoration-none text-muted">خانه</Link>
           <span className="mx-2 text-muted">/</span>
@@ -825,7 +825,7 @@ export default function ProductsPage() {
                   <Col key={product.id} xs={12} sm={viewMode === 'grid' ? 6 : 12} md={viewMode === 'grid' ? 6 : 12} lg={viewMode === 'grid' ? 4 : 12} className="mb-4">
                     <Card className={`h-100 border-0 shadow-sm product-card ${viewMode === 'list' ? 'flex-row' : ''}`}>
                       <Link href={`/product/${product.id}`} className={`text-decoration-none ${viewMode === 'list' ? 'col-4' : ''}`}>
-                        <div className="position-relative" style={{ height: viewMode === 'list' ? '150px' : '200px' }}>
+                        <div className="position-relative" style={{ height: viewMode === 'list' ? '150px' : '300px' }}>
                           <Image
                             src={product.imageUrl || '/images/placeholder.jpg'}
                             alt={product.name}

@@ -9,8 +9,6 @@ import {
   Trash, 
   ArrowLeft, 
   Cart as CartIcon,
-  Plus,
-  Dash,
   Truck,
   ShieldCheck,
   Clock
@@ -19,7 +17,6 @@ import { useCart } from '../context/CartContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { showToast } from '@/components/ToastProvider';
-import toast from 'react-hot-toast';
 
 export default function CartPage() {
   const router = useRouter();
@@ -79,7 +76,6 @@ export default function CartPage() {
     return price.toLocaleString('fa-IR') + ' تومان';
   };
 
-  // حالت سبد خالی
   if (items.length === 0) {
     return (
       <div>
@@ -125,7 +121,6 @@ export default function CartPage() {
     );
   }
 
-  // حالت سبد پر
   return (
     <div>
       <Header />
@@ -149,15 +144,15 @@ export default function CartPage() {
         <Row>
           <Col lg={8}>
             <Card className="border-0 shadow-sm mb-4">
-              <Card.Body>
-                <Table responsive className="align-middle">
+              <Card.Body className="p-0">
+                <Table responsive className="align-middle mb-0">
                   <thead>
                     <tr>
-                      <th>محصول</th>
-                      <th>قیمت واحد</th>
-                      <th>تعداد</th>
-                      <th>جمع</th>
-                      <th></th>
+                      <th style={{ width: '45%' }}>محصول</th>
+                      <th style={{ width: '15%' }}>قیمت واحد</th>
+                      <th style={{ width: '20%' }}>تعداد</th>
+                      <th style={{ width: '15%' }}>جمع</th>
+                      <th style={{ width: '5%' }}></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -165,14 +160,21 @@ export default function CartPage() {
                       <tr key={item.id}>
                         <td>
                           <div className="d-flex align-items-center gap-3">
-                            <div style={{ width: '80px', height: '80px', position: 'relative' }}>
-                              <Image
-                                src={item.imageUrl}
-                                alt={item.name}
-                                fill
-                                sizes="80px"
-                                style={{ objectFit: 'cover', borderRadius: '8px' }}
-                              />
+                            <div className="position-relative" style={{ width: '100px', height: '100px', flexShrink: 0, backgroundColor: '#f5f5f5', borderRadius: '8px', overflow: 'hidden' }}>
+                              {item.imageUrl ? (
+                                <Image
+                                  src={item.imageUrl}
+                                  alt={item.name}
+                                  fill
+                                  sizes="100px"
+                                  style={{ objectFit: 'contain' }}
+                                  priority={false}
+                                />
+                              ) : (
+                                <div className="w-100 h-100 d-flex align-items-center justify-content-center bg-light">
+                                  <CartIcon size={30} className="text-muted" />
+                                </div>
+                              )}
                             </div>
                             <div>
                               <Link 
@@ -193,11 +195,11 @@ export default function CartPage() {
                             <Button
                               variant="outline-secondary"
                               size="sm"
-                              onClick={() => handleQuantityChange(item.id, item.quantity - 1, item.stock)}
-                              disabled={item.quantity <= 1}
+                              onClick={() => handleQuantityChange(item.id, item.quantity + 1, item.stock)}
+                              disabled={item.quantity >= item.stock}
                               style={{ width: '32px', height: '32px', padding: 0 }}
                             >
-                              <Dash size={16} />
+                              <div className='fw-bold'>+</div>
                             </Button>
                             <Form.Control
                               type="number"
@@ -215,11 +217,11 @@ export default function CartPage() {
                             <Button
                               variant="outline-secondary"
                               size="sm"
-                              onClick={() => handleQuantityChange(item.id, item.quantity + 1, item.stock)}
-                              disabled={item.quantity >= item.stock}
+                              onClick={() => handleQuantityChange(item.id, item.quantity - 1, item.stock)}
+                              disabled={item.quantity <= 1}
                               style={{ width: '32px', height: '32px', padding: 0 }}
                             >
-                              <Plus size={16} />
+                              <div className='fw-bold'>-</div>
                             </Button>
                           </div>
                         </td>
@@ -240,7 +242,7 @@ export default function CartPage() {
                   </tbody>
                 </Table>
 
-                <div className="d-flex justify-content-between mt-3">
+                <div className="d-flex justify-content-between p-3 border-top">
                   <Button
                     variant="outline-danger"
                     onClick={handleClearCart}

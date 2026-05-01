@@ -41,10 +41,12 @@ export default function ProductCard({
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : product.discount || 0;
 
+
+
   return (
     <Link href={`/product/${product.id}`} className="text-decoration-none">
-      <Card className="h-100 border-0" style={{ cursor: 'pointer' }}>
-        <div className="position-relative" style={{ height: '200px' }}>
+      <Card className="h-400 border-0" style={{ cursor: 'pointer' }}>
+        <div className="position-relative" style={{ height: '200px' , width: '180px' }}>
           <Image
             src={product.imageUrl || '/images/placeholder.jpg'}
             alt={product.name}

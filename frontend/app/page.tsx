@@ -1,12 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import ProductCard from '@/components/ProductCard';
+import { Container, Row, Col, Button, Card, Badge } from 'react-bootstrap';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import { ArrowLeft, ChevronRight, ChevronLeft } from 'react-bootstrap-icons';
+import { ArrowLeft, ChevronRight, ChevronLeft, Heart } from 'react-bootstrap-icons';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useQuery } from '@apollo/client';
@@ -19,12 +18,118 @@ import stoneImage from "../public/images/banners/123.png"
 loadDevMessages();
 loadErrorMessages();
 
+function ProductCard({ product, showBadge = false, badgeText = '', badgeColor = 'primary', priceColor = 'text-dark' }) {
+  const [imgError, setImgError] = useState(false);
+  
+  const getImageSrc = () => {
+    if (imgError) return '/images/placeholder.jpg';
+    if (product.image) return product.image;
+    if (product.imageUrl) return product.imageUrl;
+    if (product.images && product.images.length > 0) return product.images[0];
+    if (product.mainImage) return product.mainImage;
+    return '/images/placeholder.jpg';
+  };
+
+  return (
+    <Card className="h-100 border-0 shadow-sm product-card">
+      <div className="position-relative">
+        <Link href={`/product/${product.id}`}>
+          <div className="product-image-wrapper">
+            <Image
+              src={getImageSrc()}
+              alt={product.name || 'محصول'}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              className="product-image"
+              style={{ objectFit: 'contain' }}
+              onError={() => setImgError(true)}
+            />
+          </div>
+        </Link>
+        {showBadge && (
+          <Badge 
+            bg={badgeColor} 
+            className="position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill"
+          >
+            {badgeText}
+          </Badge>
+        )}
+        <button 
+          className="position-absolute bottom-0 end-0 m-2 btn btn-light rounded-circle p-2"
+          style={{ width: '35px', height: '35px', fontSize: '14px' }}
+        >
+          <Heart />
+        </button>
+      </div>
+      
+      <Card.Body className="d-flex flex-column">
+        <Link href={`/product/${product.id}`} className="text-decoration-none">
+          <Card.Title className="h6 mb-2 text-dark">{product.name || 'بدون نام'}</Card.Title>
+        </Link>
+        
+        <div className="mt-auto">
+          {product.discount > 0 ? (
+            <>
+              <div className="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                <span className="h5 mb-0 fw-bold text-danger">
+                  {Math.floor(product.price * (100 - product.discount) / 100).toLocaleString()} تومان
+                </span>
+                <span className="text-muted text-decoration-line-through small">
+                  {product.price?.toLocaleString()} تومان
+                </span>
+              </div>
+              <Badge bg="danger" className="px-2 py-1">
+                {product.discount}% تخفیف
+              </Badge>
+            </>
+          ) : (
+            <div className={`h5 mb-0 fw-bold ${priceColor}`}>
+              {product.price?.toLocaleString() || '0'} تومان
+            </div>
+          )}
+        </div>
+      </Card.Body>
+      
+      <style jsx>{`
+        .product-image-wrapper {
+          position: relative;
+          width: 100%;
+          padding-top: 100%;
+          overflow: hidden;
+          background-color: #f8f9fa;
+        }
+        
+        .product-image {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-image {
+          transform: translate(-50%, -50%) scale(1.05);
+        }
+        
+        @media (min-width: 768px) {
+          .product-image-wrapper {
+            padding-top: 80%;
+          }
+        }
+      `}</style>
+    </Card>
+  );
+}
+
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [hoveredBrand, setHoveredBrand] = useState<number | null>(null);
-  const [hoveredFeatured, setHoveredFeatured] = useState<string | null>(null);
-  const [hoveredSale, setHoveredSale] = useState<string | null>(null);
-  const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
+  const [hoveredBrand, setHoveredBrand] = useState(null);
+  const [hoveredFeatured, setHoveredFeatured] = useState(null);
+  const [hoveredSale, setHoveredSale] = useState(null);
+  const [hoveredCategory, setHoveredCategory] = useState(null);
   const [featuredPage, setFeaturedPage] = useState(0);
   const [salePage, setSalePage] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
@@ -114,7 +219,7 @@ export default function Home() {
     if (productsData?.products) {
       const products = productsData.products;
       brands.forEach(brand => {
-        const count = products.filter((p: any) => 
+        const count = products.filter((p) => 
           p.brand?.toLowerCase() === brand.nameEn.toLowerCase()
         ).length;
         brand.productCount = count;
@@ -151,7 +256,7 @@ export default function Home() {
   const categoryImages = categoriesData?.activeCategoryImages || [];
   
   const featuredProducts = products.slice(0, 8);
-  const onSaleProducts = products.filter((p: any) => p.discount > 0).slice(0, 8);
+  const onSaleProducts = products.filter((p) => p.discount > 0).slice(0, 8);
   
   const totalFeaturedPages = Math.ceil(featuredProducts.length / itemsPerPage);
   const totalSalePages = Math.ceil(onSaleProducts.length / itemsPerPage);
@@ -174,7 +279,7 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
   };
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (index) => {
     setCurrentSlide(index);
   };
 
@@ -194,11 +299,11 @@ export default function Home() {
     setSalePage((prev) => (prev - 1 + totalSalePages) % totalSalePages);
   };
 
-  const handleBrandClick = (brand: any) => {
+  const handleBrandClick = (brand) => {
     router.push(`/products?brand=${brand.nameEn}`);
   };
 
-  const handleCategoryClick = (link: string) => {
+  const handleCategoryClick = (link) => {
     router.push(link);
   };
 
@@ -206,7 +311,6 @@ export default function Home() {
     <div>
       <Header />
       
-      {/* ========== اسلایدر دایره‌ای بالا ========== */}
       <section className="pt-1 pb-1" style={{ backgroundColor: 'white' }}>
         <Container>
           <div className="position-relative">
@@ -286,7 +390,6 @@ export default function Home() {
         </Container>
       </section>
       
-      {/* ========== بخش قهرمانی ========== */}      
       <section className="bg-primary text-white py-5">
         <Container>
           <Row className="align-items-center">
@@ -297,13 +400,8 @@ export default function Home() {
               </p>
               <div className="d-flex gap-3">
                 <Link href="/products">
-                  <button className="btn btn-light btn-lg">
+                  <button className="btn btn-light btn-lg mt-5 mb-5">
                     مشاهده محصولات
-                  </button>
-                </Link>
-                <Link href="/about">
-                  <button className="btn btn-outline-light btn-lg">
-                    درباره ما
                   </button>
                 </Link>
               </div>
@@ -323,7 +421,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ========== اسلایدر اصلی ========== */}
       <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
         <Container>
           <Row className="align-items-center">
@@ -391,167 +488,38 @@ export default function Home() {
       </section>
 
       <Container>
-        {/* ========== محصولات ویژه ========== */}
         <section className="mb-5">
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="h3 fw-bold mt-5">محصولات ویژه</h2>
-            <Link href="/products" className="text-decoration-none d-flex align-items-center">
-              مشاهده همه
-              <ArrowLeft className="me-2" />
-            </Link>
-          </div>
-          
-          <Row className="align-items-center">
-            <Col xs={1} className="d-flex justify-content-center">
-              <Button 
-                variant="outline-primary" 
-                className="rounded-circle d-flex align-items-center justify-content-center border-2"
-                style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
-                onClick={prevFeaturedPage}
-              >
-                <ChevronRight size={24} className="text-primary" />
-              </Button>
-            </Col>
-            
-            <Col xs={10}>
-              <Row>
-                {featuredToShow.map((product: any) => (
-                  <Col 
-                    key={product.id} 
-                    xs={12} 
-                    sm={6} 
-                    md={4} 
-                    lg={3} 
-                    className="mb-4"
-                    onMouseEnter={() => setHoveredFeatured(product.id)}
-                    onMouseLeave={() => setHoveredFeatured(null)}
-                  >
-                    <div 
-                      className="product-card-wrapper position-relative rounded overflow-hidden"
-                      style={{
-                        border: hoveredFeatured === product.id ? '3px solid #0d6efd' : '1px solid #dee2e6',
-                        borderRadius: '10px',
-                        transition: 'all 0.3s ease',
-                        transform: hoveredFeatured === product.id ? 'scale(1.02)' : 'scale(1)',
-                        boxShadow: hoveredFeatured === product.id ? '0 10px 20px rgba(13, 110, 253, 0.2)' : '0 2px 5px rgba(0,0,0,0.1)'
-                      }}
-                    >
-                      <ProductCard 
-                        product={product}
-                        showBadge={true}
-                        badgeText="ویژه"
-                        badgeColor="primary"
-                        priceColor="text-dark"
-                      />
-                    </div>
-                  </Col>
-                ))}
-              </Row>
+          <div 
+            className="p-4 rounded-4"
+            style={{ 
+              backgroundColor: '#f8f3ff', 
+              border: '2px solid #6a1b9a',
+              borderRadius: '20px'
+            }}
+          >
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <h2 className="h3 fw-bold mt-5 text-center flex-grow-1">محصولات ویژه</h2>
+              <Link href="/products" className="text-decoration-none d-flex align-items-center">
+                مشاهده همه
+                <ArrowLeft className="me-2" />
+              </Link>
+            </div>
+
+            <Row className="align-items-center">
+              <Col lg={1} className="d-none d-lg-flex justify-content-center">
+                <Button 
+                  variant="outline-primary" 
+                  className="rounded-circle d-flex align-items-center justify-content-center border-2"
+                  style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
+                  onClick={prevFeaturedPage}
+                >
+                  <ChevronRight size={24} className="text-primary" />
+                </Button>
+              </Col>
               
-              <div className="d-flex justify-content-center gap-2 mt-3">
-                {Array.from({ length: totalFeaturedPages }).map((_, index) => (
-                  <button 
-                    key={index}
-                    className={`btn ${index === featuredPage ? 'btn-primary' : 'btn-outline-primary'} rounded-circle`}
-                    style={{ width: '12px', height: '12px', padding: 0 }}
-                    onClick={() => setFeaturedPage(index)}
-                  >
-                    &nbsp;
-                  </button>
-                ))}
-              </div>
-            </Col>
-            
-            <Col xs={1} className="d-flex justify-content-center">
-              <Button 
-                variant="outline-primary" 
-                className="rounded-circle d-flex align-items-center justify-content-center border-2"
-                style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
-                onClick={nextFeaturedPage}
-              >
-                <ChevronLeft size={24} className="text-primary" />
-              </Button>
-            </Col>
-          </Row>
-          </section>
-          
-          {/* ========== بنر سنگ‌ها - با عنوان جداگانه ========== */}
-          <Container className="my-5" fluid>
-            {/* عنوان و دکمه در بالای عکس */}
-            <Row className="mb-5">
-              <Col className="text-center">
-                <h1 className="display-3 fw-bold mb-3" style={{ color: '#6a1b9a' }}>
-                  سنگ‌های تزئینی
-                </h1>
-                <p className="lead fs-3 text-muted mb-4">
-                  کیفیت عالی، قیمت مناسب، تنوع بی‌نظیر
-                </p>
-                <Link href="/stones">
-                  <Button 
-                    variant="primary" 
-                    size="lg"
-                    className="px-5 py-3 fw-bold"
-                    style={{ 
-                      backgroundColor: '#6a1b9a', 
-                      borderColor: '#6a1b9a',
-                      borderRadius: '50px',
-                      fontSize: '1.2rem'
-                    }}
-                  >
-                    مشاهده محصولات
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
-
-            {/* عکس با نمایش کامل و بدون حاشیه */}
-            <Row className="g-0">
-              <Col>
-                <div className="position-relative w-100" style={{ height: '600px', backgroundColor: '#f5f5f5', overflow: 'hidden' }}>
-                  <Image
-                    src={stoneImage}
-                    alt="سنگ‌های تزئینی"
-                    fill
-                    sizes="100vw"
-                    className="rounded-4 shadow-lg"
-                    style={{ 
-                      objectFit: 'cover',
-                      objectPosition: 'center'
-                    }}
-                    priority
-                  />
-                </div>
-              </Col>
-            </Row>
-          </Container>
-
-        {/* ========== تخفیف‌های ویژه ========== */}
-        <section className="mb-5">
-          <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="h3 fw-bold">تخفیف‌های ویژه</h2>
-            <Link href="/products?filter=discount" className="text-decoration-none d-flex align-items-center">
-              مشاهده همه
-              <ArrowLeft className="me-2" />
-            </Link>
-          </div>
-          
-          <Row className="align-items-center">
-            <Col xs={1} className="d-flex justify-content-center">
-              <Button 
-                variant="outline-danger" 
-                className="rounded-circle d-flex align-items-center justify-content-center border-2"
-                style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
-                onClick={prevSalePage}
-              >
-                <ChevronRight size={24} className="text-danger" />
-              </Button>
-            </Col>
-            
-            <Col xs={10}>
-              <Row>
-                {saleToShow.map((product: any) => {
-                  const discountPercentage = product.discount || 0;
-                  return (
+              <Col xs={12} lg={10}>
+                <Row className="g-4">
+                  {featuredToShow.map((product) => (
                     <Col 
                       key={product.id} 
                       xs={12} 
@@ -559,65 +527,206 @@ export default function Home() {
                       md={4} 
                       lg={3} 
                       className="mb-4"
-                      onMouseEnter={() => setHoveredSale(product.id)}
-                      onMouseLeave={() => setHoveredSale(null)}
+                      onMouseEnter={() => setHoveredFeatured(product.id)}
+                      onMouseLeave={() => setHoveredFeatured(null)}
                     >
                       <div 
                         className="product-card-wrapper position-relative rounded overflow-hidden"
                         style={{
-                          border: hoveredSale === product.id ? '3px solid #dc3545' : '1px solid #dee2e6',
+                          border: hoveredFeatured === product.id ? '3px solid #0d6efd' : '1px solid #dee2e6',
                           borderRadius: '10px',
                           transition: 'all 0.3s ease',
-                          transform: hoveredSale === product.id ? 'scale(1.02)' : 'scale(1)',
-                          boxShadow: hoveredSale === product.id ? '0 10px 20px rgba(220, 53, 69, 0.2)' : '0 2px 5px rgba(0,0,0,0.1)'
+                          transform: hoveredFeatured === product.id ? 'scale(1.02)' : 'scale(1)',
+                          boxShadow: hoveredFeatured === product.id ? '0 10px 20px rgba(13, 110, 253, 0.2)' : '0 2px 5px rgba(0,0,0,0.1)'
                         }}
                       >
                         <ProductCard 
                           product={product}
                           showBadge={true}
-                          badgeText={`${discountPercentage}% تخفیف`}
-                          badgeColor="danger"
-                          priceColor="text-danger"
+                          badgeText="ویژه"
+                          badgeColor="primary"
+                          priceColor="text-dark"
                         />
                       </div>
                     </Col>
-                  );
-                })}
-              </Row>
+                  ))}
+                </Row>
+                
+                <div className="d-flex justify-content-center gap-2 mt-3">
+                  {Array.from({ length: totalFeaturedPages }).map((_, index) => (
+                    <button 
+                      key={index}
+                      className={`btn ${index === featuredPage ? 'btn-primary' : 'btn-outline-primary'} rounded-circle`}
+                      style={{ width: '12px', height: '12px', padding: 0 }}
+                      onClick={() => setFeaturedPage(index)}
+                    >
+                      &nbsp;
+                    </button>
+                  ))}
+                </div>
+              </Col>
               
-              <div className="d-flex justify-content-center gap-2 mt-3">
-                {Array.from({ length: totalSalePages }).map((_, index) => (
-                  <button 
-                    key={index}
-                    className={`btn ${index === salePage ? 'btn-danger' : 'btn-outline-danger'} rounded-circle`}
-                    style={{ width: '12px', height: '12px', padding: 0 }}
-                    onClick={() => setSalePage(index)}
-                  >
-                    &nbsp;
-                  </button>
-                ))}
-              </div>
-            </Col>
-            
-            <Col xs={1} className="d-flex justify-content-center">
-              <Button 
-                variant="outline-danger" 
-                className="rounded-circle d-flex align-items-center justify-content-center border-2"
-                style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
-                onClick={nextSalePage}
-              >
-                <ChevronLeft size={24} className="text-danger" />
-              </Button>
+              <Col lg={1} className="d-none d-lg-flex justify-content-center">
+                <Button 
+                  variant="outline-primary" 
+                  className="rounded-circle d-flex align-items-center justify-content-center border-2"
+                  style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
+                  onClick={nextFeaturedPage}
+                >
+                  <ChevronLeft size={24} className="text-primary" />
+                </Button>
+              </Col>
+            </Row>
+          </div>
+        </section>  
+
+        <Container className="my-5" fluid>
+          <Row className="mb-5">
+            <Col className="text-center">
+              <h1 className="display-3 fw-bold mb-3" style={{ color: '#6a1b9a' }}>
+                سنگ‌های تزئینی
+              </h1>
+              <p className="lead fs-3 text-muted mb-4">
+                کیفیت عالی، قیمت مناسب، تنوع بی‌نظیر
+              </p>
+              <Link href="/stones">
+                <Button 
+                  variant="primary" 
+                  size="lg"
+                  className="px-5 py-3 fw-bold"
+                  style={{ 
+                    backgroundColor: '#6a1b9a', 
+                    borderColor: '#6a1b9a',
+                    borderRadius: '50px',
+                    fontSize: '1.2rem'
+                  }}
+                >
+                  مشاهده محصولات
+                </Button>
+              </Link>
             </Col>
           </Row>
+
+          <Row className="g-0">
+            <Col>
+              <div className="position-relative w-100" style={{ height: '600px', backgroundColor: '#f5f5f5', overflow: 'hidden' }}>
+                <Image
+                  src={stoneImage}
+                  alt="سنگ‌های تزئینی"
+                  fill
+                  sizes="100vw"
+                  className="rounded-4 shadow-lg"
+                  style={{ 
+                    objectFit: 'cover',
+                    objectPosition: 'center'
+                  }}
+                  priority
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
+        <section className="mb-5">
+          <div 
+            className="p-4 rounded-4"
+            style={{ 
+              backgroundColor: '#f8f3ff', 
+              border: '2px solid #6a1b9a',
+              borderRadius: '20px'
+            }}
+          >
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <h2 className="h3 fw-bold mt-5 text-center flex-grow-1">تخفیف های ویژه</h2>
+              <Link href="/products" className="text-decoration-none d-flex align-items-center">
+                مشاهده همه
+                <ArrowLeft className="me-2" />
+              </Link>
+            </div>
+            
+            <Row className="align-items-center">
+              <Col lg={1} className="d-none d-lg-flex justify-content-center">
+                <Button 
+                  variant="outline-danger" 
+                  className="rounded-circle d-flex align-items-center justify-content-center border-2"
+                  style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
+                  onClick={prevSalePage}
+                >
+                  <ChevronRight size={24} className="text-danger" />
+                </Button>
+              </Col>
+              
+              <Col xs={12} lg={10}>
+                <Row className="g-4">
+                  {saleToShow.map((product) => {
+                    const discountPercentage = product.discount || 0;
+                    return (
+                      <Col 
+                        key={product.id} 
+                        xs={12} 
+                        sm={6} 
+                        md={4} 
+                        lg={3} 
+                        className="mb-4"
+                        onMouseEnter={() => setHoveredSale(product.id)}
+                        onMouseLeave={() => setHoveredSale(null)}
+                      >
+                        <div 
+                          className="product-card-wrapper position-relative rounded overflow-hidden"
+                          style={{
+                            border: hoveredSale === product.id ? '3px solid #dc3545' : '1px solid #dee2e6',
+                            borderRadius: '10px',
+                            transition: 'all 0.3s ease',
+                            transform: hoveredSale === product.id ? 'scale(1.02)' : 'scale(1)',
+                            boxShadow: hoveredSale === product.id ? '0 10px 20px rgba(220, 53, 69, 0.2)' : '0 2px 5px rgba(0,0,0,0.1)'
+                          }}
+                        >
+                          <ProductCard 
+                            product={product}
+                            showBadge={true}
+                            badgeText={`${discountPercentage}% تخفیف`}
+                            badgeColor="danger"
+                            priceColor="text-danger"
+                          />
+                        </div>
+                      </Col>
+                    );
+                  })}
+                </Row>
+                
+                <div className="d-flex justify-content-center gap-2 mt-3">
+                  {Array.from({ length: totalSalePages }).map((_, index) => (
+                    <button 
+                      key={index}
+                      className={`btn ${index === salePage ? 'btn-danger' : 'btn-outline-danger'} rounded-circle`}
+                      style={{ width: '12px', height: '12px', padding: 0 }}
+                      onClick={() => setSalePage(index)}
+                    >
+                      &nbsp;
+                    </button>
+                  ))}
+                </div>
+              </Col>
+              
+              <Col lg={1} className="d-none d-lg-flex justify-content-center">
+                <Button 
+                  variant="outline-danger" 
+                  className="rounded-circle d-flex align-items-center justify-content-center border-2"
+                  style={{ width: '50px', height: '50px', backgroundColor: 'white' }}
+                  onClick={nextSalePage}
+                >
+                  <ChevronLeft size={24} className="text-danger" />
+                </Button>
+              </Col>
+            </Row>
+          </div>
         </section>
 
-        {/* ========== گالری ۴ عکس دسته‌بندی ========== */}
         {categoryImages.length > 0 && (
           <section className="mb-5">
-            <h2 className="h3 fw-bold mb-4">خرید بر اساس دسته‌بندی</h2>
-            <Row>
-              {categoryImages.map((category: any) => (
+            <h2 className="h3 fw-bold mt-5 text-center flex-grow-1 mb-4">خرید بر اساس دسته بندی</h2>
+            <Row className="g-4">
+              {categoryImages.map((category) => (
                 <Col key={category.id} xs={6} md={3} className="mb-4">
                   <div 
                     className="category-image-container"
@@ -642,17 +751,16 @@ export default function Home() {
           </section>
         )}
 
-        {/* ========== برندهای معتبر ========== */}
         <section className="mb-5">
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="h3 fw-bold">برندهای معتبر</h2>
+            <h2 className="h3 fw-bold mt-5 text-center flex-grow-1">برندهای معتبر</h2>
             <Link href="/brands" className="text-decoration-none d-flex align-items-center">
               مشاهده همه
               <ArrowLeft className="me-2" />
             </Link>
           </div>
 
-          <Row className="text-center">
+          <Row className="text-center g-4">
             {brands.map((brand) => (
               <Col key={brand.id} xs={6} sm={4} md={3} lg={2} className="mb-4">
                 <div 
@@ -702,15 +810,12 @@ export default function Home() {
           </Row>
         </section>
 
-        {/* ========== پرفروش‌ترین کالاها ========== */}
         <BestSellers />
 
-        {/* ========== دسته‌بندی‌های ویژه ========== */}
         <CategorySections />
 
-        {/* ========== ویژگی‌های فروشگاه ========== */}
         <section className="py-5 border-top">
-          <Row className="text-center">
+          <Row className="text-center g-4">
             <Col md={3} className="mb-4">
               <div className="p-3">
                 <div className="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
@@ -815,7 +920,6 @@ export default function Home() {
           background-color: #6a1b9a !important;
         }
 
-        /* ========== استایل گالری دسته‌بندی‌ها ========== */
         .category-image-container {
           position: relative;
           width: 100%;

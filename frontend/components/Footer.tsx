@@ -61,7 +61,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-dark text-white pt-5 mt-5" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+    <footer className="bg-6a1b9a text-white fw-bold pt-5 mt-5" dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <Container>
         <Row>
           {/* ستون اول: دسته‌بندی */}
@@ -141,7 +141,7 @@ export default function Footer() {
 
           {/* ستون پنجم: انتخاب زبان و شبکه‌های اجتماعی */}
           <Col md={3} className="mb-4">
-            <h5 className="fw-bold mb-3">زبان سایت</h5>
+            {/* <h5 className="fw-bold mb-3">زبان سایت</h5>
             
             <div className="position-relative mb-4">
               <Dropdown onToggle={() => setShowLangDropdown(!showLangDropdown)}>
@@ -166,7 +166,7 @@ export default function Footer() {
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
-            </div>
+            </div> */}
 
             <h5 className="fw-bold mb-3">شبکه‌های اجتماعی</h5>
             <div className="d-flex gap-3">
