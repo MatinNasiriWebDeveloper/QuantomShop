@@ -68,20 +68,20 @@ export default function LotteryPage() {
     const end = Date.now() + duration;
 
     (function frame() {
-    //   confetti({
-    //     particleCount: 5,
-    //     angle: 60,
-    //     spread: 55,
-    //     origin: { x: 0 },
-    //     colors: ['#6a1b9a', '#ffeb3b', '#ff5722']
-    //   });
-    //   confetti({
-    //     particleCount: 5,
-    //     angle: 120,
-    //     spread: 55,
-    //     origin: { x: 1 },
-    //     colors: ['#6a1b9a', '#ffeb3b', '#ff5722']
-    //   });
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: ['#6a1b9a', '#ffeb3b', '#ff5722']
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: ['#6a1b9a', '#ffeb3b', '#ff5722']
+      });
 
       if (Date.now() < end) {
         requestAnimationFrame(frame);

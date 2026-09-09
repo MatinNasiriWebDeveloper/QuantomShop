@@ -14,14 +14,14 @@ export async function POST(request: Request) {
     });
     
     // بررسی آستانه‌های هشدار
-    const thresholds = {
+    const thresholds: Record<string, number> = {
       LCP: 2500, // Largest Contentful Paint - حداکثر ۲.۵ ثانیه
       FID: 100,  // First Input Delay - حداکثر ۱۰۰ میلی‌ثانیه
       CLS: 0.1,  // Cumulative Layout Shift - حداکثر ۰.۱
       FCP: 1800, // First Contentful Paint - حداکثر ۱.۸ ثانیه
       TTFB: 600, // Time to First Byte - حداکثر ۶۰۰ میلی‌ثانیه
     };
-    
+
     if (thresholds[metric.name] && metric.value > thresholds[metric.name]) {
       console.warn(`⚠️ هشدار: ${metric.name} از حد مجاز فراتر رفت`, {
         value: metric.value,

@@ -1,10 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Badge, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
 import { useParams, useRouter } from 'next/navigation';
-import { useQuery } from '@apollo/client';
-import { GET_PRODUCT_DETAILS } from '@/lib/graphql-queries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
@@ -13,27 +11,22 @@ import { Cart, Heart, Share, ArrowLeft, CheckCircle, Truck, ShieldCheck, Clock }
 import { showToast } from '@/components/ToastProvider';
 import toast from 'react-hot-toast';
 import { useCart } from '../../../app/context/CartContext';
+import { PRODUCTS } from '@/lib/mock-data';
 
 export default function ProductPage() {
   const params = useParams();
   const router = useRouter();
   const productId = params.id as string;
-  
+
   const [quantity, setQuantity] = useState(1);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState<any>(null);
   const [isInCartState, setIsInCartState] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  
+
   const { addToCart, isInCart } = useCart();
-  
-  const { loading, error, data } = useQuery(GET_PRODUCT_DETAILS, {
-    variables: { id: productId },
-    onError: (err) => {
-      console.error('GraphQL Error:', err);
-      showToast.error('خطا در دریافت اطلاعات محصول');
-    }
-  });
+
+  const data = { product: PRODUCTS.find((p) => p.id === productId) ?? null };
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -120,33 +113,6 @@ export default function ProductPage() {
     navigator.clipboard.writeText(window.location.href);
     showToast.info('لینک محصول کپی شد');
   };
-
-  if (loading) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <Spinner animation="border" variant="primary" />
-        <p className="mt-3">در حال بارگذاری محصول...</p>
-      </Container>
-      <Footer />
-    </div>
-  );
-
-  if (error) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <div className="alert alert-danger">
-          <h4>خطا در بارگذاری محصول</h4>
-          <p>{error.message}</p>
-          <Button variant="primary" onClick={() => router.back()} className="mt-3">
-            بازگشت
-          </Button>
-        </div>
-      </Container>
-      <Footer />
-    </div>
-  );
 
   const product = data?.product;
   

@@ -8,26 +8,25 @@ import Link from 'next/link';
 import { ArrowLeft, ChevronRight, ChevronLeft, Heart } from 'react-bootstrap-icons';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useQuery } from '@apollo/client';
-import { GET_PRODUCTS, GET_ACTIVE_CATEGORY_IMAGES } from '@/lib/graphql-queries';
 import CategorySections from '@/components/CategorySections';
 import BestSellers from '@/components/BestSellers';
-import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import stoneImage from "../public/images/banners/123.png"
+import { PRODUCTS, CATEGORY_IMAGES, type Product } from '@/lib/mock-data';
 
-loadDevMessages();
-loadErrorMessages();
+interface ProductCardProps {
+  product: Product;
+  showBadge?: boolean;
+  badgeText?: string;
+  badgeColor?: string;
+  priceColor?: string;
+}
 
-function ProductCard({ product, showBadge = false, badgeText = '', badgeColor = 'primary', priceColor = 'text-dark' }) {
+function ProductCard({ product, showBadge = false, badgeText = '', badgeColor = 'primary', priceColor = 'text-dark' }: ProductCardProps) {
   const [imgError, setImgError] = useState(false);
   
   const getImageSrc = () => {
-    if (imgError) return '/images/placeholder.jpg';
-    if (product.image) return product.image;
-    if (product.imageUrl) return product.imageUrl;
-    if (product.images && product.images.length > 0) return product.images[0];
-    if (product.mainImage) return product.mainImage;
-    return '/images/placeholder.jpg';
+    if (imgError || !product.imageUrl) return '/images/placeholder.jpg';
+    return product.imageUrl;
   };
 
   return (
@@ -126,17 +125,14 @@ function ProductCard({ product, showBadge = false, badgeText = '', badgeColor = 
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [hoveredBrand, setHoveredBrand] = useState(null);
-  const [hoveredFeatured, setHoveredFeatured] = useState(null);
-  const [hoveredSale, setHoveredSale] = useState(null);
-  const [hoveredCategory, setHoveredCategory] = useState(null);
+  const [hoveredBrand, setHoveredBrand] = useState<number | null>(null);
+  const [hoveredFeatured, setHoveredFeatured] = useState<string | null>(null);
+  const [hoveredSale, setHoveredSale] = useState<string | null>(null);
+  const [hoveredCategory, setHoveredCategory] = useState<number | null>(null);
   const [featuredPage, setFeaturedPage] = useState(0);
   const [salePage, setSalePage] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const router = useRouter();
-
-  const { loading: productsLoading, error: productsError, data: productsData } = useQuery(GET_PRODUCTS);
-  const { loading: categoriesLoading, error: categoriesError, data: categoriesData } = useQuery(GET_ACTIVE_CATEGORY_IMAGES);
 
   const itemsPerPage = 4;
 
@@ -192,18 +188,18 @@ export default function Home() {
   ];
 
   const brands = [
-    { id: 1, image: '/images/products/app.webp', nameEn: 'apple', productCount: 0 },
-    { id: 2, image: '/images/products/sam.webp', nameEn: 'samsung', productCount: 0 },
-    { id: 3, image: '/images/products/so.webp', nameEn: 'sony', productCount: 0 },
-    { id: 4, image: '/images/products/lg.webp', nameEn: 'lg', productCount: 0 },
-    { id: 5, image: '/images/products/haylou.webp', nameEn: 'haylou', productCount: 0 },
-    { id: 6, image: '/images/products/jbl.webp',  nameEn: 'jbl', productCount: 0 },
-    { id: 7, image: '/images/products/noki.webp', nameEn: 'nokia', productCount: 0 },
-    { id: 8, image: '/images/products/tp.webp', nameEn: 'tp-link', productCount: 0 },
-    { id: 9, image: '/images/products/tsco.webp',  nameEn: 'tesco', productCount: 0 },
-    { id: 10, image: '/images/products/anker.webp', nameEn: 'anker', productCount: 0 },
-    { id: 11, image: '/images/products/as.webp',  nameEn: 'acer', productCount: 0 },
-    { id: 12, image: '/images/products/as.webp',  nameEn: 'asus', productCount: 0 }
+    { id: 1, image: '/images/products/app.webp', name: 'اپل', nameEn: 'apple', productCount: 0 },
+    { id: 2, image: '/images/products/sam.webp', name: 'سامسونگ', nameEn: 'samsung', productCount: 0 },
+    { id: 3, image: '/images/products/so.webp', name: 'سونی', nameEn: 'sony', productCount: 0 },
+    { id: 4, image: '/images/products/lg.webp', name: 'ال‌جی', nameEn: 'lg', productCount: 0 },
+    { id: 5, image: '/images/products/haylou.webp', name: 'هایلو', nameEn: 'haylou', productCount: 0 },
+    { id: 6, image: '/images/products/jbl.webp', name: 'جی‌بی‌ال', nameEn: 'jbl', productCount: 0 },
+    { id: 7, image: '/images/products/noki.webp', name: 'نوکیا', nameEn: 'nokia', productCount: 0 },
+    { id: 8, image: '/images/products/tp.webp', name: 'تی‌پی‌لینک', nameEn: 'tp-link', productCount: 0 },
+    { id: 9, image: '/images/products/tsco.webp', name: 'تسکو', nameEn: 'tesco', productCount: 0 },
+    { id: 10, image: '/images/products/anker.webp', name: 'انکر', nameEn: 'anker', productCount: 0 },
+    { id: 11, image: '/images/products/as.webp', name: 'ایسر', nameEn: 'acer', productCount: 0 },
+    { id: 12, image: '/images/products/as.webp', name: 'ایسوس', nameEn: 'asus', productCount: 0 }
   ];
 
   useEffect(() => {
@@ -215,46 +211,18 @@ export default function Home() {
     }
   }, [isHovering]);
 
+  const products = PRODUCTS;
+  const categoryImages = CATEGORY_IMAGES;
+
   useEffect(() => {
-    if (productsData?.products) {
-      const products = productsData.products;
-      brands.forEach(brand => {
-        const count = products.filter((p) => 
-          p.brand?.toLowerCase() === brand.nameEn.toLowerCase()
-        ).length;
-        brand.productCount = count;
-      });
-    }
-  }, [productsData]);
+    brands.forEach(brand => {
+      const count = products.filter((p) =>
+        p.brand?.toLowerCase() === brand.nameEn.toLowerCase()
+      ).length;
+      brand.productCount = count;
+    });
+  }, []);
 
-  if (productsLoading || categoriesLoading) return (
-    <div>
-      <Header />
-      <Container className="mt-5 text-center">
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">در حال بارگذاری...</span>
-        </div>
-        <p className="mt-2">در حال بارگذاری محصولات...</p>
-      </Container>
-      <Footer />
-    </div>
-  );
-
-  if (productsError || categoriesError) return (
-    <div>
-      <Header />
-      <Container className="mt-5 text-center">
-        <div className="alert alert-danger" role="alert">
-          خطا در بارگذاری: {productsError?.message || categoriesError?.message}
-        </div>
-      </Container>
-      <Footer />
-    </div>
-  );
-
-  const products = productsData?.products || [];
-  const categoryImages = categoriesData?.activeCategoryImages || [];
-  
   const featuredProducts = products.slice(0, 8);
   const onSaleProducts = products.filter((p) => p.discount > 0).slice(0, 8);
   
@@ -279,7 +247,7 @@ export default function Home() {
     setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
@@ -299,11 +267,11 @@ export default function Home() {
     setSalePage((prev) => (prev - 1 + totalSalePages) % totalSalePages);
   };
 
-  const handleBrandClick = (brand) => {
+  const handleBrandClick = (brand: (typeof brands)[number]) => {
     router.push(`/products?brand=${brand.nameEn}`);
   };
 
-  const handleCategoryClick = (link) => {
+  const handleCategoryClick = (link: string) => {
     router.push(link);
   };
 

@@ -1,13 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Form, Badge, Spinner } from 'react-bootstrap';
+import { Suspense, useState, useEffect, type ReactElement } from 'react';
+import { Container, Row, Col, Card, Button, Form, Badge } from 'react-bootstrap';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useQuery } from '@apollo/client';
-import { GET_PRODUCTS } from '@/lib/graphql-queries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { useLanguage } from '../context/LanguageContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
@@ -33,6 +30,7 @@ import {
 } from 'react-bootstrap-icons';
 import { showToast } from '@/components/ToastProvider';
 import { useCart } from '../../app/context/CartContext';
+import { PRODUCTS } from '@/lib/mock-data';
 
 // تابع کمکی برای تبدیل نام انگلیسی برند به فارسی
 const getBrandNameInPersian = (brandEn: string): string => {
@@ -92,12 +90,20 @@ const getBrandNameInEnglish = (brandFa: string): string => {
 interface CategoryNode {
   id: string;
   name: string;
-  icon?: JSX.Element;
+  icon?: ReactElement;
   subcategories?: CategoryNode[];
   count?: number;
 }
 
 export default function ProductsPage() {
+  return (
+    <Suspense fallback={null}>
+      <ProductsPageContent />
+    </Suspense>
+  );
+}
+
+function ProductsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const brandParam = searchParams.get('brand');
@@ -120,7 +126,6 @@ export default function ProductsPage() {
   const [openBrands, setOpenBrands] = useState<string[]>([]);
   
   const { addToCart } = useCart();
-  const { loading, error, data } = useQuery(GET_PRODUCTS);
 
   // ساختار دسته‌بندی‌ها با زیرشاخه (با آیکون‌های اصلاح شده)
   const categoryTree: CategoryNode[] = [
@@ -346,31 +351,8 @@ export default function ProductsPage() {
     return stars;
   };
 
-  if (loading) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <Spinner animation="border" variant="primary" />
-        <p className="mt-3">در حال بارگذاری محصولات...</p>
-      </Container>
-      <Footer />
-    </div>
-  );
+  const products = PRODUCTS;
 
-  if (error) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <div className="alert alert-danger">
-          خطا در بارگذاری محصولات: {error.message}
-        </div>
-      </Container>
-      <Footer />
-    </div>
-  );
-
-  const products = data?.products || [];
-  
   // استخراج لیست برندها از محصولات
   const brands = Array.from(new Set(products.map((p: any) => p.brand).filter(Boolean))).sort();
   

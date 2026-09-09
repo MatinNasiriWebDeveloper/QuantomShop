@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ToastProvider from '@/components/ToastProvider';
-import ApolloProviderWrapper from '../components/ApolloProviderWrapper';
 import { CartProvider } from './context/CartContext';
 import { Vazirmatn } from 'next/font/google';
 import './globals.css';
@@ -28,12 +27,10 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={`${vazirmatn.variable}`}>
       <body style={{ fontFamily: 'var(--font-vazirmatn)' }}>
-        <ApolloProviderWrapper>
-          <CartProvider>
-            <ToastProvider />
-            {children}
-          </CartProvider>
-        </ApolloProviderWrapper>
+        <CartProvider>
+          <ToastProvider />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

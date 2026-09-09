@@ -1,39 +1,20 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Container, Row, Col, Nav, Dropdown, Spinner } from 'react-bootstrap';
-import Link from 'next/link';
-import { useQuery } from '@apollo/client';
-import { 
-  Globe, 
-  ChevronDown, 
-  Instagram, 
-  Telegram, 
-  Twitter, 
+import { useState } from 'react';
+import { Container, Row, Col, Nav } from 'react-bootstrap';
+import {
+  Instagram,
+  Telegram,
+  Twitter,
   Linkedin,
   Phone,
   Envelope,
   GeoAlt
 } from 'react-bootstrap-icons';
-import { 
-  GET_CATEGORIES, 
-  GET_BEST_DISCOUNTS, 
-  GET_NEWEST_PRODUCTS, 
-  GET_STORE_INFO 
-} from '@/lib/graphql-queries';
+import { PRODUCTS, STORE_INFO } from '@/lib/mock-data';
 
 export default function Footer() {
   const [language, setLanguage] = useState('fa');
-  const [showLangDropdown, setShowLangDropdown] = useState(false);
-
-  const { data: categoriesData, loading: categoriesLoading } = useQuery(GET_CATEGORIES);
-  const { data: discountsData, loading: discountsLoading } = useQuery(GET_BEST_DISCOUNTS, {
-    variables: { limit: 5 }
-  });
-  const { data: newestData, loading: newestLoading } = useQuery(GET_NEWEST_PRODUCTS, {
-    variables: { limit: 4 }
-  });
-  const { data: storeData, loading: storeLoading } = useQuery(GET_STORE_INFO);
 
   const languages = [
     { code: 'fa', name: 'فارسی', flag: '🇮🇷' },
@@ -43,22 +24,24 @@ export default function Footer() {
     { code: 'fr', name: 'Français', flag: '🇫🇷' }
   ];
 
-  const currentLang = languages.find(lang => lang.code === language) || languages[0];
-  const categories = categoriesData?.categories || [];
-  const discounts = discountsData?.bestDiscounts || [];
-  const newestProducts = newestData?.newestProducts || [];
-  const storeInfo = storeData?.storeInfo;
+  const categories = Array.from(new Set(PRODUCTS.map((p) => p.category))).map((name, index) => ({
+    id: String(index + 1),
+    name,
+    slug: encodeURIComponent(name),
+    productCount: PRODUCTS.filter((p) => p.category === name).length,
+  }));
 
-  if (categoriesLoading || discountsLoading || newestLoading || storeLoading) {
-    return (
-      <footer className="bg-dark text-white pt-5 mt-5">
-        <Container className="text-center py-5">
-          <Spinner animation="border" variant="light" />
-          <p className="mt-3 text-white-50">در حال بارگذاری...</p>
-        </Container>
-      </footer>
-    );
-  }
+  const discounts = PRODUCTS
+    .filter((p) => p.discount > 0)
+    .sort((a, b) => b.discount - a.discount)
+    .slice(0, 5)
+    .map((p) => ({ title: p.name, discountPercent: p.discount }));
+
+  const newestProducts = [...PRODUCTS]
+    .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    .slice(0, 4);
+
+  const storeInfo = STORE_INFO;
 
   return (
     <footer className="bg-6a1b9a text-white fw-bold pt-5 mt-5" dir={language === 'ar' ? 'rtl' : 'ltr'}>

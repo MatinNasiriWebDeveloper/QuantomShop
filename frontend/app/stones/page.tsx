@@ -1,40 +1,13 @@
 'use client';
 
-import { Container, Row, Col, Card, Button, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import Header from '@/components/Header';
-import Link from 'next/link';
 import Image from 'next/image';
-import { useQuery } from '@apollo/client';
-import { GET_STONES } from '@/lib/graphql-queries';
 import Footer from '@/components/Footer';
+import { STONES } from '@/lib/mock-data';
 
 export default function StonesPage() {
-  const { loading, error, data } = useQuery(GET_STONES);
-
-  if (loading) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <Spinner animation="border" variant="primary" />
-        <p className="mt-3">در حال بارگذاری سنگ‌ها...</p>
-      </Container>
-      <Footer />
-    </div>
-  );
-
-  if (error) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <div className="alert alert-danger">
-          خطا در بارگذاری سنگ‌ها: {error.message}
-        </div>
-      </Container>
-      <Footer />
-    </div>
-  );
-
-  const stones = data?.stones || [];
+  const stones = STONES;
 
   return (
     <div>

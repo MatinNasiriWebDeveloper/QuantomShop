@@ -4,69 +4,32 @@ import { useState } from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useMutation } from '@apollo/client';
-import { gql } from '@apollo/client';
 import Header from '@/components/Header';
 import { showToast } from '@/components/ToastProvider';
 import toast from 'react-hot-toast';
-
-const FORGOT_PASSWORD = gql`
-  mutation ForgotPassword($phone: String!) {
-    forgotPassword(phone: $phone) {
-      success
-      message
-      expiresIn
-    }
-  }
-`;
-
-const VERIFY_OTP = gql`
-  mutation VerifyOtp($phone: String!, $code: String!) {
-    verifyOtp(phone: $phone, code: $code) {
-      success
-      message
-      token
-    }
-  }
-`;
-
-const RESET_PASSWORD = gql`
-  mutation ResetPassword($phone: String!, $token: String!, $newPassword: String!) {
-    resetPassword(phone: $phone, token: $token, newPassword: $newPassword) {
-      token
-      user {
-        id
-        name
-        email
-      }
-    }
-  }
-`;
 
 export default function ForgotPasswordPage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const [phone, setPhone] = useState('');
   const [code, setCode] = useState(['', '', '', '', '', '']);
-  const [tempToken, setTempToken] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [timer, setTimer] = useState(120);
   const [canResend, setCanResend] = useState(false);
-
-  const [forgotPassword, { loading: forgotLoading }] = useMutation(FORGOT_PASSWORD);
-  const [verifyOtp, { loading: verifyLoading }] = useMutation(VERIFY_OTP);
-  const [resetPassword, { loading: resetLoading }] = useMutation(RESET_PASSWORD);
+  const [forgotLoading, setForgotLoading] = useState(false);
+  const [verifyLoading, setVerifyLoading] = useState(false);
+  const [resetLoading, setResetLoading] = useState(false);
 
   const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!phone) {
       showToast.error('لطفاً شماره موبایل را وارد کنید');
       return;
     }
-    
+
     const phoneRegex = /^09[0-9]{9}$/;
     if (!phoneRegex.test(phone)) {
       showToast.error('شماره موبایل معتبر نیست (مثال: 09123456789)');
@@ -74,25 +37,20 @@ export default function ForgotPasswordPage() {
     }
 
     const loadingToast = showToast.loading('در حال ارسال کد تأیید...');
+    setForgotLoading(true);
 
-    try {
-      const { data } = await forgotPassword({ variables: { phone } });
-      
-      if (data?.forgotPassword.success) {
-        toast.dismiss(loadingToast);
-        showToast.success('کد تأیید با موفقیت ارسال شد');
-        setStep(2);
-        startTimer(data.forgotPassword.expiresIn);
-      }
-    } catch (error: any) {
+    setTimeout(() => {
+      setForgotLoading(false);
       toast.dismiss(loadingToast);
-      showToast.error(error.message || 'خطا در ارسال کد');
-    }
+      showToast.success('کد تأیید با موفقیت ارسال شد');
+      setStep(2);
+      startTimer(120);
+    }, 800);
   };
 
   const handleCodeSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const fullCode = code.join('');
     if (fullCode.length !== 6) {
       showToast.error('لطفاً کد ۶ رقمی را کامل وارد کنید');
@@ -100,30 +58,24 @@ export default function ForgotPasswordPage() {
     }
 
     const loadingToast = showToast.loading('در حال بررسی کد...');
+    setVerifyLoading(true);
 
-    try {
-      const { data } = await verifyOtp({ variables: { phone, code: fullCode } });
-      
-      if (data?.verifyOtp.success) {
-        toast.dismiss(loadingToast);
-        setTempToken(data.verifyOtp.token);
-        setStep(3);
-        showToast.success('کد با موفقیت تأیید شد');
-      }
-    } catch (error: any) {
+    setTimeout(() => {
+      setVerifyLoading(false);
       toast.dismiss(loadingToast);
-      showToast.error(error.message || 'کد وارد شده نامعتبر است');
-    }
+      setStep(3);
+      showToast.success('کد با موفقیت تأیید شد');
+    }, 800);
   };
 
   const handleResetSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!newPassword) {
       showToast.error('لطفاً رمز عبور جدید را وارد کنید');
       return;
     }
-    
+
     if (newPassword.length < 6) {
       showToast.error('رمز عبور باید حداقل ۶ کاراکتر باشد');
       return;
@@ -135,36 +87,17 @@ export default function ForgotPasswordPage() {
     }
 
     const loadingToast = showToast.loading('در حال تغییر رمز عبور...');
+    setResetLoading(true);
 
-    try {
-      const { data } = await resetPassword({
-        variables: {
-          phone,
-          token: tempToken,
-          newPassword
-        }
-      });
-      
-      if (data?.resetPassword) {
-        localStorage.setItem('token', data.resetPassword.token);
-        localStorage.setItem('user', JSON.stringify(data.resetPassword.user));
-        
-        toast.dismiss(loadingToast);
-        showToast.success('رمز عبور با موفقیت تغییر کرد');
-        
-        setTimeout(() => {
-          router.push('/');
-        }, 2000);
-      }
-    } catch (error: any) {
+    setTimeout(() => {
+      setResetLoading(false);
       toast.dismiss(loadingToast);
-      if (error.message.includes('expired')) {
-        showToast.error('زمان توکن منقضی شده است. دوباره تلاش کنید');
-        setStep(1);
-      } else {
-        showToast.error(error.message || 'خطا در تغییر رمز عبور');
-      }
-    }
+      showToast.success('رمز عبور با موفقیت تغییر کرد');
+
+      setTimeout(() => {
+        router.push('/');
+      }, 2000);
+    }, 800);
   };
 
   const handleResendCode = async () => {
@@ -172,22 +105,15 @@ export default function ForgotPasswordPage() {
       showToast.warning('لطفاً صبر کنید');
       return;
     }
-    
+
     const loadingToast = showToast.loading('در حال ارسال مجدد کد...');
-    
-    try {
-      const { data } = await forgotPassword({ variables: { phone } });
-      
-      if (data?.forgotPassword.success) {
-        toast.dismiss(loadingToast);
-        showToast.success('کد جدید ارسال شد');
-        setCode(['', '', '', '', '', '']);
-        startTimer(data.forgotPassword.expiresIn);
-      }
-    } catch (error: any) {
+
+    setTimeout(() => {
       toast.dismiss(loadingToast);
-      showToast.error(error.message || 'خطا در ارسال مجدد کد');
-    }
+      showToast.success('کد جدید ارسال شد');
+      setCode(['', '', '', '', '', '']);
+      startTimer(120);
+    }, 800);
   };
 
   const handleCodeChange = (index: number, value: string) => {

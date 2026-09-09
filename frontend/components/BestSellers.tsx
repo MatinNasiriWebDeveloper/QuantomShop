@@ -4,38 +4,13 @@ import { useState, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useQuery } from '@apollo/client';
-import { gql } from '@apollo/client';
 import { ChevronLeft, ChevronRight } from 'react-bootstrap-icons';
+import { PRODUCTS } from '@/lib/mock-data';
 
 // استایل‌های مربوط به Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-const GET_BEST_SELLERS = gql`
-  query GetBestSellers($limit: Int) {
-    bestSellers(limit: $limit) {
-      id
-      name
-      price
-      finalPrice
-      imageUrl
-      discount
-      brand
-    }
-  }
-`;
-
-interface Product {
-  id: string;
-  name: string;
-  imageUrl: string;
-  price: number;
-  finalPrice: number;
-  discount?: number;
-  brand?: string;
-}
 
 export default function BestSellers() {
   const [swiper, setSwiper] = useState<any>(null);
@@ -43,9 +18,7 @@ export default function BestSellers() {
   const [showNextButton, setShowNextButton] = useState(true);
   const swiperRef = useRef<any>(null);
 
-  const { loading, error, data } = useQuery(GET_BEST_SELLERS, {
-    variables: { limit: 18 }
-  });
+  const products = PRODUCTS;
 
   useEffect(() => {
     import('swiper/react').then(({ Swiper, SwiperSlide }) => {
@@ -59,7 +32,7 @@ export default function BestSellers() {
     return price.toLocaleString('en-US') + ' تومان';
   };
 
-  if (loading || !swiper) return (
+  if (!swiper) return (
     <Container className="my-5">
       <div className="bg-white rounded-3 p-3 shadow-sm">
         <div className="d-flex justify-content-between align-items-center mb-3 px-2">
@@ -77,10 +50,7 @@ export default function BestSellers() {
     </Container>
   );
 
-  if (error) return null;
-
   const { Swiper, SwiperSlide } = swiper;
-  const products = data?.bestSellers || [];
 
   if (products.length === 0) return null;
 

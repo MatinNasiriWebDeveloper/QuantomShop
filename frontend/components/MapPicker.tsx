@@ -110,7 +110,7 @@ export default function MapPicker({ onAddressSelect, onClose }: MapPickerProps) 
         try {
           const response = await fetch(`https://map.ir/reverse?lat=${lat}&lon=${lng}`, {
             headers: {
-              'x-api-key': apiKey
+              'x-api-key': apiKey!
             }
           });
           const data = await response.json();
@@ -189,8 +189,8 @@ export default function MapPicker({ onAddressSelect, onClose }: MapPickerProps) 
       window.map.setView([lat, lng], 16);
       
       // اضافه کردن نشانگر
-      L.marker([lat, lng], {
-        icon: L.icon({
+      window.L.marker([lat, lng], {
+        icon: window.L.icon({
           iconUrl: 'https://static.map.ir/marker/blue.png',
           iconSize: [32, 32],
           iconAnchor: [16, 32]
@@ -222,8 +222,8 @@ export default function MapPicker({ onAddressSelect, onClose }: MapPickerProps) 
         if (window.map) {
           window.map.setView([latitude, longitude], 16);
           
-          L.marker([latitude, longitude], {
-            icon: L.icon({
+          window.L.marker([latitude, longitude], {
+            icon: window.L.icon({
               iconUrl: 'https://static.map.ir/marker/red.png',
               iconSize: [32, 32],
               iconAnchor: [16, 32]

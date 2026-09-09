@@ -1,10 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Form, Badge, Spinner } from 'react-bootstrap';
+import { Suspense, useState, useEffect } from 'react';
+import { Container, Row, Col, Card, Button, Form, Badge } from 'react-bootstrap';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useQuery } from '@apollo/client';
-import { GET_PRODUCTS } from '@/lib/graphql-queries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
@@ -12,8 +10,17 @@ import Link from 'next/link';
 import { Cart, Filter, StarFill, Star } from 'react-bootstrap-icons';
 import { showToast } from '@/components/ToastProvider';
 import { useCart } from '../context/CartContext';
+import { PRODUCTS } from '@/lib/mock-data';
 
 export default function ProductsPage() {
+  return (
+    <Suspense fallback={null}>
+      <ProductsPageContent />
+    </Suspense>
+  );
+}
+
+function ProductsPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const brandParam = searchParams.get('brand');
@@ -27,7 +34,6 @@ export default function ProductsPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   
   const { addToCart } = useCart();
-  const { loading, error, data } = useQuery(GET_PRODUCTS);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -118,31 +124,8 @@ export default function ProductsPage() {
     return brandNames[brandKey] || brandKey;
   };
 
-  if (loading) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <Spinner animation="border" variant="primary" />
-        <p className="mt-3">در حال بارگذاری محصولات...</p>
-      </Container>
-      <Footer />
-    </div>
-  );
+  const products = PRODUCTS;
 
-  if (error) return (
-    <div>
-      <Header />
-      <Container className="text-center py-5">
-        <div className="alert alert-danger">
-          خطا در بارگذاری محصولات: {error.message}
-        </div>
-      </Container>
-      <Footer />
-    </div>
-  );
-
-  const products = data?.products || [];
-  
   // استخراج لیست برندها از محصولات
   const brands = ['همه', ...Array.from(new Set(products.map((p: any) => p.brand).filter(Boolean)))];
   

@@ -5,8 +5,6 @@ import { Container, Row, Col, Card, Form, Button, Tab, Nav, InputGroup, Spinner,
 import { Eye, EyeSlash, PersonCircle, CloudUpload } from 'react-bootstrap-icons';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useMutation } from '@apollo/client';
-import { REGISTER_USER, LOGIN_USER } from '@/lib/graphql-mutations';
 import { uploadAvatar } from '@/lib/uploadAvatar';
 import Header from '@/components/Header';
 import Image from 'next/image';
@@ -46,8 +44,8 @@ export default function LoginPage() {
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const [registerUser, { loading: registerLoading }] = useMutation(REGISTER_USER);
-  const [loginUser, { loading: loginLoading }] = useMutation(LOGIN_USER);
+  const [registerLoading, setRegisterLoading] = useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
 
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLoginData({
@@ -109,45 +107,31 @@ export default function LoginPage() {
     }
 
     const loadingToast = showToast.loading('در حال ورود به حساب کاربری...');
+    setLoginLoading(true);
 
-    try {
-      const { data } = await loginUser({
-        variables: {
-          input: {
-            email: loginData.email,
-            password: loginData.password
-          }
-        }
-      });
+    setTimeout(() => {
+      setLoginLoading(false);
+      localStorage.setItem('token', `local-${Date.now()}`);
+      localStorage.setItem('user', JSON.stringify({
+        name: loginData.email.split('@')[0],
+        email: loginData.email
+      }));
 
-      if (data?.loginUser) {
-        localStorage.setItem('token', data.loginUser.token);
-        localStorage.setItem('user', JSON.stringify(data.loginUser.user));
-        
-        toast.dismiss(loadingToast);
-        showToast.success('با موفقیت وارد شدید');
-        
-        const redirectUrl = localStorage.getItem('redirectAfterLogin');
-        if (redirectUrl) {
-          localStorage.removeItem('redirectAfterLogin');
-          setTimeout(() => {
-            router.push(redirectUrl);
-          }, 1500);
-        } else {
-          setTimeout(() => {
-            router.push('/');
-          }, 1500);
-        }
-      }
-    } catch (error: any) {
       toast.dismiss(loadingToast);
-      
-      if (error.message.includes('credentials')) {
-        showToast.error('ایمیل یا رمز عبور اشتباه است');
+      showToast.success('با موفقیت وارد شدید');
+
+      const redirectUrl = localStorage.getItem('redirectAfterLogin');
+      if (redirectUrl) {
+        localStorage.removeItem('redirectAfterLogin');
+        setTimeout(() => {
+          router.push(redirectUrl);
+        }, 1500);
       } else {
-        showToast.error(error.message || 'خطا در ورود به سیستم');
+        setTimeout(() => {
+          router.push('/');
+        }, 1500);
       }
-    }
+    }, 800);
   };
 
   const handleRegisterSubmit = async (e: React.FormEvent) => {
@@ -194,64 +178,39 @@ export default function LoginPage() {
     }
 
     const loadingToast = showToast.loading('در حال ثبت‌نام...');
+    setRegisterLoading(true);
 
-    try {
-      let avatarUrl = '';
-      if (registerData.avatar) {
-        try {
-          avatarUrl = await uploadAvatar(registerData.avatar);
-        } catch (uploadError) {
-          toast.dismiss(loadingToast);
-          showToast.error('خطا در آپلود عکس');
-          return;
-        }
-      }
-
-      const { data } = await registerUser({
-        variables: {
-          input: {
-            name: registerData.name,
-            email: registerData.email,
-            password: registerData.password,
-            phone: registerData.phone,
-            avatar: avatarUrl
-          }
-        }
-      });
-
-      if (data?.registerUser) {
+    let avatarUrl = '';
+    if (registerData.avatar) {
+      try {
+        avatarUrl = await uploadAvatar(registerData.avatar);
+      } catch (uploadError) {
+        setRegisterLoading(false);
         toast.dismiss(loadingToast);
-        showToast.success('ثبت‌نام با موفقیت انجام شد');
-        
-        setTimeout(() => {
-          setActiveTab('login');
-          setRegisterData({
-            name: '',
-            email: '',
-            phone: '',
-            password: '',
-            confirmPassword: '',
-            avatar: null
-          });
-          setAvatarPreview(null);
-          showToast.info('اکنون می‌توانید وارد شوید');
-        }, 2000);
-      }
-    } catch (error: any) {
-      toast.dismiss(loadingToast);
-      
-      if (error.message.includes('already exists')) {
-        if (error.message.includes('email')) {
-          showToast.error('این ایمیل قبلاً ثبت شده است');
-        } else if (error.message.includes('phone')) {
-          showToast.error('این شماره موبایل قبلاً ثبت شده است');
-        } else {
-          showToast.error('کاربری با این اطلاعات قبلاً ثبت شده است');
-        }
-      } else {
-        showToast.error(error.message || 'خطا در ثبت‌نام');
+        showToast.error('خطا در آپلود عکس');
+        return;
       }
     }
+
+    setTimeout(() => {
+      setRegisterLoading(false);
+      toast.dismiss(loadingToast);
+      showToast.success('ثبت‌نام با موفقیت انجام شد');
+
+      setTimeout(() => {
+        setActiveTab('login');
+        setRegisterData({
+          name: '',
+          email: '',
+          phone: '',
+          password: '',
+          confirmPassword: '',
+          avatar: null
+        });
+        setAvatarPreview(null);
+        showToast.info('اکنون می‌توانید وارد شوید');
+      }, 2000);
+    }, 800);
   };
 
   return (
@@ -392,16 +351,19 @@ export default function LoginPage() {
                       <Form onSubmit={handleRegisterSubmit}>
                         {/* بخش آپلود عکس */}
                         <div className="text-center mb-4">
-                          <div 
+                          <div
                             className="position-relative d-inline-block"
-                            style={{ cursor: 'pointer' }}
+                            style={{ cursor: 'pointer', width: '100px', height: '100px' }}
                             onClick={() => fileInputRef.current?.click()}
                           >
-                            <div 
+                            <div
                               className="rounded-circle overflow-hidden border border-3"
-                              style={{ 
-                                width: '100px', 
+                              style={{
+                                position: 'relative',
+                                width: '100px',
                                 height: '100px',
+                                aspectRatio: '1 / 1',
+                                flexShrink: 0,
                                 borderColor: '#6a1b9a !important'
                               }}
                             >
@@ -409,8 +371,7 @@ export default function LoginPage() {
                                 <Image
                                   src={avatarPreview}
                                   alt="آواتار"
-                                  width={100}
-                                  height={100}
+                                  fill
                                   style={{ objectFit: 'cover' }}
                                 />
                               ) : (
@@ -422,7 +383,7 @@ export default function LoginPage() {
                                 </div>
                               )}
                             </div>
-                            <div 
+                            {/* <div 
                               className="position-absolute bottom-0 end-0 rounded-circle p-2"
                               style={{ 
                                 backgroundColor: '#6a1b9a',
@@ -430,7 +391,7 @@ export default function LoginPage() {
                               }}
                             >
                               <CloudUpload size={16} color="white" />
-                            </div>
+                            </div> */}
                           </div>
                           <Form.Control
                             type="file"
