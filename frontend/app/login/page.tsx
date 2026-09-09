@@ -195,21 +195,24 @@ export default function LoginPage() {
     setTimeout(() => {
       setRegisterLoading(false);
       toast.dismiss(loadingToast);
+
+      localStorage.setItem('token', `local-${Date.now()}`);
+      localStorage.setItem('user', JSON.stringify({
+        name: registerData.name,
+        email: registerData.email,
+        phone: registerData.phone,
+        avatar: avatarUrl
+      }));
+
       showToast.success('ثبت‌نام با موفقیت انجام شد');
 
-      setTimeout(() => {
-        setActiveTab('login');
-        setRegisterData({
-          name: '',
-          email: '',
-          phone: '',
-          password: '',
-          confirmPassword: '',
-          avatar: null
-        });
-        setAvatarPreview(null);
-        showToast.info('اکنون می‌توانید وارد شوید');
-      }, 2000);
+      const savedRedirect = localStorage.getItem('redirectAfterLogin');
+      if (savedRedirect) {
+        localStorage.removeItem('redirectAfterLogin');
+        setTimeout(() => router.push(savedRedirect), 1500);
+      } else {
+        setTimeout(() => router.push('/'), 1500);
+      }
     }, 800);
   };
 
