@@ -4,18 +4,20 @@ import { useState, useRef, useEffect } from 'react';
 import { Container, Button, Modal, Badge, Alert } from 'react-bootstrap';
 import { Gift, Star, ArrowRepeat, Trophy, CheckCircle } from 'react-bootstrap-icons';
 import Image from 'next/image';
-import confetti from 'canvas-confetti'; // نیاز به نصب پکیج: npm install canvas-confetti
+import confetti from 'canvas-confetti';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { showToast } from '@/components/ToastProvider';
 
-// تعریف جوایز
 const prizes = [
-  { id: 1, text: 'آیفون ۱۷ پرومکس', color: '#ff5252', icon: '📱', type: 'jackpot' },
-  { id: 2, text: '۱۰۰ میلیون تومان اعتبار', color: '#448aff', icon: '💰', type: 'jackpot' },
-  { id: 3, text: 'پوچ', color: '#e0e0e0', icon: '😔', type: 'lose' },
-  { id: 4, text: 'دسته PS4', color: '#ffab40', icon: '🎮', type: 'win' },
-  { id: 5, text: 'دسته PS5', color: '#69f0ae', icon: '🎮', type: 'win' },
-  { id: 6, text: 'تخفیف ۹۰٪', color: '#e040fb', icon: '🎟️', type: 'win' },
-  { id: 7, text: 'پوچ', color: '#e0e0e0', icon: '😔', type: 'lose' },
-  { id: 8, text: 'کد تخفیف ۵۰ هزارتومانی', color: '#536dfe', icon: '🎫', type: 'win' },
+  { id: 1, text: 'آیفون ۱۷ پرومکس', color: '#ff5252', icon: '📱', type: 'jackpot', value: 0 },
+  { id: 2, text: '۱۰۰ میلیون تومان اعتبار', color: '#448aff', icon: '💰', type: 'jackpot', value: 0 },
+  { id: 3, text: 'پوچ', color: '#e0e0e0', icon: '😔', type: 'lose', value: 0 },
+  { id: 4, text: 'کیف پول ۳۰۰ هزار تومانی', color: '#ffab40', icon: '💵', type: 'win', value: 300000 },
+  { id: 5, text: 'کیف پول ۵۰۰ هزار تومانی', color: '#69f0ae', icon: '💵', type: 'win', value: 500000 },
+  { id: 6, text: 'تخفیف ۹۰٪ (۹۰ هزار تومان اعتبار)', color: '#e040fb', icon: '🎟️', type: 'win', value: 90000 },
+  { id: 7, text: 'پوچ', color: '#e0e0e0', icon: '😔', type: 'lose', value: 0 },
+  { id: 8, text: 'کد تخفیف ۵۰ هزارتومانی', color: '#536dfe', icon: '🎫', type: 'win', value: 50000 },
 ];
 
 export default function LotteryPage() {
@@ -23,7 +25,40 @@ export default function LotteryPage() {
   const [rotation, setRotation] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [winner, setWinner] = useState<any>(null);
+  const [claimed, setClaimed] = useState(false);
   const wheelRef = useRef<HTMLDivElement>(null);
+
+  const handleClaimPrize = () => {
+    if (winner?.type === 'jackpot') {
+      showToast.success('درخواست شما ثبت شد؛ همکاران ما برای تحویل جایزه با شما تماس می‌گیرند');
+      setShowModal(false);
+      return;
+    }
+
+    if (winner?.value > 0) {
+      const currentBalance = Number(localStorage.getItem('walletBalance') || 0);
+      const currentTransactions = JSON.parse(localStorage.getItem('walletTransactions') || '[]');
+
+      const nextBalance = currentBalance + winner.value;
+      const nextTransactions = [
+        {
+          id: Date.now().toString(),
+          type: 'charge',
+          amount: winner.value,
+          date: new Date().toISOString(),
+          description: `جایزه گردونه شانس: ${winner.text}`,
+        },
+        ...currentTransactions,
+      ];
+
+      localStorage.setItem('walletBalance', String(nextBalance));
+      localStorage.setItem('walletTransactions', JSON.stringify(nextTransactions));
+      setClaimed(true);
+      showToast.success('جایزه شما به کیف پول اضافه شد');
+    }
+
+    setShowModal(false);
+  };
 
   // محاسبه زاویه هر بخش
   const segmentAngle = 360 / prizes.length;
@@ -33,6 +68,7 @@ export default function LotteryPage() {
 
     setIsSpinning(true);
     setShowModal(false);
+    setClaimed(false);
 
     // انتخاب برنده به صورت تصادفی (اینجا برای تست همیشه برنده است، می‌توانید تغییر دهید)
     // برای واقعی‌تر شدن، می‌توانید احتمال پوچ را بیشتر کنید
@@ -90,7 +126,10 @@ export default function LotteryPage() {
   };
 
   return (
-    <Container className="py-5 d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <div>
+      <Header />
+
+      <Container className="py-5 d-flex flex-column align-items-center justify-content-center min-vh-100">
       <style>{`
         .wheel-container {
           position: relative;
@@ -270,11 +309,21 @@ export default function LotteryPage() {
               <div className="display-4 mb-3">{winner?.icon}</div>
               <h2 className="fw-bold mb-4" style={{ color: '#6a1b9a' }}>{winner?.text}</h2>
               <Alert variant="success" className="d-inline-block">
-                کد جایزه شما به کیف پول اضافه شد.
+                {winner?.type === 'jackpot'
+                  ? 'برای دریافت این جایزه همکاران ما با شما تماس خواهند گرفت.'
+                  : claimed
+                    ? 'جایزه شما با موفقیت به کیف پول اضافه شد.'
+                    : 'برای افزودن جایزه به کیف پول، دکمه زیر را بزنید.'}
               </Alert>
               <div className="mt-4">
-                <Button variant="primary" className="px-4" onClick={() => setShowModal(false)} style={{ backgroundColor: '#6a1b9a' }}>
-                  دریافت جایزه
+                <Button
+                  variant="primary"
+                  className="px-4"
+                  onClick={handleClaimPrize}
+                  disabled={claimed}
+                  style={{ backgroundColor: '#6a1b9a' }}
+                >
+                  {claimed ? 'دریافت شد' : 'دریافت جایزه'}
                 </Button>
               </div>
             </>
@@ -282,6 +331,9 @@ export default function LotteryPage() {
         </Modal.Body>
       </Modal>
 
-    </Container>
+      </Container>
+
+      <Footer />
+    </div>
   );
 }

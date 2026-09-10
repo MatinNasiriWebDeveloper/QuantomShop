@@ -3,16 +3,38 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { showToast } from '@/components/ToastProvider';
+import toast from 'react-hot-toast';
 
 export default function GoldPage() {
   const [activeTab, setActiveTab] = useState('buy');
   const [price, setPrice] = useState('3500000');
   const [amount, setAmount] = useState('');
+  const [submitting, setSubmitting] = useState(false);
 
   const total = () => {
     const p = parseFloat(price) || 0;
     const a = parseFloat(amount) || 0;
     return (p * a).toLocaleString('fa-IR', { maximumFractionDigits: 0 });
+  };
+
+  const handleSubmit = () => {
+    const parsedAmount = parseFloat(amount) || 0;
+
+    if (parsedAmount <= 0) {
+      showToast.error('لطفاً مقدار طلا را وارد کنید');
+      return;
+    }
+
+    setSubmitting(true);
+    const loadingToast = showToast.loading(activeTab === 'buy' ? 'در حال ثبت خرید...' : 'در حال ثبت فروش...');
+
+    setTimeout(() => {
+      setSubmitting(false);
+      toast.dismiss(loadingToast);
+      showToast.success(activeTab === 'buy' ? 'خرید طلا با موفقیت ثبت شد' : 'فروش طلا با موفقیت ثبت شد');
+      setAmount('');
+    }, 1000);
   };
 
   return (
@@ -67,8 +89,12 @@ export default function GoldPage() {
           <div className="mt-4 p-4 rounded fw-bold fs-5 content-total">
             مبلغ کل: {total()} تومان
           </div>
-          <button className="btn w-100 mt-4 fw-bold fs-5 content-submit">
-            {activeTab === 'buy' ? 'ثبت خرید' : 'ثبت فروش'}
+          <button
+            className="btn w-100 mt-4 fw-bold fs-5 content-submit"
+            onClick={handleSubmit}
+            disabled={submitting}
+          >
+            {submitting ? 'در حال ثبت...' : activeTab === 'buy' ? 'ثبت خرید' : 'ثبت فروش'}
           </button>
         </div>
 

@@ -3,8 +3,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { Container, Card, Form, Button, InputGroup, Badge, Spinner } from 'react-bootstrap';
 import { Send, Robot, Person, ChatDots, ArrowRight } from 'react-bootstrap-icons';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
-// نوع پیام‌ها
 type Message = {
   id: number;
   text: string;
@@ -88,7 +89,10 @@ export default function SupportPage() {
   };
 
   return (
-    <Container className="py-5" style={{ maxWidth: '900px' }}>
+    <div>
+      <Header />
+
+      <Container className="py-5" style={{ maxWidth: '900px' }}>
       <div className="text-center mb-4">
         <Badge bg="primary" className="mb-2 p-2">پشتیبانی آنلاین</Badge>
         <h2 className="fw-bold">گفتگو با دستیار هوشمند</h2>
@@ -97,7 +101,6 @@ export default function SupportPage() {
 
 
       <Card className="shadow-sm border-0 overflow-hidden">
-        {/* هدر چت */}
         <Card.Header className="bg-white border-bottom py-3 d-flex align-items-center gap-3">
           <div className="position-relative">
             <div 
@@ -218,6 +221,9 @@ export default function SupportPage() {
           برای دسترسی سریع‌تر به بخش‌های مختلف فروشگاه، از منوی بالای صفحه استفاده کنید.
         </p>
       </div>
-    </Container>
+      </Container>
+
+      <Footer />
+    </div>
   );
 }

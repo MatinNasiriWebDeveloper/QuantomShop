@@ -8,154 +8,145 @@ import Link from 'next/link';
 import { Search, StarFill, Star } from 'react-bootstrap-icons';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { PRODUCTS } from '@/lib/mock-data';
 
-// لیست برندها با اطلاعات کامل
+const brandCount = (nameEn: string) =>
+  PRODUCTS.filter((p) => p.brand.toLowerCase() === nameEn.toLowerCase()).length;
+
 const brands = [
-  { 
-    id: 1, 
+  {
+    id: 1,
     name: 'اپل',
     nameEn: 'Apple',
-    logo: '/images/brands/apple.png',
+    logo: '/images/products/app.webp',
     category: 'apple',
-    productCount: 156,
     description: 'برند آمریکایی تولیدکننده محصولات الکترونیکی پیشرفته',
     since: 1976,
     country: 'آمریکا',
-    rating: 4.8
+    rating: 4.8,
   },
-  { 
-    id: 2, 
+  {
+    id: 2,
     name: 'سامسونگ',
     nameEn: 'Samsung',
-    logo: '/images/brands/samsung.png',
+    logo: '/images/products/sam.webp',
     category: 'samsung',
-    productCount: 243,
     description: 'برند کرهای تولیدکننده انواع گوشی، لپ تاپ و لوازم خانگی',
     since: 1938,
     country: 'کره جنوبی',
-    rating: 4.7
+    rating: 4.7,
   },
-  { 
-    id: 3, 
+  {
+    id: 3,
     name: 'سونی',
     nameEn: 'Sony',
-    logo: '/images/brands/sony.png',
+    logo: '/images/products/so.webp',
     category: 'sony',
-    productCount: 189,
     description: 'برند ژاپنی تولیدکننده محصولات صوتی و تصویری',
     since: 1946,
     country: 'ژاپن',
-    rating: 4.6
+    rating: 4.6,
   },
-  { 
-    id: 4, 
+  {
+    id: 4,
     name: 'الجی',
     nameEn: 'LG',
-    logo: '/images/brands/lg.png',
+    logo: '/images/products/lg.webp',
     category: 'lg',
-    productCount: 167,
     description: 'برند کرهای تولیدکننده لوازم خانگی و الکترونیک',
     since: 1958,
     country: 'کره جنوبی',
-    rating: 4.5
+    rating: 4.5,
   },
-  { 
-    id: 5, 
+  {
+    id: 5,
     name: 'هایلو',
     nameEn: 'Haylou',
-    logo: '/images/brands/haylou.png',
+    logo: '/images/products/haylou.webp',
     category: 'haylou',
-    productCount: 78,
     description: 'برند چینی تولیدکننده هدفون و ساعت هوشمند',
     since: 2018,
     country: 'چین',
-    rating: 4.3
+    rating: 4.3,
   },
-  { 
-    id: 6, 
+  {
+    id: 6,
     name: 'جی‌بی‌ال',
     nameEn: 'JBL',
-    logo: '/images/brands/jbl.png',
+    logo: '/images/products/jbl.webp',
     category: 'jbl',
-    productCount: 92,
     description: 'برند آمریکایی تولیدکننده سیستم‌های صوتی',
     since: 1946,
     country: 'آمریکا',
-    rating: 4.7
+    rating: 4.7,
   },
-  { 
-    id: 7, 
+  {
+    id: 7,
     name: 'نوکیا',
     nameEn: 'Nokia',
-    logo: '/images/brands/nokia.png',
+    logo: '/images/products/noki.webp',
     category: 'nokia',
-    productCount: 65,
     description: 'برند فنلاندی تولیدکننده گوشی موبایل',
     since: 1865,
     country: 'فنلاند',
-    rating: 4.2
+    rating: 4.2,
   },
-  { 
-    id: 8, 
+  {
+    id: 8,
     name: 'تی‌پی‌لینک',
     nameEn: 'TP-Link',
-    logo: '/images/brands/tplink.png',
+    logo: '/images/products/tp.webp',
     category: 'tp-link',
-    productCount: 84,
     description: 'برند چینی تولیدکننده تجهیزات شبکه',
     since: 1996,
     country: 'چین',
-    rating: 4.4
+    rating: 4.4,
   },
-  { 
-    id: 9, 
+  {
+    id: 9,
     name: 'تسکو',
     nameEn: 'Tesco',
-    logo: '/images/brands/tesco.png',
+    logo: '/images/products/tsco.webp',
     category: 'tesco',
-    productCount: 45,
     description: 'برند انگلیسی تولیدکننده لوازم خانگی',
     since: 1919,
     country: 'انگلیس',
-    rating: 4.1
+    rating: 4.1,
   },
-  { 
-    id: 10, 
+  {
+    id: 10,
     name: 'انکر',
     nameEn: 'Anker',
-    logo: '/images/brands/anker.png',
+    logo: '/images/products/anker.webp',
     category: 'anker',
-    productCount: 71,
     description: 'برند چینی تولیدکننده شارژر و پاوربانک',
     since: 2011,
     country: 'چین',
-    rating: 4.6
+    rating: 4.6,
   },
-  { 
-    id: 11, 
+  {
+    id: 11,
     name: 'ایسر',
     nameEn: 'Acer',
-    logo: '/images/brands/acer.png',
+    logo: '/images/products/as.webp',
     category: 'acer',
-    productCount: 112,
     description: 'برند تایوانی تولیدکننده لپ تاپ و کامپیوتر',
     since: 1976,
     country: 'تایوان',
-    rating: 4.3
+    rating: 4.3,
   },
-  { 
-    id: 12, 
+  {
+    id: 12,
     name: 'ایسوس',
     nameEn: 'Asus',
-    logo: '/images/brands/asus.png',
+    logo: '/images/products/as.webp',
     category: 'asus',
-    productCount: 135,
     description: 'برند تایوانی تولیدکننده لپ تاپ و قطعات کامپیوتر',
     since: 1989,
     country: 'تایوان',
-    rating: 4.5
-  }
-];
+    rating: 4.5,
+  },
+].map((brand) => ({ ...brand, productCount: brandCount(brand.category) }));
 
 export default function BrandsPage() {
   const router = useRouter();
